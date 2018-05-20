@@ -1,16 +1,13 @@
 # Creating your own scripts in DBM
-
 Most things that are not available as actions can be run as a script either in the `run script` action or in any box that allows for text entry using `${ }`.
 
-![](/assets/scriptex.png)
+![](/screenshots/scriptex.png)
 
 ### Handy Scripting Resources
-
 * [W3Schools](https://www.w3schools.com/js/) - basic javascript reference
 * [Discord.js](https://discord.js.org/#/) - discord's custom JS library
 
 ### Scripting Cheat Sheets
-
 * [Basic Javascript](/creating-your-own-scripts/basic-javascript.md)
 * [Identifiers](/creating-your-own-scripts/identifiers.md)
 * [Math and Calculations](/creating-your-own-scripts/math-and-calculations.md)
@@ -19,7 +16,6 @@ Most things that are not available as actions can be run as a script either in t
 * [Miscellaneous](/creating-your-own-scripts/miscellaneous.md)
 
 ## Basic Javascript
-
 Usage | Script
 :- | :-
 Force Lower case | `.toLowerCase()`
@@ -31,7 +27,6 @@ If/Then (Ternery) | `(A < 1 ? "value if true" : "value if false")`
 If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 
 ## DBM Identifiers
-
 | Usage | Script |
 | :--- | :--- |
 | get the bot as a client (user) | `${this.getDBM().Bot.bot` |
@@ -40,7 +35,6 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 | the command channel | `${msg.channel` |
 
 ## Lists
-
 Usage | Script
 :- | :-
 Create a list out of items that have data following them | `.array}`
@@ -52,7 +46,6 @@ Return the last # of items in a list | `tempVars("your variable").slice(Math.max
 Return item at [position] from [list] | `tempVars("list").slice(tempVars("pos_num")-1,tempVars("pos_num"))`
 
 ## Math & Operations
-
 Usage | Script
 :- | :-
 round down | `${Math.floor(yourvariable)}`
@@ -91,13 +84,8 @@ Create server invite | `msg.channel.createInvite({temporary: true}," Showing the
 Add role to cmd author | `member.addRole(tempVars("newrolename"));`
 Stop the bot | `process.exit(0);`
 Change nickname (command author) | `msg.member.setNickname(tempVars("new_nick"))`<br/>`.then(console.log)`<br/>`.catch(console.error);`
-
-#
-# Misc
-| Usage | Script |
-| :--- | :--- |
-| Get Variable value | `this.getVariable(1,"varname",cache);`
-|Store Variables via script | `this.storeValue(output, 1 ,"totalUsers", cache)` <br /> (*1 = temp, 2 = server, 3 = global*)
+Get Variable value | `this.getVariable(1,"varname",cache);`
+Store Variables via script | `this.storeValue(output, 1 ,"totalUsers", cache)` <br /> (*1 = temp, 2 = server, 3 = global*)
 
 ## Bot Info
 
