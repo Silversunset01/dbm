@@ -1,7 +1,8 @@
 # Creating your own scripts in DBM
 Most things that are not available as actions can be run as a script either in the `run script` action or in any box that allows for text entry using `${ }`.
 
-![](/screenshots/scriptex.png)
+![](https://github.com/Silversunset01/dbm/raw/master/screenshots/scriptex.png)
+
 
 ### Handy Scripting Resources
 * [W3Schools](https://www.w3schools.com/js/) - basic javascript reference
