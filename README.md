@@ -136,6 +136,8 @@ Store Variables via script | `this.storeValue(output, 1 ,"totalUsers", cache)` <
 | Store members in a role | `${tempVars("role").members.array().length}`|
 
 # Tutorials
+This section covers various tutorials and things that may be helpful.
+
 ## Generating a Random Response
 A random response generator works for anything from a Magic 8 ball command to a coin toss command, to a random image, joke, phrase, or even paper/scissors/rock command. The bot will generate a random number and select a response based on the number chosen.
 
