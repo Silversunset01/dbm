@@ -387,6 +387,38 @@ If you've copied all of the steps above you should end up with an embed like thi
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest6.png)
 
+## Using and Storing Variables
+
+[DBM Tutorial - Obtaining Parameters](https://www.youtube.com/watch?v=haAyykGaY_E)
+
+There are a few ways to store and reuse information in DBM.
+
+* **Temp variable** - exists only for the duration of the command. Once the command action list is over the variable is 'forgotten' by the bot
+* **Server variable** - exists for a single server. The bot will 'remember' these variable between commands but only for the server they were created in.
+* **Global variable** - exists for the bot regardless of server or command.
+
+## Store Command Parameters
+
+You can store parameters entered into a command using the "Store command parameters" action. This will assume your parameters are using the default `space` \(`\s+`\) as a seperator.  
+![](/assets/storeparams.png)
+
+* Parameter Number:
+* This tells the bot which word to start on. Using 1 would mean "the first word after the command"; 2 would mean "the second word after the command" and so on.
+* DBM defines a "word" as a complete string of characters between your parameter seperator
+* ex: If your seperator is a space, a "world" would be anything between spaces - `this is four words`
+* ex: if your seperator is a comma, a "word" would be anything between commas - `this is, two things`
+* Source Info:
+
+* **One Parameter** - creates a parameter using a single word, beginning at the \# given in the "parameter number" field.
+* ex: `!prune 50 100` - using "One Parameter" and "1" your parameter would be `50`
+* ex: `!prune 50 100` - using "One Parameter" and "2" your parameter would return `100`
+* **Multiple Parameters** - creates a parameter using multiple words, beginning from the number you specify in "Parameter Number" and going to the end of the command input
+* ex: `! ban @Silversunset You are breaking the rules` - using "Multiple Parameters" and "2" your parameter would be `You are breaking the rules`
+* ex: `! ban @Silversunset You are breaking the rules` - using "Multiple Parameters" and "3" your parameter would be `are breaking the rules`
+* **Mentioned Member** - stores the `@username` from a command as a parameter
+* **Mentioned Role** - stores the `@role` from a command as a parameter
+* **Mentioned Channel** - stores the `#channel` from a command as a parameter
+
 # Running your bot 24/7
 By now you may have noticed that when you close DBM your bot shuts down. [This tutorial](https://www.youtube.com/watch?v=MNw7anSA06g&t=2s) will explain how to export your bot to run in a command terminal.
 
