@@ -308,7 +308,84 @@ This is what each action is doing:
 
 **Action 5**: **required** Save the new current time to the member data, overwriting the old one and storing the new 'last time this command was run for that user.
 
+## How to Create an Embed Message
+Your bot can send two types of message, a normal message (that looks like something you would type) an an embed message.
+### To create an embed you must have at least three actions
+
+**1. Create embed** - you must create an embed first. If you've not created an embed you won't be able to send it.
+[THIS IMAGE](https://dbm-mods.xyz/files/opera_2018-03-05_15-51-27.png) is a full explaination of what the fields mean.
+For this example we'll use the following settings:
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest.png)
+
+**2. Add embed field OR set embed description** - If you want to add more content to your embed you can add a field or description. You can do both if you wish as well. The main difference is that the *Description* field does not have a required header, as the "embed title" is considered the header. the *embed field* item requires both a name and a description.
+For this example we'll use the following settings (Both an embed description AND an embed field):
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest2.png)
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest3.png)
+
+**3. Add a footer (with a script)** - If you don't have DBM Mods you can add an embed footer with a script. This will add the authors username and avatar to the embed footer.
+If you want to add more text you can modify the script text.
+
+*Script Text:* `tempVars("e").setFooter(member.displayName, msg.author.avatarURL)`
+
+*Modified Script Text:* `tempVars("e").setFooter(member.displayName + " Some Other Text", msg.author.avatarURL)`
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest4.png)
+
+**4. Send the embed** - after you've created the embed with all its fancy fields you must send it!
+DBM Defaults to "Same Channel" which will send the embed to the same channel as the command message. You've got the same options here as you do a normal send-message. (If you send the message to a user the user will recieve a DM unless they have those blocked)
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest5.png)
+
+**THE RESULT**:
+If you've copied all of the steps above you should end up with an embed like this:
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest6.png)
 
 
+# Troubleshooting
+## Adding Roles to Users
 
+A common bot task is to add roles to users either automatically on join, or via command. Here we will review some common errors that can occur.
+**Error:** From bot logs: _The supplied role is neither a role nor a snowflake_
 
+**Cause:** When adding a role some users will attempt to add the role name directly into the "Add Member Role" field. DBM requires a role object in order to apply the role to a user.
+
+**Solution:** Instead of typing directly into the Source Role field, first you should use the Find Role action, store the role as a variable, and then use that variable in the Source Role field.
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/roleexample.jpg)
+
+**Error:** From bot logs: _Error with Event "Add Member Role", Action ##: DiscordAPIError: Missing Permissions_
+
+**Cause:** The bot has insufficient permissions to add roles to users.
+
+**Solution 1:** Make sure that your bot has the permission to Manage Roles.
+
+**Solution 2:** Discord does not allow a user to manage a role that is *higher* in the list than the users highest role. This applies to bots as well as normal users (with the exception of server owners). In your server's Role list move the bot's role higher than the roles you are trying to apply.
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rolelist1.jpg)
+
+## Error: Cannot find module 'discord.js'
+1. Delete node_modules 
+2. type `npm i` (this will reinstall modules)
+
+## Error: DBM won't start
+1. Launch Steam
+2. Open Software Library section 
+3. Right-click on DBM and select Properties from the menu
+4. Select the Local files tab
+5. Click the Verify integrity of game files button.
+6. Steam will verify the game's files - this process may take several minutes.
+
+## Error: (beta) Bot token is being overwritten
+Navigate to `C:\Users\your-name\AppData\local` and delete folders DBM and DBM2
+
+## Error: There was an error parsing `players.json` |  `commands.json` | `events.json` 
+Your file is most likely empty. To correct this: 
+1. Open the bots project folder 
+2. Open the DATA folder 
+3. Open the file that is erroring (`players.json` etc) 
+4. Enter `{ }`, save and close the file 
+5. Restart your bot 
