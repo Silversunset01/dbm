@@ -249,7 +249,7 @@ we're using a few javascript tricks here.
 
 ### Using .toLocaleString()
 **WARNING WARNING WARNING**
-If you use this method in DBM you WILL NOT be able to run your bot directly in DBM. It will be fine on your [vps or running via cmd locally](/running-24-7.md).
+If you use this method in DBM you WILL NOT be able to run your bot directly in DBM. It will be fine on your vps or running via cmd locally.
 **YOU HAVE BEEN WARNED**
 
 [.toLocaleString()](https://www.w3schools.com/jsref/jsref_tolocalestring.asp) allows you to display a string using location-specific formatting. If your string is a date, it will show the current time as `4/4/2018, 7:40:32 PM` since that is the local settings for where the bot is currently running. **AGAIN** if you save the bot to a VPS it will use the bots server settings instead, BUT you can tell the program which settings you want it to use rather than the 'local' ones. 
