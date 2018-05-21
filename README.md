@@ -180,69 +180,6 @@ this.storeValue(resp, 1 ,"answer", cache);
 ```
 (you would use `tempVars("answer")` to call this variable
 
-## Stopping the bot
-Sometimes you need to stop your bot. If you're running a script like `forever` this may automatically restart your bot, otherwise it will just shut the whole bot down.
-
-**Action 1: send a message** to the channel so you know the bot has recognized the command
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/stopping.png)
-
-**Action 2: stop the bot using a script**. Its good practice to log to console that the bot is stopping, again to confirm that the action is recognized.
-
-`console.log("text")` is used to print text directly to the bots console logs. Anything inside the `" "` will be printed directly. If you choose to use a variable instead you would use `console.log(tempVars("name"))`
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/stopping2.png)
-
-## Restarting the bot Automatically
-In this guide I'll show how to create a script that will restart the bot automatically. This script restarts your bot when it crashes. You can even make a command to restart your bot with this script.
-
-### Linux
-
-* Go into your bot folder with : `cd BotFolderLocation`
-* Use `nano start.sh` to create a file called `start.sh` and start editing.
-* Paste the code below :
-
-```bash
-# /bin/sh
-while true
-do
-echo Starting Bot
-node bot.js
-echo Restarting Bot in 5 Seconds...
-sleep 5
-done
-```
-
-* Press CTRL+C then Y and ENTER to save the start.sh file.
-* Use `chmod 777 start.sh` to give the file executable permission.
-* Done! Now you can start your bot by executing that file with : `./start.sh`
-
-**Tutorial Video** _\(Click on image to watch it\)_[![](https://asciinema.org/a/Gjc27yyaid3LxAIDlc8AqM4Z3.png)](https://asciinema.org/a/Gjc27yyaid3LxAIDlc8AqM4Z3)
-
-### Windows
-
-* Create a file with `.bat` extension.
-* Paste the code below and save it.
-
-```
-@echo off
-echo Starting..
-:main
-node bot.js
-echo Restarting Bot..
-goto main
-```
-
-* Done! Now you can run your bot just executing that file.
-
-[**Tutorial Video **_\(Click to watch it\)_](https://youtu.be/1ZDE3z_Fsi4)
-
-### Forever.js
-You can install a script called **Forever.js** that will automatically restart your bot if it crashes. 
-* `npm install --no optional -g forever`
-* `chmod -R a+rwx <bot folder>`- Give the bot folder permission to be read/write and executable
-* `cd <bot folder>` - Change to the bots directory
-* `forever start bot.js` - Start the bot program using "Forever" \(this will keep the bot running and restart it if it crashes\)
-
 ## Working with Time
 **Time is an illusion. Lunchtime doubly so. **
 Trying to code things with time in javascript will most likely set your hair on fire. Please proceed with caution.
@@ -431,7 +368,9 @@ By now you may have noticed that when you close DBM your bot shuts down. [This t
 4. type `node bot.js`
 
 ## Running your bot with NODEMON
+
 `node bot.js` will have to be restarted every time you make changes. You can use Nodemon to do this automatically
+
 1. Install nodemon with `npm i -g nodemon`
 2. Open project directory
 3. Click into the address bar
@@ -450,6 +389,7 @@ By now you may have noticed that when you close DBM your bot shuts down. [This t
 * `npm install --no optional -g forever`
 
 #### **Unpackage and Start the bot**
+
 * Upload the bot file to your droplet using something like [WinSCP](https://winscp.net/eng/download.php)
 * If you're uploading the bot for the first time it may be faster to upload is as a zip file and then unzip it on the dropletby typing `unzip <yourbot>.zip -d <bot folder>`
 * If you've already uploaded the bot and you're just making a change to the command.json/events.json file you can JUST upload those without zipping them
@@ -605,7 +545,68 @@ _In this way you can close VNC Viewer and your bot will still run, however if yo
 
 ![](https://i.hizliresim.com/PlWorb.gif)
 
+## Stopping the bot
+Sometimes you need to stop your bot. If you're running a script like `forever` this may automatically restart your bot, otherwise it will just shut the whole bot down.
 
+**Action 1: send a message** to the channel so you know the bot has recognized the command
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/stopping.png)
+
+**Action 2: stop the bot using a script**. Its good practice to log to console that the bot is stopping, again to confirm that the action is recognized.
+
+`console.log("text")` is used to print text directly to the bots console logs. Anything inside the `" "` will be printed directly. If you choose to use a variable instead you would use `console.log(tempVars("name"))`
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/stopping2.png)
+
+## Restarting the bot Automatically
+In this guide I'll show how to create a script that will restart the bot automatically. This script restarts your bot when it crashes. You can even make a command to restart your bot with this script.
+
+### Linux
+
+* Go into your bot folder with : `cd BotFolderLocation`
+* Use `nano start.sh` to create a file called `start.sh` and start editing.
+* Paste the code below :
+
+```bash
+# /bin/sh
+while true
+do
+echo Starting Bot
+node bot.js
+echo Restarting Bot in 5 Seconds...
+sleep 5
+done
+```
+
+* Press CTRL+C then Y and ENTER to save the start.sh file.
+* Use `chmod 777 start.sh` to give the file executable permission.
+* Done! Now you can start your bot by executing that file with : `./start.sh`
+
+**Tutorial Video** _\(Click on image to watch it\)_[![](https://asciinema.org/a/Gjc27yyaid3LxAIDlc8AqM4Z3.png)](https://asciinema.org/a/Gjc27yyaid3LxAIDlc8AqM4Z3)
+
+### Windows
+
+* Create a file with `.bat` extension.
+* Paste the code below and save it.
+
+```
+@echo off
+echo Starting..
+:main
+node bot.js
+echo Restarting Bot..
+goto main
+```
+
+* Done! Now you can run your bot just executing that file.
+
+[**Tutorial Video **_\(Click to watch it\)_](https://youtu.be/1ZDE3z_Fsi4)
+
+### Forever.js
+You can install a script called **Forever.js** that will automatically restart your bot if it crashes. 
+* `npm install --no optional -g forever`
+* `chmod -R a+rwx <bot folder>`- Give the bot folder permission to be read/write and executable
+* `cd <bot folder>` - Change to the bots directory
+* `forever start bot.js` - Start the bot program using "Forever" \(this will keep the bot running and restart it if it crashes\)
 
 # Troubleshooting
 ## Error: Cannot Add Roles to User
