@@ -159,7 +159,7 @@ Switch/case basically evaluates the statement defined in `switch(tempVars("rand-
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/randtext2.png)
 
-### Copyable code \(by request\)
+#### Copyable code
 
 #### Send message to the current channel:
 
@@ -229,7 +229,7 @@ to display the following:
 **but** what if the minutes are < 10, you'd see the time as `23:1` instead of `23:01`
 And how can you tell if the date is month/day/year or day/month/year (different countries have different conventions)
 
-#### Getting the Current UTC Time AND FORMATTING IT
+### Getting the Current UTC Time AND FORMATTING IT
 The final change to our script is going to be to add formatting to the month, to display "April" instead of "4", as well as padding leading zeros in the hour/minutes of the time.
 
 **this is the full run-script action code**
@@ -264,7 +264,7 @@ we're using a few javascript tricks here.
 1) A [switch statement](https://www.w3schools.com/js/js_switch.asp) is being used to display the month name instead of the number
 2) A [conditional operator](https://www.w3schools.com/jsref/jsref_operators.asp) is being used to pad the zeros on the date
 
-#### Give up and use .toLocaleString()
+### Using .toLocaleString()
 **WARNING WARNING WARNING**
 If you use this method in DBM you WILL NOT be able to run your bot directly in DBM. It will be fine on your [vps or running via cmd locally](/running-24-7.md).
 **YOU HAVE BEEN WARNED**
@@ -274,7 +274,7 @@ If you use this method in DBM you WILL NOT be able to run your bot directly in D
 `new Date().toLocaleString("en-US", {timeZone: "America/Chicago"})` will show the current CST time in an American format.
 [This Document](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString) has more information on locale string settings.
 
-#### Finding the time between actions
+### Finding the time between actions
 Another common use for time in javascript is determining "when the last time something was done"
 
 To do this you'll need to store the last time something was run and compare it to the current time.
@@ -310,7 +310,7 @@ This is what each action is doing:
 
 ## How to Create an Embed Message
 Your bot can send two types of message, a normal message (that looks like something you would type) an an embed message.
-### To create an embed you must have at least three actions
+#### To create an embed you must have at least three actions
 
 **1. Create embed** - you must create an embed first. If you've not created an embed you won't be able to send it.
 [THIS IMAGE](https://dbm-mods.xyz/files/opera_2018-03-05_15-51-27.png) is a full explaination of what the fields mean.
