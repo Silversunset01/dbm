@@ -400,7 +400,7 @@ There are a few ways to store and reuse information in DBM.
 ## Store Command Parameters
 
 You can store parameters entered into a command using the "Store command parameters" action. This will assume your parameters are using the default `space` \(`\s+`\) as a seperator.  
-![](/assets/storeparams.png)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/storeparams.png)
 
 * Parameter Number:
 * This tells the bot which word to start on. Using 1 would mean "the first word after the command"; 2 would mean "the second word after the command" and so on.
