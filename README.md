@@ -530,7 +530,7 @@ There is two ways to run your bot:
 
 Thats it!
 
-![](/assets/putty_2018-03-29_15-59-08.png)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/putty_2018-03-29_15-59-08.png)
 
 _In this way if you close PuTTY, your bot will stop working too._
 
