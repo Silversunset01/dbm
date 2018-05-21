@@ -467,7 +467,7 @@ pi@raspberrypi:~ $ npm -v
 5.6.0
 ```
 
-This is an example if you want to watch it: [![](https://asciinema.org/a/173263.png)](https://asciinema.org/a/173263)
+[This is an example](https://asciinema.org/a/173263) if you want to watch it.
 
 #### Uploading Bot Files to Raspberry Pi
 
