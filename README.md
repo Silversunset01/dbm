@@ -195,13 +195,14 @@ Getting the current time in javascript is easy.
 **but be careful** - this will give you the time in the bot's timezone. So if you're running it on your home computer you'll get your local time, but when you save it out to a VPS you'll get whatever the servers 'local time' is.
 
 ### Getting the current UTC time
-This is a bit more tricky, and will take multiple steps. All of this is done in a single `run script` action in DBM.
-`var now = new Date();` = this will get the current time and create the variable "now" to use
-`var year = now.getUTCFullYear();` = stores the UTC Year
-`var month = now.getUTCMonth() + 1;` = stores the UTC month (months are 0-11 so you have to add 1)
-`var day = now.getUTCDate();` = stores the UTC Date
-`var hour = now.getUTCHours();` = stores the UTC Hour
-`var minutes = now.getUTCMinutes();` = stores the UTC Minutes
+
+This is a bit more tricky, and will take multiple steps. All of this is done in a single `run script` action in DBM.<br/>
+`var now = new Date();` = this will get the current time and create the variable "now" to use<br/>
+`var year = now.getUTCFullYear();` = stores the UTC Year<br/>
+`var month = now.getUTCMonth() + 1;` = stores the UTC month (months are 0-11 so you have to add 1)<br/>
+`var day = now.getUTCDate();` = stores the UTC Date<br/>
+`var hour = now.getUTCHours();` = stores the UTC Hour<br/>
+`var minutes = now.getUTCMinutes();` = stores the UTC Minutes<br/>
 
 You can then add:
 `msg.channel.send("The time is: " + month + "/" + day + "/" + year + "; " + hour + ":" + minutes)`
