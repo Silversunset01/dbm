@@ -397,7 +397,7 @@ By now you may have noticed that when you close DBM your bot shuts down. [This t
 3. At the beginning type "cmd" and hit enter (this will open a cmd prompt in this folder)
 4. type `node bot.js`
 
-### Running your bot with NODEMON
+## Running your bot with NODEMON
 `node bot.js` will have to be restarted every time you make changes. You can use Nodemon to do this automatically
 1. Install nodemon with `npm i -g nodemon`
 2. Open project directory
@@ -443,10 +443,12 @@ If you want to add an SSH key after you've set up your droplet you can edit the 
 - edit directly in PuTTY
 - `nano /root/.ssh/authorized_keys`
 - enter `ssh-rsa <key>` (the section that starts with AAAA[gibberish] - do not use begin, end, or comment line)
+```
 ---- BEGIN SSH2 PUBLIC KEY ----
 Comment: "rsa-key-[date]"
 [a whole lot of gibberish]
 ---- END SSH2 PUBLIC KEY ----
+```
 - `ctrl + O`, then at the bottom says "filename to write"
 - `ctrl + x`
 - set up PuTTY to connect automatically
@@ -455,10 +457,8 @@ Comment: "rsa-key-[date]"
 - Fill in the Auto Login username
 - Putty should now connect automatically when the server is connected to
 
-F
-irst of all i made this guide using Raspberry Pi 3, however it should work with Raspberry Pi 2 too, but i have no idea if things here are working for Raspberry Pi 1 or Raspberry Pi Zero. If you tried to use this guide on Raspberry Pi 1 or Raspberry Pi Zero, let me know if its working or not by messaging me on Discord. _Tresmos\#2135_
-
 ## Installing Node.js on a Raspberry Pi
+First of all i made this guide using Raspberry Pi 3, however it should work with Raspberry Pi 2 too, but i have no idea if things here are working for Raspberry Pi 1 or Raspberry Pi Zero. If you tried to use this guide on Raspberry Pi 1 or Raspberry Pi Zero, let me know if its working or not by messaging me on Discord. _Tresmos\#2135_
 
 Connect your raspberry pi using [PuTTY](https://www.putty.org/), or using [VNC ](https://howtoraspberrypi.com/raspberry-pi-vnc/)and type these commands in order to install Node.js:
 
