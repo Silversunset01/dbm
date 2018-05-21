@@ -158,9 +158,9 @@ Switch/case basically evaluates the statement defined in `switch(tempVars("rand-
 
 ![](https://github.com/Silversunset01/dbm/raw/master/screenshots/randtext2.PNG)
 
-## Copyable code \(by request\)
+### Copyable code \(by request\)
 
-### Send message to the current channel:
+#### Send message to the current channel:
 
 ```
 switch(tempVars("rand-num")){
@@ -172,7 +172,7 @@ default: msg.channel.send("Answer 5"); break;
 }
 ```
 
-### Save message as a variable to use later:
+#### Save message as a variable to use later:
 ```
 switch(tempVars("rand-num")){
 case 1: var resp = "Answer 1"; break;
