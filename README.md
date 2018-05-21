@@ -141,6 +141,50 @@ Store Variables via script | `this.storeValue(output, 1 ,"totalUsers", cache)` <
 | Return Server AFK Timeout \(in seconds\) | `${msg.guild.afkTimeout}` |
 | Store members in a role | `${tempVars("role").members.array().length}`|
 
+# Tutorials
+## Generating a Random Response
+A random response generator works for anything from a Magic 8 ball command to a coin toss command, to a random image, joke, phrase, or even paper/scissors/rock command. The bot will generate a random number and select a response based on the number chosen.
+
+**Action 1: Generate a random number** this will allow the bot to select one of your pre-programmed responses.
+![](https://github.com/Silversunset01/dbm/raw/master/screenshots/randtext.PNG)
+
+**Action 2: Send message based on the number generated** using a switch/case script.
+
+Switch/case basically evaluates the statement defined in `switch(tempVars("rand-num"))` and selects the matching response from the list of `case` items. The last item should always be `default` this is often used for error handling if no `case` match is found. In this case the possible outcomes of the `rand-num` variable are known and such a short list that `default` can be used to indicate the last match rather than an error.
+
+`msg.channel.send("text")` will send a message to the current channel.
+
+`break;` ends the action
+
+![](https://github.com/Silversunset01/dbm/raw/master/screenshots/randtext2.PNG)
+
+## Copyable code \(by request\)
+
+### Send message to the current channel:
+
+```
+switch(tempVars("rand-num")){
+case 1: msg.channel.send("Answer 1"); break;
+case 2: msg.channel.send("Answer 2"); break;
+case 3: msg.channel.send("Answer 3"); break;
+case 4: msg.channel.send("Answer 4"); break;
+default: msg.channel.send("Answer 5"); break;
+}
+```
+
+### Save message as a variable to use later:
+```
+switch(tempVars("rand-num")){
+case 1: var resp = "Answer 1"; break;
+case 2: var resp = "Answer 2"; break;
+case 3: var resp = "Answer 3"; break;
+case 4: var resp = "Answer 4"; break;
+default: var resp = "Answer 5"; break;
+};
+this.storeValue(resp, 1 ,"answer", cache);
+```
+(you would use `tempVars("answer")` to call this variable
+
 
 
 
