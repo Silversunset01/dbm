@@ -3,18 +3,9 @@ Most things that are not available as actions can be run as a script either in t
 
 ![](https://github.com/Silversunset01/dbm/raw/master/screenshots/scriptex.png)
 
-
 ### Handy Scripting Resources
 * [W3Schools](https://www.w3schools.com/js/) - basic javascript reference
 * [Discord.js](https://discord.js.org/#/) - discord's custom JS library
-
-### Scripting Cheat Sheets
-* [Basic Javascript](/creating-your-own-scripts/basic-javascript.md)
-* [Identifiers](/creating-your-own-scripts/identifiers.md)
-* [Math and Calculations](/creating-your-own-scripts/math-and-calculations.md)
-* [Storing Information](/creating-your-own-scripts/store-info.md)
-* [Messaging](/creating-your-own-scripts/messaging.md)
-* [Miscellaneous](/creating-your-own-scripts/miscellaneous.md)
 
 ## Basic Javascript
 Usage | Script
@@ -212,7 +203,7 @@ Getting the current time in javascript is easy.
 `${new Date()}` is all you really need. When you run this you're going to get something that looks like `Wed Apr 04 2018 20:18:02 GMT-0400 (Eastern Daylight Time)`
 **but be careful** - this will give you the time in the bot's timezone. So if you're running it on your home computer you'll get your local time, but when you save it out to a VPS you'll get whatever the servers 'local time' is.
 
-* Getting the current UTC time
+### Getting the current UTC time
 This is a bit more tricky, and will take multiple steps. All of this is done in a single `run script` action in DBM.
 `var now = new Date();` = this will get the current time and create the variable "now" to use
 `var year = now.getUTCFullYear();` = stores the UTC Year
@@ -229,7 +220,7 @@ to display the following:
 **but** what if the minutes are < 10, you'd see the time as `23:1` instead of `23:01`
 And how can you tell if the date is month/day/year or day/month/year (different countries have different conventions)
 
-### Getting the Current UTC Time AND FORMATTING IT
+### Formatting Current UTC Time
 The final change to our script is going to be to add formatting to the month, to display "April" instead of "4", as well as padding leading zeros in the hour/minutes of the time.
 
 **this is the full run-script action code**
@@ -261,8 +252,8 @@ msg.channel.send("The time is: " + monthname + " " + day + ", " + year + "; " + 
 ```
 
 we're using a few javascript tricks here.
-1) A [switch statement](https://www.w3schools.com/js/js_switch.asp) is being used to display the month name instead of the number
-2) A [conditional operator](https://www.w3schools.com/jsref/jsref_operators.asp) is being used to pad the zeros on the date
+1. A [switch statement](https://www.w3schools.com/js/js_switch.asp) is being used to display the month name instead of the number
+2. A [conditional operator](https://www.w3schools.com/jsref/jsref_operators.asp) is being used to pad the zeros on the date
 
 ### Using .toLocaleString()
 **WARNING WARNING WARNING**
@@ -346,23 +337,19 @@ If you've copied all of the steps above you should end up with an embed like thi
 
 
 # Troubleshooting
-## Adding Roles to Users
+## Error: Cannot Add Roles to User
 
 A common bot task is to add roles to users either automatically on join, or via command. Here we will review some common errors that can occur.
+
 **Error:** From bot logs: _The supplied role is neither a role nor a snowflake_
-
 **Cause:** When adding a role some users will attempt to add the role name directly into the "Add Member Role" field. DBM requires a role object in order to apply the role to a user.
-
 **Solution:** Instead of typing directly into the Source Role field, first you should use the Find Role action, store the role as a variable, and then use that variable in the Source Role field.
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/roleexample.jpg)
 
 **Error:** From bot logs: _Error with Event "Add Member Role", Action ##: DiscordAPIError: Missing Permissions_
-
 **Cause:** The bot has insufficient permissions to add roles to users.
-
 **Solution 1:** Make sure that your bot has the permission to Manage Roles.
-
 **Solution 2:** Discord does not allow a user to manage a role that is *higher* in the list than the users highest role. This applies to bots as well as normal users (with the exception of server owners). In your server's Role list move the bot's role higher than the roles you are trying to apply.
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rolelist1.jpg)
@@ -379,7 +366,7 @@ A common bot task is to add roles to users either automatically on join, or via 
 5. Click the Verify integrity of game files button.
 6. Steam will verify the game's files - this process may take several minutes.
 
-## Error: (beta) Bot token is being overwritten
+## Error: Bot token is being overwritten
 Navigate to `C:\Users\your-name\AppData\local` and delete folders DBM and DBM2
 
 ## Error: There was an error parsing `players.json` |  `commands.json` | `events.json` 
