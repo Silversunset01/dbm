@@ -482,7 +482,7 @@ After that you have a couple options to upload your bot files to Raspberry Pi:
 
 Download and install FileZilla using this [link](https://filezilla-project.org/). Now before uploading bot files, we need to connect our Raspberry Pi. To do that we need to open **Site Manager **and add our Raspberry Pi:
 
-![](/assets/filezilla_2018-03-29_15-21-09.png)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/filezilla_2018-03-29_15-21-09.png)
 
 Just click **New Site**
 
@@ -492,7 +492,7 @@ Just click **New Site**
 * User = pi
 * Password = Your SSH Password
 
-![](/assets/filezilla_2018-03-29_15-24-25.png)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/filezilla_2018-03-29_15-24-25.png)
 
 After saving that and connecting, you can upload your bot files with just simple drag&drop to right side
 
@@ -504,15 +504,15 @@ First you need to activate VNC and connect to Raspberry Pi using this [guide](ht
 
 Then for transfer files click here at the top:
 
-![](/assets/vncviewer_2018-03-29_15-44-49.png)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/vncviewer_2018-03-29_15-44-49.png)
 
 After that you'll see a window, click **Send Files**, go **into** your bot folder, and press **Use Entire Folder**:
 
-![](/assets/vncviewer_2018-03-29_15-47-11.png)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/vncviewer_2018-03-29_15-47-11.png)
 
 as we can see it started to upload files to Raspberry Pi:
 
-![](/assets/vncviewer_2018-03-29_15-48-51.png)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/vncviewer_2018-03-29_15-48-51.png)
 
 #### Running The Bot
 
