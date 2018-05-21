@@ -183,8 +183,6 @@ this.storeValue(resp, 1 ,"answer", cache);
 ## Stopping the bot
 Sometimes you need to stop your bot. If you're running a script like `forever` this may automatically restart your bot, otherwise it will just shut the whole bot down.
 
-For information on how to \*restart\* the bot [check out this article on restarting the bot automatically](/running-24-7/automatic-restart-when-bot-crashes.md)
-
 **Action 1: send a message** to the channel so you know the bot has recognized the command
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/stopping.png)
 
@@ -193,6 +191,57 @@ For information on how to \*restart\* the bot [check out this article on restart
 `console.log("text")` is used to print text directly to the bots console logs. Anything inside the `" "` will be printed directly. If you choose to use a variable instead you would use `console.log(tempVars("name"))`
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/stopping2.png)
+
+## Restarting the bot Automatically
+In this guide I'll show how to create a script that will restart the bot automatically. This script restarts your bot when it crashes. You can even make a command to restart your bot with this script.
+
+### Linux
+
+* Go into your bot folder with : `cd BotFolderLocation`
+* Use `nano start.sh` to create a file called `start.sh` and start editing.
+* Paste the code below :
+
+```bash
+# /bin/sh
+while true
+do
+echo Starting Bot
+node bot.js
+echo Restarting Bot in 5 Seconds...
+sleep 5
+done
+```
+
+* Press CTRL+C then Y and ENTER to save the start.sh file.
+* Use `chmod 777 start.sh` to give the file executable permission.
+* Done! Now you can start your bot by executing that file with : `./start.sh`
+
+**Tutorial Video** _\(Click on image to watch it\)_[![](https://asciinema.org/a/Gjc27yyaid3LxAIDlc8AqM4Z3.png)](https://asciinema.org/a/Gjc27yyaid3LxAIDlc8AqM4Z3)
+
+### Windows
+
+* Create a file with `.bat` extension.
+* Paste the code below and save it.
+
+```
+@echo off
+echo Starting..
+:main
+node bot.js
+echo Restarting Bot..
+goto main
+```
+
+* Done! Now you can run your bot just executing that file.
+
+[**Tutorial Video **_\(Click to watch it\)_](https://youtu.be/1ZDE3z_Fsi4)
+
+### Forever.js
+You can install a script called **Forever.js** that will automatically restart your bot if it crashes. 
+* `npm install --no optional -g forever`
+* `chmod -R a+rwx <bot folder>`- Give the bot folder permission to be read/write and executable
+* `cd <bot folder>` - Change to the bots directory
+* `forever start bot.js` - Start the bot program using "Forever" \(this will keep the bot running and restart it if it crashes\)
 
 ## Working with Time
 **Time is an illusion. Lunchtime doubly so. **
@@ -337,6 +386,189 @@ DBM Defaults to "Same Channel" which will send the embed to the same channel as 
 If you've copied all of the steps above you should end up with an embed like this:
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest6.png)
+
+# Running your bot 24/7
+By now you may have noticed that when you close DBM your bot shuts down. [This tutorial](https://www.youtube.com/watch?v=MNw7anSA06g&t=2s) will explain how to export your bot to run in a command terminal.
+
+## Running your bot locally with cmd
+
+1. Open project directory
+2. Click into the address bar
+3. At the beginning type "cmd" and hit enter (this will open a cmd prompt in this folder)
+4. type `node bot.js`
+
+### Use something like NODEMON to run the bot
+`node bot.js` will have to be restarted every time you make changes. You can use Nodemon to do this automatically
+1. Install nodemon with `npm i -g nodemon`
+2. Follow steps 1-3 from above, but instead of using `node bot.js` type `nodemon --inspect --watch actions --watch data/commands.json--watch data/events.json --watch node_modules --watch js bot.js`
+
+## VPS Hosting - Digital Ocean
+#### **Initial Server Setup**
+
+* Start a digital ocean instance \(with node as your image\)
+* Generate and add SSH keys before creating \(then you dont have to do it after\)
+* get server IP address
+* connect via PuTTY
+* Run commands:
+* `apt install unzip`
+* `npm install --no optional -g forever`
+
+#### **Unpackage and Start the bot**
+* Upload the bot file to your droplet using something like [WinSCP](https://winscp.net/eng/download.php)
+* If you're uploading the bot for the first time it may be faster to upload is as a zip file and then unzip it on the dropletby typing `unzip <yourbot>.zip -d <bot folder>`
+* If you've already uploaded the bot and you're just making a change to the command.json/events.json file you can JUST upload those without zipping them
+* `chmod -R a+rwx <bot folder>`- Give the bot folder permission to be read/write and executable
+* `cd <bot folder>` - Change to the bots directory
+* `forever start bot.js` - Start the bot program using "Forever" \(this will keep the bot running and restart it if it crashes\)
+
+#### Stop the bot
+
+* `forever list`
+* `forever stop 0`_ - Where 0 is the index of your code in the forever list._
+
+#### Server Maintenance
+When you log into Digital Ocean you'll see an MOTD telling you if there are package updates. If you want/need to install them do the following:
+
+#### **Install Updates**
+When updates are available:
+- `sudo apt update` - update package index
+- `sudo apt upgrade` - install updates
+- `sudo reboot` - reboots the system (server will indicate if its needed)
+
+#### **add SSH key to server file manually**
+If you want to add an SSH key after you've set up your droplet you can edit the authorized_keys file
+- edit directly in PuTTY
+- `nano /root/.ssh/authorized_keys`
+- enter `ssh-rsa <key>` (the section that starts with AAAA[gibberish] - do not use begin, end, or comment line)
+---- BEGIN SSH2 PUBLIC KEY ----
+Comment: "rsa-key-[date]"
+[a whole lot of gibberish]
+---- END SSH2 PUBLIC KEY ----
+- `ctrl + O`, then at the bottom says "filename to write"
+- `ctrl + x`
+- set up PuTTY to connect automatically
+- in PuTTY - open the connection details
+- choose DATA
+- Fill in the Auto Login username
+- Putty should now connect automatically when the server is connected to
+
+F
+irst of all i made this guide using Raspberry Pi 3, however it should work with Raspberry Pi 2 too, but i have no idea if things here are working for Raspberry Pi 1 or Raspberry Pi Zero. If you tried to use this guide on Raspberry Pi 1 or Raspberry Pi Zero, let me know if its working or not by messaging me on Discord. _Tresmos\#2135_
+
+## Installing Node.js on a Raspberry Pi
+
+Connect your raspberry pi using [PuTTY](https://www.putty.org/), or using [VNC ](https://howtoraspberrypi.com/raspberry-pi-vnc/)and type these commands in order to install Node.js:
+
+for Node.js 8:
+
+```
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+for Node.js 9:
+
+```
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+After everything is done, check if Node.js is installed correctly or not with these commands:
+
+```
+node -v
+npm -v
+```
+
+it should give you an output like this:
+
+```
+pi@raspberrypi:~ $ node -v
+v9.10.0
+pi@raspberrypi:~ $ npm -v
+5.6.0
+```
+
+This is an example if you want to watch it: [![](https://asciinema.org/a/173263.png)](https://asciinema.org/a/173263)
+
+#### Uploading Bot Files to Raspberry Pi
+
+Before uploading your bot files you need to export it first watching [this video](https://www.youtube.com/watch?v=MNw7anSA06g). _**\(If you're using beta DO NOT use built in export feature because its still buggy. Please export it manually watching the video\)**_
+
+After that you have a couple options to upload your bot files to Raspberry Pi:
+
+* [FileZilla](https://filezilla-project.org/)
+* [VNC Viewer](https://www.realvnc.com/en/connect/download/viewer/)
+
+##### FileZilla
+
+Download and install FileZilla using this [link](https://filezilla-project.org/). Now before uploading bot files, we need to connect our Raspberry Pi. To do that we need to open **Site Manager **and add our Raspberry Pi:
+
+![](/assets/filezilla_2018-03-29_15-21-09.png)
+
+Just click **New Site**
+
+* Host = IP of Raspberry Pi
+* Protocol = SFTP - SSH File Transfer Protocol **\(thats really important\)**
+* Logon Type = Normal
+* User = pi
+* Password = Your SSH Password
+
+![](/assets/filezilla_2018-03-29_15-24-25.png)
+
+After saving that and connecting, you can upload your bot files with just simple drag&drop to right side
+
+![](https://i.hizliresim.com/W7vZ4m.gif)
+
+##### VNC Viewer
+
+First you need to activate VNC and connect to Raspberry Pi using this [guide](https://howtoraspberrypi.com/raspberry-pi-vnc/).
+
+Then for transfer files click here at the top:
+
+![](/assets/vncviewer_2018-03-29_15-44-49.png)
+
+After that you'll see a window, click **Send Files**, go **into** your bot folder, and press **Use Entire Folder**:
+
+![](/assets/vncviewer_2018-03-29_15-47-11.png)
+
+as we can see it started to upload files to Raspberry Pi:
+
+![](/assets/vncviewer_2018-03-29_15-48-51.png)
+
+#### Running The Bot
+
+There is two ways to run your bot:
+
+* with PuTTY
+
+* with VNC Connection
+
+##### Running With PuTTY
+
+1. Connect to your Raspberry Pi using PuTTY
+2. cd into your bot folder \(if your bot folder is in Desktop, type "cd Desktop/**YourBotFolderName"\)**
+3. and finally type "node bot.js" to run your bot.
+
+Thats it!
+
+![](/assets/putty_2018-03-29_15-59-08.png)
+
+_In this way if you close PuTTY, your bot will stop working too._
+
+##### Running With VNC Connection
+
+1. Connect to your Raspberry Pi using VNC Viewer
+2. Open your bot folder
+3. Press **F4** to open terminal window in your project folder
+4. and type "node bot.js" to run your bot
+
+Thats it!
+
+_In this way you can close VNC Viewer and your bot will still run, however if you close that terminal window bot will stop working._
+
+![](https://i.hizliresim.com/PlWorb.gif)
+
 
 
 # Troubleshooting
