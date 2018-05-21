@@ -390,17 +390,20 @@ If you've copied all of the steps above you should end up with an embed like thi
 # Running your bot 24/7
 By now you may have noticed that when you close DBM your bot shuts down. [This tutorial](https://www.youtube.com/watch?v=MNw7anSA06g&t=2s) will explain how to export your bot to run in a command terminal.
 
-## Running your bot locally with cmd
+## Running your bot with cmd
 
 1. Open project directory
 2. Click into the address bar
 3. At the beginning type "cmd" and hit enter (this will open a cmd prompt in this folder)
 4. type `node bot.js`
 
-### Use something like NODEMON to run the bot
+### Running your bot with NODEMON
 `node bot.js` will have to be restarted every time you make changes. You can use Nodemon to do this automatically
 1. Install nodemon with `npm i -g nodemon`
-2. Follow steps 1-3 from above, but instead of using `node bot.js` type `nodemon --inspect --watch actions --watch data/commands.json--watch data/events.json --watch node_modules --watch js bot.js`
+2. Open project directory
+3. Click into the address bar
+4. At the beginning type "cmd" and hit enter (this will open a cmd prompt in this folder)
+5. Type `nodemon --inspect --watch actions --watch data/commands.json--watch data/events.json --watch node_modules --watch js bot.js`
 
 ## VPS Hosting - Digital Ocean
 #### **Initial Server Setup**
