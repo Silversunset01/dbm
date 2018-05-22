@@ -23,6 +23,60 @@ Translate (date) milliseconds to minutes (up to 60) | `${Math.floor((tempVars("u
 Translate (date) milliseconds to seconds (up to 60) | `${Math.round(tempVars("uptime-ms") % 60)}`
 Translate (duration) milliseconds to a human readable format | `var duration = tempVars("time_var");` <br/> `var ms = parseInt((duration%1000)/100);` <br/> `var s = parseInt((duration/1000)%60);` <br/> `var m = parseInt((duration/(1000*60))%60);` <br/> `var h = parseInt((duration/(1000*60*60))%24);` <br/> `var timeoutput = h + "h:" + m + "m:" + s + "s:" + ms + "ms";`
 
+# Information Storage
+## Bot Info
+
+| Usage | Script |
+| :--- | :--- |
+| Return Count of Members in all Bot Guilds | `${this.getDBM().Bot.bot.users.array().length}` |
+| Return Count of all Bot Guilds | `${this.getDBM().Bot.bot.guilds.array().length}` |
+| Return List of all Bot Guilds | `${this.getDBM().Bot.bot.guilds.array()}` |
+| Program memory usage \(in MB\) | `${Math.floor((process.memoryUsage().heapUsed / 1024)/1024)} MB` |
+|Store the bot as a user (using the message sent)| `${msg.guild.me}`
+
+## User Info
+
+| Usage | Script |
+| :--- | :--- |
+|Author Tag|`${msg.author.tag}`
+|Author Discriminator|`${msg.author.discriminator}`
+|Author Username|`${msg.author.username}`
+|Author Display Name (Nick)|`${member.displayName}`
+|Author Avatar URL|`${msg.author.avatarURL}`
+|User (variable) Tag|`${tempVars("user_object").user.tag}`
+|User (variable) Discriminator|`${tempVars("user_object").user.discriminator}`
+|User (variable) Username|`${tempVars("user_object").user.username}`
+|User (variable) Display Name (Nick)|`${tempVars("user_object").displayName}`
+|User (variable) Avatar URL|`${tempVars("user_object").user.avatarURL}`
+
+## Server Info
+
+| Usage | Script |
+| :--- | :--- |
+| Return Server Icon URL | `${msg.guild.iconURL}` |
+| Return Server Verification Level | `${msg.guild.verificationLevel}` |
+| Return Server Explicit Content Filter | `${msg.guild.explicitContentFilter}` |
+| Return Server Creation Date | `${msg.guild.createdAt}` |
+| Return Server Name | `${msg.guild.name}` |
+| Return Server Owner Display Name | `${msg.guild.owner.displayName}` |
+| Return Server Available Status | `${msg.guild.available}` |
+| Return Server Region | `${msg.guild.region}` |
+| Return Server Creation Date | `${msg.guild.createdAt}` |
+| Return Server Emojis List | `${msg.guild.emojis.array()}` |
+| Return Server Emojis Count | `${msg.guild.emojis.array().length}` |
+| Return Server Count of Roles | `msg.guild.roles.array().length` |
+| Return Server Member Count | `${msg.guild.memberCount}` |
+| Return Server Online members | `${msg.guild.members.filter(m => m.user.presence.status == \"online\").size}` |
+| Return Server Offine members | `${msg.guild.members.filter(m => m.user.presence.status == \"offline\").size}` |
+| Return Server Idle members | `${msg.guild.members.filter(m => m.user.presence.status == \"idle\").size}` |
+| Return Server DND members | `${msg.guild.members.filter(m => m.user.presence.status == \"dnd\").size}` |
+| Return Server Count of Channels | `${msg.guild.channels.array().length}` |
+| Return Server Count of Text Channels | `${msg.guild.channels.findAll('type', 'text').length}` |
+| Return Server Count of Voice Channels | `${msg.guild.channels.findAll('type', 'voice').length}` |
+| Return Server AFK Channel | `${msg.guild.afkChannel}` |
+| Return Server AFK Timeout \(in seconds\) | `${msg.guild.afkTimeout}` |
+| Store members in a role | `${tempVars("role").members.array().length}`|
+
 ## Miscellaneous Javascript
 Usage | Script
 :- | :-
@@ -85,57 +139,3 @@ Stop the bot | `process.exit(0);`
 Change nickname (command author) | `msg.member.setNickname(tempVars("new_nick"))`<br/>`.then(console.log)`<br/>`.catch(console.error);`
 Get Variable value | `this.getVariable(1,"varname",cache);`
 Store Variables via script | `this.storeValue(output, 1 ,"totalUsers", cache)` <br /> (*1 = temp, 2 = server, 3 = global*)
-
-# Storing Information
-## Bot Info
-
-| Usage | Script |
-| :--- | :--- |
-| Return Count of Members in all Bot Guilds | `${this.getDBM().Bot.bot.users.array().length}` |
-| Return Count of all Bot Guilds | `${this.getDBM().Bot.bot.guilds.array().length}` |
-| Return List of all Bot Guilds | `${this.getDBM().Bot.bot.guilds.array()}` |
-| Program memory usage \(in MB\) | `${Math.floor((process.memoryUsage().heapUsed / 1024)/1024)} MB` |
-|Store the bot as a user (using the message sent)| `${msg.guild.me}`
-
-## User Info
-
-| Usage | Script |
-| :--- | :--- |
-|Author Tag|`${msg.author.tag}`
-|Author Discriminator|`${msg.author.discriminator}`
-|Author Username|`${msg.author.username}`
-|Author Display Name (Nick)|`${member.displayName}`
-|Author Avatar URL|`${msg.author.avatarURL}`
-|User (variable) Tag|`${tempVars("user_object").user.tag}`
-|User (variable) Discriminator|`${tempVars("user_object").user.discriminator}`
-|User (variable) Username|`${tempVars("user_object").user.username}`
-|User (variable) Display Name (Nick)|`${tempVars("user_object").displayName}`
-|User (variable) Avatar URL|`${tempVars("user_object").user.avatarURL}`
-
-## Server Info
-
-| Usage | Script |
-| :--- | :--- |
-| Return Server Icon URL | `${msg.guild.iconURL}` |
-| Return Server Verification Level | `${msg.guild.verificationLevel}` |
-| Return Server Explicit Content Filter | `${msg.guild.explicitContentFilter}` |
-| Return Server Creation Date | `${msg.guild.createdAt}` |
-| Return Server Name | `${msg.guild.name}` |
-| Return Server Owner Display Name | `${msg.guild.owner.displayName}` |
-| Return Server Available Status | `${msg.guild.available}` |
-| Return Server Region | `${msg.guild.region}` |
-| Return Server Creation Date | `${msg.guild.createdAt}` |
-| Return Server Emojis List | `${msg.guild.emojis.array()}` |
-| Return Server Emojis Count | `${msg.guild.emojis.array().length}` |
-| Return Server Count of Roles | `msg.guild.roles.array().length` |
-| Return Server Member Count | `${msg.guild.memberCount}` |
-| Return Server Online members | `${msg.guild.members.filter(m => m.user.presence.status == \"online\").size}` |
-| Return Server Offine members | `${msg.guild.members.filter(m => m.user.presence.status == \"offline\").size}` |
-| Return Server Idle members | `${msg.guild.members.filter(m => m.user.presence.status == \"idle\").size}` |
-| Return Server DND members | `${msg.guild.members.filter(m => m.user.presence.status == \"dnd\").size}` |
-| Return Server Count of Channels | `${msg.guild.channels.array().length}` |
-| Return Server Count of Text Channels | `${msg.guild.channels.findAll('type', 'text').length}` |
-| Return Server Count of Voice Channels | `${msg.guild.channels.findAll('type', 'voice').length}` |
-| Return Server AFK Channel | `${msg.guild.afkChannel}` |
-| Return Server AFK Timeout \(in seconds\) | `${msg.guild.afkTimeout}` |
-| Store members in a role | `${tempVars("role").members.array().length}`|
