@@ -11,17 +11,6 @@ Most things that are not available as actions can be run as a script either in t
 * [Discord.js](https://discord.js.org/#/) - discord's custom JS library
 
 # Basic Javascript
-## Miscellaneous Javascript
-Usage | Script
-:- | :-
-Force Lower case | `.toLowerCase()`
-Force Upper case | `.toUpperCase()`
-Force string | `.toString()`
-Replace | `.replace("old text","new text")`
-Switch | `switch(thing to eval) {` <br /> `case "OPT1": action to execute on match; break;` <br />`case "OPT2": action to execute on match; break;` <br />`case "OPT3": action to execute on match; break;` <br />`default: action to execute on match; break;` <br /> `}`
-If/Then (Ternery) | `(A < 1 ? "value if true" : "value if false")`
-If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
-
 ## Math & Operations
 Usage | Script
 :- | :-
@@ -34,24 +23,16 @@ Translate (date) milliseconds to minutes (up to 60) | `${Math.floor((tempVars("u
 Translate (date) milliseconds to seconds (up to 60) | `${Math.round(tempVars("uptime-ms") % 60)}`
 Translate (duration) milliseconds to a human readable format | `var duration = tempVars("time_var");` <br/> `var ms = parseInt((duration%1000)/100);` <br/> `var s = parseInt((duration/1000)%60);` <br/> `var m = parseInt((duration/(1000*60))%60);` <br/> `var h = parseInt((duration/(1000*60*60))%24);` <br/> `var timeoutput = h + "h:" + m + "m:" + s + "s:" + ms + "ms";`
 
-## DBM Identifiers
-| Usage | Script |
-| :--- | :--- |
-| get the bot as a client (user) | `${this.getDBM().Bot.bot` |
-| the command message | `${msg` |
-| the current server | `${msg.guild` |
-| the command channel | `${msg.channel` |
-
-## Lists
+## Miscellaneous Javascript
 Usage | Script
 :- | :-
-Create a list out of items that have data following them | `.array}`
-Count items in the specified array | `.array().length}`
-Count items in the specified list <br/> **or** <br/> count the length of a string | `.length}`
-Find position of item in a list | `${tempVars("yourList").indexOf(tempVars("yourItemToFind"))}`
-Remove item from list | `${tempVars("yourList").splice(# to remove, 1)}`
-Return the last # of items in a list | `tempVars("your variable").slice(Math.max(tempVars("your variable").length - 5, 1))` <br/> *where 5 is the number of items to return*
-Return item at [position] from [list] | `tempVars("list").slice(tempVars("pos_num")-1,tempVars("pos_num"))`
+Force Lower case | `.toLowerCase()`
+Force Upper case | `.toUpperCase()`
+Force string | `.toString()`
+Replace | `.replace("old text","new text")`
+Switch | `switch(thing to eval) {` <br /> `case "OPT1": action to execute on match; break;` <br />`case "OPT2": action to execute on match; break;` <br />`case "OPT3": action to execute on match; break;` <br />`default: action to execute on match; break;` <br /> `}`
+If/Then (Ternery) | `(A < 1 ? "value if true" : "value if false")`
+If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 
 # Messaging
 ## Embeds
@@ -71,6 +52,27 @@ Log to console | `console.log("your text here")`
 Add reactions to message <br/> *works on normal messages or embeds* | `msg.channel.send(tempVars("test"))` <br /> `.then(function (message) {` <br /> `message.react("👍")` <br /> `message.react("👎")` <br /> `}).catch(function() {` <br /> `msg.channel.send("is broke yo")` <br /> `});`
 
 # Miscellaneous
+## Identifiers
+| Usage | Script |
+| :--- | :--- |
+| get the bot as a client (user) | `${this.getDBM().Bot.bot` |
+| get the bot as a client (user) | `${client` |
+| the command message | `${msg` |
+| the current server | `${msg.guild` |
+| the command channel | `${msg.channel` |
+
+## Lists
+Usage | Script
+:- | :-
+Create a list out of items that have data following them | `.array}`
+Count items in the specified array | `.array().length}`
+Count items in the specified list <br/> **or** <br/> count the length of a string | `.length}`
+Find position of item in a list | `${tempVars("yourList").indexOf(tempVars("yourItemToFind"))}`
+Remove item from list | `${tempVars("yourList").splice(# to remove, 1)}`
+Return the last # of items in a list | `tempVars("your variable").slice(Math.max(tempVars("your variable").length - 5, 1))` <br/> *where 5 is the number of items to return*
+Return item at [position] from [list] | `tempVars("list").slice(tempVars("pos_num")-1,tempVars("pos_num"))`
+
+## Uncategorized
 Usage | Script
 :- | :-
 Unban User <br/><i>requires user's ID</i> | `msg.guild.unban(tempVars("user_id"))`<br/>`.then(user => console.log("Unbanned ${user.username} from ${msg.guild.name}"))`<br/>`.catch(console.error);`
