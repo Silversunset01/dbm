@@ -3,8 +3,8 @@ This section covers various tutorials and things that may be helpful.
 
 ## Official Tutorial Videos
 
-* [DBM Tutorial #1 - Setting up the bot >](https://youtu.be/5fE1_UqvVPQ)
-* [DBM Tutorial #2 - How to use Commands  >](https://youtu.be/GOQcJ7a-cLc)
+* [DBM Tutorial #1 - Setting up the bot](https://youtu.be/5fE1_UqvVPQ)
+* [DBM Tutorial #2 - How to use Commands](https://youtu.be/GOQcJ7a-cLc)
 * [DBM Tutorial #3 - How to use Variables](https://youtu.be/BOzYGzbJZ8g)
 * [DBM Tutorial #4 - Text Evaluations](https://youtu.be/XluYShxVhPI)
 * [DBM Tutorial #5 - Obtaining Parameters](https://youtu.be/haAyykGaY_E)
@@ -16,7 +16,7 @@ Information relating to the storage and passing of data between commands or acti
 
 ## Variables
 
-[DBM Tutorial - Obtaining Parameters](https://www.youtube.com/watch?v=haAyykGaY_E)
+[DBM Tutorial - Obtaining Parameters >](https://www.youtube.com/watch?v=haAyykGaY_E)
 
 There are a few ways to store and reuse information in DBM.
 
