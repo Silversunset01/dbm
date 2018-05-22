@@ -10,7 +10,8 @@ Most things that are not available as actions can be run as a script either in t
 * [W3Schools](https://www.w3schools.com/js/) - basic javascript reference
 * [Discord.js](https://discord.js.org/#/) - discord's custom JS library
 
-## Basic Javascript
+# Basic Javascript
+## Miscellaneous Javascript
 Usage | Script
 :- | :-
 Force Lower case | `.toLowerCase()`
@@ -20,6 +21,18 @@ Replace | `.replace("old text","new text")`
 Switch | `switch(thing to eval) {` <br /> `case "OPT1": action to execute on match; break;` <br />`case "OPT2": action to execute on match; break;` <br />`case "OPT3": action to execute on match; break;` <br />`default: action to execute on match; break;` <br /> `}`
 If/Then (Ternery) | `(A < 1 ? "value if true" : "value if false")`
 If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
+
+## Math & Operations
+Usage | Script
+:- | :-
+round down | `${Math.floor(yourvariable)}`
+Round to the nearest Integer | `${Math.round(yourvariable [, decimals])`
+Force variable to be read as a number | `${parseInt(yourvariable)}`
+Translate (date) milliseconds to days | `${Math.floor((tempVars("uptime-ms") % 31536000) / 86400)}`
+Translate (date) milliseconds to hours (up to 24) | `${Math.floor((tempVars("uptime-ms") % 86400) / 3600)} `
+Translate (date) milliseconds to minutes (up to 60) | `${Math.floor((tempVars("uptime-ms") % 3600) / 60)}`
+Translate (date) milliseconds to seconds (up to 60) | `${Math.round(tempVars("uptime-ms") % 60)}`
+Translate (duration) milliseconds to a human readable format | `var duration = tempVars("time_var");` <br/> `var ms = parseInt((duration%1000)/100);` <br/> `var s = parseInt((duration/1000)%60);` <br/> `var m = parseInt((duration/(1000*60))%60);` <br/> `var h = parseInt((duration/(1000*60*60))%24);` <br/> `var timeoutput = h + "h:" + m + "m:" + s + "s:" + ms + "ms";`
 
 ## DBM Identifiers
 | Usage | Script |
@@ -40,25 +53,14 @@ Remove item from list | `${tempVars("yourList").splice(# to remove, 1)}`
 Return the last # of items in a list | `tempVars("your variable").slice(Math.max(tempVars("your variable").length - 5, 1))` <br/> *where 5 is the number of items to return*
 Return item at [position] from [list] | `tempVars("list").slice(tempVars("pos_num")-1,tempVars("pos_num"))`
 
-## Math & Operations
-Usage | Script
-:- | :-
-round down | `${Math.floor(yourvariable)}`
-Round to the nearest Integer | `${Math.round(yourvariable [, decimals])`
-Force variable to be read as a number | `${parseInt(yourvariable)}`
-Translate (date) milliseconds to days | `${Math.floor((tempVars("uptime-ms") % 31536000) / 86400)}`
-Translate (date) milliseconds to hours (up to 24) | `${Math.floor((tempVars("uptime-ms") % 86400) / 3600)} `
-Translate (date) milliseconds to minutes (up to 60) | `${Math.floor((tempVars("uptime-ms") % 3600) / 60)}`
-Translate (date) milliseconds to seconds (up to 60) | `${Math.round(tempVars("uptime-ms") % 60)}`
-Translate (duration) milliseconds to a human readable format | `var duration = tempVars("time_var");` <br/> `var ms = parseInt((duration%1000)/100);` <br/> `var s = parseInt((duration/1000)%60);` <br/> `var m = parseInt((duration/(1000*60))%60);` <br/> `var h = parseInt((duration/(1000*60*60))%24);` <br/> `var timeoutput = h + "h:" + m + "m:" + s + "s:" + ms + "ms";`
-
-## Messaging - Embeds
+# Messaging
+## Embeds
 Usage | Script
 :- | :-
 Add Field to Embed message | `tempVars("test").addField("Test Name","Test Value",[inline]);` <br/> `[inline]` = True or False
 Add Footer to Embed message | `tempVars("test").setFooter(member.displayName, msg.author.avatarURL)`
 
-## Messaging - Miscellaneous
+## Miscellaneous
 Usage | Script
 :- | :-
 Send a message (hard coded text) | `msg.channel.send("your message here")`
@@ -68,7 +70,7 @@ Send a message (to another channel)| `msg.guild.channels.find("name","bot-logs")
 Log to console | `console.log("your text here")`
 Add reactions to message <br/> *works on normal messages or embeds* | `msg.channel.send(tempVars("test"))` <br /> `.then(function (message) {` <br /> `message.react("👍")` <br /> `message.react("👎")` <br /> `}).catch(function() {` <br /> `msg.channel.send("is broke yo")` <br /> `});`
 
-## Miscellaneous
+# Miscellaneous
 Usage | Script
 :- | :-
 Unban User <br/><i>requires user's ID</i> | `msg.guild.unban(tempVars("user_id"))`<br/>`.then(user => console.log("Unbanned ${user.username} from ${msg.guild.name}"))`<br/>`.catch(console.error);`
@@ -82,6 +84,7 @@ Change nickname (command author) | `msg.member.setNickname(tempVars("new_nick"))
 Get Variable value | `this.getVariable(1,"varname",cache);`
 Store Variables via script | `this.storeValue(output, 1 ,"totalUsers", cache)` <br /> (*1 = temp, 2 = server, 3 = global*)
 
+# Storing Information
 ## Bot Info
 
 | Usage | Script |
