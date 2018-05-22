@@ -12,6 +12,7 @@ This section covers various tutorials and things that may be helpful.
 * [DBM Tutorial #7 - How to Export the Bot](https://youtu.be/MNw7anSA06g)
 
 # Data
+Information relating to the storage and passing of data between commands or actions.
 
 ## Variables
 
