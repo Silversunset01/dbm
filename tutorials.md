@@ -293,6 +293,7 @@ goto main
 
 ### Forever.js
 You can install a script called **Forever.js** that will automatically restart your bot if it crashes. 
+
 * `npm install --no optional -g forever`
 * `chmod -R a+rwx <bot folder>`- Give the bot folder permission to be read/write and executable
 * `cd <bot folder>` - Change to the bots directory
