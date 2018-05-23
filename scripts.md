@@ -16,9 +16,13 @@ Sidenote: If you are trying to use a script in a text-entry field you'll need to
 ## Math & Operations
 Usage | Script
 :- | :-
-round down | `${Math.floor(yourvariable)}`
-Round to the nearest Integer | `${Math.round(yourvariable [, decimals])`
 Force variable to be read as a number | `${parseInt(yourvariable)}`
+Add two variables | `${parseInt(tempVars("var1")) + parseInt(tempVars("var2"))}`
+Subtract two variables | `${parseInt(tempVars("var1")) - parseInt(tempVars("var2"))}`
+Multiply two variables | `${parseInt(tempVars("var1")) * parseInt(tempVars("var2"))}`
+Divide two variables | `${parseInt(tempVars("var1")) / parseInt(tempVars("var2"))}`
+Round down | `${Math.floor(yourvariable)}`
+Round to the nearest Integer | `${Math.round(yourvariable [, decimals])`
 Translate (date) milliseconds to days | `${Math.floor((tempVars("uptime-ms") % 31536000) / 86400)}`
 Translate (date) milliseconds to hours (up to 24) | `${Math.floor((tempVars("uptime-ms") % 86400) / 3600)} `
 Translate (date) milliseconds to minutes (up to 60) | `${Math.floor((tempVars("uptime-ms") % 3600) / 60)}`
