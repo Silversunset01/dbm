@@ -72,12 +72,12 @@ _note: if you have mods installed you will need to reinstall them after this pro
 ## Error: Unexpected Token
 Unexpected Token has nothing to do with your bots token. It means you've got an unmatched bracket somewhere. 
 
-  `Unexpected Token (` means you're missing `)`
-  `Unexpected Token )` means you're missing `(`  
-  `Unexpected Token {` means you're missing `}`
-  `Unexpected Token }` means you're missing `{`
-  `Unexpected Token <` means you're missing `>`
-  `Unexpected Token >` means you're missing `<`
+*  `Unexpected Token (` means you're missing `)`
+*  `Unexpected Token )` means you're missing `(`  
+*  `Unexpected Token {` means you're missing `}`
+*  `Unexpected Token }` means you're missing `{`
+*  `Unexpected Token <` means you're missing `>`
+*  `Unexpected Token >` means you're missing `<`
 
 **Example:**
 `${parseInt(tempVars("name")}` will throw an error: `Unexpected Token (` because you're missing a closing `)` after the variable.
