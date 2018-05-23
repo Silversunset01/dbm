@@ -97,21 +97,25 @@ When you log into Digital Ocean you'll see an MOTD telling you if there are pack
 
 #### **Install Updates**
 When updates are available:
+
 - `sudo apt update` - update package index
 - `sudo apt upgrade` - install updates
 - `sudo reboot` - reboots the system (server will indicate if its needed)
 
 #### **add SSH key to server file manually**
 If you want to add an SSH key after you've set up your droplet you can edit the authorized_keys file
+
 - edit directly in PuTTY
 - `nano /root/.ssh/authorized_keys`
 - enter `ssh-rsa <key>` (the section that starts with AAAA[gibberish] - do not use begin, end, or comment line)
+
 ```
 ---- BEGIN SSH2 PUBLIC KEY ----
 Comment: "rsa-key-[date]"
 [a whole lot of gibberish]
 ---- END SSH2 PUBLIC KEY ----
 ```
+
 - `ctrl + O`, then at the bottom says "filename to write"
 - `ctrl + x`
 - set up PuTTY to connect automatically
