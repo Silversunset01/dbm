@@ -68,3 +68,17 @@ Navigate to your bots folder > DATA > and open the file that is unable to parse 
 6. Steam will verify the game's files - this process may take several minutes.
 
 _note: if you have mods installed you will need to reinstall them after this process_
+
+## Error: Unexpected Token
+Unexpected Token has nothing to do with your bots token. It means you've got an unmatched bracket somewhere. 
+  `Unexpected Token (` means you're missing `)`
+  `Unexpected Token )` means you're missing `(`  
+  
+  `Unexpected Token {` means you're missing `}`
+  `Unexpected Token }` means you're missing `{`
+
+  `Unexpected Token <` means you're missing `>`
+  `Unexpected Token >` means you're missing `<`
+
+**Example:**
+`${parseInt(tempVars("name")}` will throw an error: `Unexpected Token (` because you're missing a closing `)` after the variable.
