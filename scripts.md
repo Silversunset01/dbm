@@ -25,6 +25,17 @@ Translate (date) milliseconds to minutes (up to 60) | `${Math.floor((tempVars("u
 Translate (date) milliseconds to seconds (up to 60) | `${Math.round(tempVars("uptime-ms") % 60)}`
 Translate (duration) milliseconds to a human readable format | `var duration = tempVars("time_var");` <br/> `var ms = parseInt((duration%1000)/100);` <br/> `var s = parseInt((duration/1000)%60);` <br/> `var m = parseInt((duration/(1000*60))%60);` <br/> `var h = parseInt((duration/(1000*60*60))%24);` <br/> `var timeoutput = h + "h:" + m + "m:" + s + "s:" + ms + "ms";`
 
+## Miscellaneous Javascript
+Usage | Script
+:- | :-
+Force Lower case | `.toLowerCase()`
+Force Upper case | `.toUpperCase()`
+Force string | `.toString()`
+Replace | `.replace("old text","new text")`
+Switch | `switch(thing to eval) {` <br /> `case "OPT1": action to execute on match; break;` <br />`case "OPT2": action to execute on match; break;` <br />`case "OPT3": action to execute on match; break;` <br />`default: action to execute on match; break;` <br /> `}`
+If/Then (Ternery) | `(A < 1 ? "value if true" : "value if false")`
+If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
+
 # Information Storage
 ## Bot Info
 
@@ -78,17 +89,6 @@ Translate (duration) milliseconds to a human readable format | `var duration = t
 | Return Server AFK Channel | `${msg.guild.afkChannel}` |
 | Return Server AFK Timeout \(in seconds\) | `${msg.guild.afkTimeout}` |
 | Store members in a role | `${tempVars("role").members.array().length}`|
-
-## Miscellaneous Javascript
-Usage | Script
-:- | :-
-Force Lower case | `.toLowerCase()`
-Force Upper case | `.toUpperCase()`
-Force string | `.toString()`
-Replace | `.replace("old text","new text")`
-Switch | `switch(thing to eval) {` <br /> `case "OPT1": action to execute on match; break;` <br />`case "OPT2": action to execute on match; break;` <br />`case "OPT3": action to execute on match; break;` <br />`default: action to execute on match; break;` <br /> `}`
-If/Then (Ternery) | `(A < 1 ? "value if true" : "value if false")`
-If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 
 # Messaging
 ## Embeds
