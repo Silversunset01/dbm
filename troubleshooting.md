@@ -1,5 +1,9 @@
 # Troubleshooting
-## Error: Cannot Add Roles to User
+
+# Error: Bot token is being overwritten
+Navigate to `C:\Users\your-name\AppData\local` and delete folders DBM and DBM2
+
+# Error: Cannot Add Roles to User
 A common bot task is to add roles to users either automatically on join, or via command. Here we will review some common errors that can occur.
 
 **Error:** From bot logs: _The supplied role is neither a role nor a snowflake_<br/>
@@ -15,26 +19,48 @@ A common bot task is to add roles to users either automatically on join, or via 
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rolelist1.jpg)
 
-## Error: Cannot find module 'discord.js'
+# Error: Cannot find module 'discord.js'
 1. Delete node_modules 
 2. type `npm i` (this will reinstall modules)
 
-## Error: DBM won't start
+# Error: DBM won't start
 1. Launch Steam
 2. Open Software Library section 
 3. Right-click on DBM and select Properties from the menu
 4. Select the Local files tab
 5. Click the Verify integrity of game files button.
 6. Steam will verify the game's files - this process may take several minutes.
+_note: if you have mods installed you will need to reinstall them after this process_
 
-## Error: Bot token is being overwritten
-Navigate to `C:\Users\your-name\AppData\local` and delete folders DBM and DBM2
+# Error: FFMPEG not found
+1. Press Windows + R
+2. Type in the field: cmd
+3. Press Enter
+4. Start DBM
+5. Click on Project -> Open Project Directory
+6. Right click on the bar at the top with your path
+7. Click on Copy path
+8. Go back to your CMD window
+9. Type cdPasteYourPathHere and press enter
+10. Type npm i
+11. Close everything and restart DBM
 
-## Error: There was an error parsing `players.json` |  `commands.json` | `events.json` 
-Your file is most likely empty. To correct this: 
+# Error: There was an error parsing `players.json` |  `commands.json` | `events.json` 
+Navigate to your bots folder > DATA > and open the file that is unable to parse in a text editor. 
+
+## If your file is empty
 
 1. Open the bots project folder 
 2. Open the DATA folder 
 3. Open the file that is erroring (`players.json` etc) 
 4. Enter `{ }`, save and close the file 
 5. Restart your bot 
+
+## If your file is not empty
+1. Launch Steam
+2. Open Software Library section 
+3. Right-click on DBM and select Properties from the menu
+4. Select the Local files tab
+5. Click the Verify integrity of game files button.
+6. Steam will verify the game's files - this process may take several minutes.
+_note: if you have mods installed you will need to reinstall them after this process_
