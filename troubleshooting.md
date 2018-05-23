@@ -32,6 +32,7 @@ A common bot task is to add roles to users either automatically on join, or via 
 4. Select the Local files tab
 5. Click the Verify integrity of game files button.
 6. Steam will verify the game's files - this process may take several minutes.
+
 _note: if you have mods installed you will need to reinstall them after this process_
 
 ## Error: FFMPEG not found
@@ -65,4 +66,5 @@ Navigate to your bots folder > DATA > and open the file that is unable to parse 
 4. Select the Local files tab
 5. Click the Verify integrity of game files button.
 6. Steam will verify the game's files - this process may take several minutes.
+
 _note: if you have mods installed you will need to reinstall them after this process_
