@@ -110,7 +110,7 @@ Send a message (with mixed text & variables) | `msg.channel.send("some text here
 Send a message (to another channel)| `msg.guild.channels.find("name","bot-logs").send("test in another channel")` <br/>*can use "ID" instead of "Name"*
 Log to console | `console.log("your text here")`
 Add reactions to message <br/> *works on normal messages or embeds* | `msg.channel.send(tempVars("test"))` <br /> `.then(function (message) {` <br /> `message.react("👍")` <br /> `message.react("👎")` <br /> `}).catch(function() {` <br /> `msg.channel.send("is broke yo")` <br /> `});`
-Collect reactions to a message | `const filter = (reaction, user) => reaction.emoji.name === '👍'`<br/>`tempVars("your_message").awaitReactions(filter, { time: 15000 })`<br/>`.then(collected => msg.channel.send("Collected ${collected.size} 👍 reactions by ${collected.users} \n Collected ${collected.size} 👎 reactions"))`<br/>`.catch(console.error);`
+Collect reactions to a message | `const filter = (reaction, user) => reaction.emoji.name === '👍'`<br/>`tempVars("your_message").awaitReactions(filter, { time: 15000 })`<br/>`.then(collected => msg.channel.send("Collected ${collected.size} 👍 reactions"))`<br/>`.catch(console.error);`
 
 # Miscellaneous
 ## Identifiers
