@@ -317,7 +317,7 @@ This event will detect every time someone joins your server, and when you enter 
 
 To apply a role you must first obtain the role object. Do this with a Find Role action. You can search by Role ID, Role Name, or Role Color (name or ID are the best options for this as they are the least likely to duplicate).
 
-Give this role a variable name that you can easily identify later. Here we will use `default-role`
+Give this role a variable name that you can easily identify later. Here we will search for the role called `Players` and store it as the variable name `default-role`
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/autorole2.PNG)
 
