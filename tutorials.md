@@ -492,3 +492,31 @@ DBM Defaults to "Same Channel" which will send the embed to the same channel as 
 If you've copied all of the steps above you should end up with an embed like this:
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest6.png)
+
+## Synchronous or Asynchronous
+Thread: the flow of actions, starting from one until it ends
+
+These keywords refer to how the thread is treated and how the program flows. Whenever the call type is Sync, it waits until it recieves a callback or when the thread ends. Meaning that when the event or command is called, the main thread starts first, and if it is ever interrupted by a call, it does that action and if that action ends, returns to the main thread. Async is similar to Sync however, it runs alongside with the main thread.  
+
+Purpose: This is useful in multithreading. Take this example:  
+
+Main Thread:
+ControlVariable(A to 1)
+CallCommand(Called, Sync)
+ControlVariable(A to 7)
+${A + 1}
+
+Called Thread:
+ControlVariable(A o 4)
+
+This would output 8, However take this example with Asynchronous:
+ControlVariable(A to 1)
+CallCommand(Called, Async)
+ControlVariable(A to 7)
+${A + 1}
+
+Called Thread:
+ControlVariable(A to 4)
+
+This would either output 5 or 8, depends on which thread changes the variable's value last.
+Async has its purpose, you need to think about how to use which callback function or call type to use in which case.
