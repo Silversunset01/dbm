@@ -304,6 +304,33 @@ You can install a script called **Forever.js** that will automatically restart y
 * `forever start bot.js` - Start the bot program using "Forever" \(this will keep the bot running and restart it if it crashes\)
 
 # Miscellaneous Tutorials
+## Adding a role on-join
+Adding a role to users who join your server is quite simple.
+
+1. **Create an event that is triggered ON MEMBER JOIN**
+
+This event will detect every time someone joins your server, and when you enter a variable name in the box labelled `Temp Variable Name (stores member that joined):` it will store the user that joined. For this example we will call the variable `new-user`
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/autorole1.PNG)
+
+2. **Find the role you want to apply to users** 
+
+To apply a role you must first obtain the role object. Do this with a Find Role action. You can search by Role ID, Role Name, or Role Color (name or ID are the best options for this as they are the least likely to duplicate).
+
+Give this role a variable name that you can easily identify later. Here we will search for the role called `Players` and store it as the variable name `default-role`
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/autorole2.PNG)
+
+3. **Add the role to the member that joined**
+
+You have stored both the member object for the user that joined (variable `new-user`) and the role object for your default role (variable `default-role`). Now you will select a ADD MEMBER ROLE action, and apply the role you stored to the member you stored.
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/autorole3.PNG)
+
+**Thats it!**
+
+Your new user now has a shiny new role.
+
 ## Generating a Random Response
 A random response generator works for anything from a Magic 8 ball command to a coin toss command, to a random image, joke, phrase, or even paper/scissors/rock command. The bot will generate a random number and select a response based on the number chosen.
 
@@ -347,6 +374,70 @@ default: var resp = "Answer 5"; break;
 this.storeValue(resp, 1 ,"answer", cache);
 ```
 (you would use `tempVars("answer")` to call this variable
+
+## How to Create an Embed Message
+Your bot can send two types of message, a normal message (that looks like something you would type) an an embed message.
+#### To create an embed you must have at least three actions
+
+**1. Create embed** - you must create an embed first. If you've not created an embed you won't be able to send it.
+[THIS IMAGE](https://dbm-mods.xyz/files/opera_2018-03-05_15-51-27.png) is a full explaination of what the fields mean.
+For this example we'll use the following settings:
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest.png)
+
+**2. Add embed field OR set embed description** - If you want to add more content to your embed you can add a field or description. You can do both if you wish as well. The main difference is that the *Description* field does not have a required header, as the "embed title" is considered the header. the *embed field* item requires both a name and a description.
+For this example we'll use the following settings (Both an embed description AND an embed field):
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest2.png)
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest3.png)
+
+**3. Add a footer (with a script)** - If you don't have DBM Mods you can add an embed footer with a script. This will add the authors username and avatar to the embed footer.
+If you want to add more text you can modify the script text.
+
+*Script Text:* `tempVars("e").setFooter(member.displayName, msg.author.avatarURL)`
+
+*Modified Script Text:* `tempVars("e").setFooter(member.displayName + " Some Other Text", msg.author.avatarURL)`
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest4.png)
+
+**4. Send the embed** - after you've created the embed with all its fancy fields you must send it!
+DBM Defaults to "Same Channel" which will send the embed to the same channel as the command message. You've got the same options here as you do a normal send-message. (If you send the message to a user the user will recieve a DM unless they have those blocked)
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest5.png)
+
+**THE RESULT**:
+If you've copied all of the steps above you should end up with an embed like this:
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest6.png)
+
+## Synchronous or Asynchronous
+Thread: the flow of actions, starting from one until it ends
+
+These keywords refer to how the thread is treated and how the program flows. Whenever the call type is Sync, it waits until it recieves a callback or when the thread ends. Meaning that when the event or command is called, the main thread starts first, and if it is ever interrupted by a call, it does that action and if that action ends, returns to the main thread. Async is similar to Sync however, it runs alongside with the main thread.  
+
+Purpose: This is useful in multithreading. Take this example:  
+
+Main Thread:
+ControlVariable(A to 1)
+CallCommand(Called, Sync)
+ControlVariable(A to 7)
+${A + 1}
+
+Called Thread:
+ControlVariable(A o 4)
+
+This would output 8, However take this example with Asynchronous:
+ControlVariable(A to 1)
+CallCommand(Called, Async)
+ControlVariable(A to 7)
+${A + 1}
+
+Called Thread:
+ControlVariable(A to 4)
+
+This would either output 5 or 8, depends on which thread changes the variable's value last.
+Async has its purpose, you need to think about how to use which callback function or call type to use in which case.
 
 ## Working with Time
 **Time is an illusion. Lunchtime doubly so. **
@@ -456,67 +547,3 @@ This is what each action is doing:
 **Action 4**: Send some message with the information (Or do whatever else you want with it really). For the purposes of this tutorial you should get two lines, one in milliseconds and one formatted.
 
 **Action 5**: **required** Save the new current time to the member data, overwriting the old one and storing the new 'last time this command was run for that user.
-
-## How to Create an Embed Message
-Your bot can send two types of message, a normal message (that looks like something you would type) an an embed message.
-#### To create an embed you must have at least three actions
-
-**1. Create embed** - you must create an embed first. If you've not created an embed you won't be able to send it.
-[THIS IMAGE](https://dbm-mods.xyz/files/opera_2018-03-05_15-51-27.png) is a full explaination of what the fields mean.
-For this example we'll use the following settings:
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest.png)
-
-**2. Add embed field OR set embed description** - If you want to add more content to your embed you can add a field or description. You can do both if you wish as well. The main difference is that the *Description* field does not have a required header, as the "embed title" is considered the header. the *embed field* item requires both a name and a description.
-For this example we'll use the following settings (Both an embed description AND an embed field):
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest2.png)
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest3.png)
-
-**3. Add a footer (with a script)** - If you don't have DBM Mods you can add an embed footer with a script. This will add the authors username and avatar to the embed footer.
-If you want to add more text you can modify the script text.
-
-*Script Text:* `tempVars("e").setFooter(member.displayName, msg.author.avatarURL)`
-
-*Modified Script Text:* `tempVars("e").setFooter(member.displayName + " Some Other Text", msg.author.avatarURL)`
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest4.png)
-
-**4. Send the embed** - after you've created the embed with all its fancy fields you must send it!
-DBM Defaults to "Same Channel" which will send the embed to the same channel as the command message. You've got the same options here as you do a normal send-message. (If you send the message to a user the user will recieve a DM unless they have those blocked)
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest5.png)
-
-**THE RESULT**:
-If you've copied all of the steps above you should end up with an embed like this:
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest6.png)
-
-## Synchronous or Asynchronous
-Thread: the flow of actions, starting from one until it ends
-
-These keywords refer to how the thread is treated and how the program flows. Whenever the call type is Sync, it waits until it recieves a callback or when the thread ends. Meaning that when the event or command is called, the main thread starts first, and if it is ever interrupted by a call, it does that action and if that action ends, returns to the main thread. Async is similar to Sync however, it runs alongside with the main thread.  
-
-Purpose: This is useful in multithreading. Take this example:  
-
-Main Thread:
-ControlVariable(A to 1)
-CallCommand(Called, Sync)
-ControlVariable(A to 7)
-${A + 1}
-
-Called Thread:
-ControlVariable(A o 4)
-
-This would output 8, However take this example with Asynchronous:
-ControlVariable(A to 1)
-CallCommand(Called, Async)
-ControlVariable(A to 7)
-${A + 1}
-
-Called Thread:
-ControlVariable(A to 4)
-
-This would either output 5 or 8, depends on which thread changes the variable's value last.
-Async has its purpose, you need to think about how to use which callback function or call type to use in which case.
