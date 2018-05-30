@@ -439,6 +439,8 @@ ControlVariable(A to 4)
 This would either output 5 or 8, depends on which thread changes the variable's value last.
 Async has its purpose, you need to think about how to use which callback function or call type to use in which case.
 
+**Silver's Stealth Edit:** _Synchronous in the context of a loop action basically means "finish this item before i go to the next one" while asynchronous means "attempt process all of the items in my loop at the same time"_
+
 ## Working with Time
 **Time is an illusion. Lunchtime doubly so. **
 Trying to code things with time in javascript will most likely set your hair on fire. Please proceed with caution.
