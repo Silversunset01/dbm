@@ -440,6 +440,8 @@ This would either output 5 or 8, depends on which thread changes the variable's 
 Async has its purpose, you need to think about how to use which callback function or call type to use in which case.
 
 See [dbm/raw/callback.txt](https://github.com/ArztVielfrass/dbm/blob/master/raws/callback.txt) for actual dbm raw
+=======
+**Silver's Stealth Edit:** _Synchronous in the context of a loop action basically means "finish this item before i go to the next one" while asynchronous means "attempt process all of the items in my loop at the same time"_
 
 ## Working with Time
 **Time is an illusion. Lunchtime doubly so. **
