@@ -136,7 +136,8 @@ Return item at [position] from [list] | `tempVars("list").slice(tempVars("pos_nu
 ## Uncategorized
 Usage | Script
 :- | :-
-Unban User <br/><i>requires user's ID</i> | `msg.guild.unban(tempVars("user_id"))`<br/>`.then(user => console.log("Unbanned ${user.username} from ${msg.guild.name}"))`<br/>`.catch(console.error);`
+Ban User <br/><i>requires user's ID</i> | `msg.guild.ban(tempVars("user_id"))`<br/>`.then(user => console.log("Banned " + user.username + " from" + msg.guild.name))`<br/>`.catch(console.error);`
+Unban User <br/><i>requires user's ID</i> | `msg.guild.unban(tempVars("user_id"))`<br/>`.then(user => console.log("Unbanned " + user.username + " from" + msg.guild.name))`<br/>`.catch(console.error);`
 Find Emoji | `client.emojis.find("name", "NameOfTheEmoji")`
 skip ahead some number<br/>_there are kinks to this still_ | `this.callNextAction(#)`
 Show current date/time in timezone | `new Date().toLocaleString("en-US", {timeZone: "America/New_York"})`
