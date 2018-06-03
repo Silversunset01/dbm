@@ -60,11 +60,15 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 |Author Username|`${msg.author.username}`
 |Author Display Name (Nick)|`${member.displayName}`
 |Author Avatar URL|`${msg.author.avatarURL}`
+|Author Role List | `${member.roles.array()}`
+|Author Role List (truncated after 3 roles) <br/>*enter `${tempVars("role_list")}` into your send-message to view this output.*<br/>*output will display as `@role1,@role2,@role3 + # more roles!`* | `var roles = member.roles.array();`<br/>`var len = roles.length;`<br/>`if (len > 3) {`<br/>`   var answer = roles.slice(0,3) + " + " + (len - 3) + " more!"`<br/>`} else {`<br/>`   var answer = roles`<br/>`};`<br/>`this.storeValue(answer, 1 ,"role_list", cache);`
 |User (variable) Tag|`${tempVars("user_object").user.tag}`
 |User (variable) Discriminator|`${tempVars("user_object").user.discriminator}`
 |User (variable) Username|`${tempVars("user_object").user.username}`
 |User (variable) Display Name (Nick)|`${tempVars("user_object").displayName}`
 |User (variable) Avatar URL|`${tempVars("user_object").user.avatarURL}`
+
+
 
 ## Server Info
 
