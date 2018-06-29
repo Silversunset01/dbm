@@ -50,7 +50,7 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 | Return List of all Bot Guilds | `${this.getDBM().Bot.bot.guilds.array()}` |
 | Program memory usage \(in MB\) | `${Math.floor((process.memoryUsage().heapUsed / 1024)/1024)} MB` |
 |Store the bot as a user (using the message sent)| `${msg.guild.me}`
-|Bot Ping | `${this.getDBM().Bot.bot.ping}` <br/> `${client.ping}`
+|Bot Ping | `${this.getDBM().Bot.bot.ping}` <br/>or<br/> `${client.ping}`
 
 
 ## User Info
