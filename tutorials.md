@@ -67,6 +67,23 @@ By now you may have noticed that when you close DBM your bot shuts down. [This t
 4. At the beginning type "cmd" and hit enter (this will open a cmd prompt in this folder)
 5. Type `nodemon --inspect --watch actions --watch data/commands.json --watch data/events.json --watch node_modules --watch js bot.js`
 
+## VPS Hosting - Heroku
+### Disclaimers
+From R. Danny (Discord's API server bot)
+
+* Bots are not what the platform is designed for. Heroku is designed to provide web servers (like Django, Flask, etc). This is why they give you a domain name and open a port on their local emulator.
+* Heroku's environment is heavily containerized, making it quite significantly underpowered (this is reason 1 why voice doesn't work properly on heroku)
+* Heroku's environment is volatile. In order to handle the insane amount of users trying to use it for their own applications, Heroku will dispose your environment every time your application dies unless you pay.
+* Heroku does not let you control system dependencies barely at all. This means if any of your requirements need C bindings (pynacl, lxml, etc), they'll probably not work. (this is reason 2 why voice doesn't work properly on heroku)
+* Heroku only offers a limited amount of time on their free programme for your applications. If you exceed this limit (which you probably will), they'll shut down your application until your free credit resets.
+
+### YouTube Tutorials
+
+* [HOW TO HOST YOUR DISCORD BOT FOR FREE! (Heroku)](https://www.youtube.com/watch?v=d8INsGl28xw) - Published on May 29, 2018 **most recent**
+* [Discord Bot | Host your bot for free! (using heroku)](https://www.youtube.com/watch?v=kpIFnZ0zbsw) - Published on Mar 22, 2018
+* [HOW TO HOST A DISCORD BOT FOR FREE USING HEROKU!](https://www.youtube.com/watch?v=diq7INoHqh4) - Published on Nov 15, 2017
+* [Host your Discord bot on Heroku 24/7!](https://www.youtube.com/watch?v=NM8IMyqpvqU) - Published on Sep 10, 2017
+
 ## VPS Hosting - Digital Ocean
 #### **Initial Server Setup**
 
