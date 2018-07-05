@@ -141,7 +141,9 @@ Comment: "rsa-key-[date]"
 - Fill in the Auto Login username
 - Putty should now connect automatically when the server is connected to
 
-## Installing Node.js on a Raspberry Pi
+## VPS Hosting - Raspberry Pi (Self Hosted)
+
+### Installing Node.js on a Raspberry pi
 First of all i made this guide using Raspberry Pi 3, however it should work with Raspberry Pi 2 too, but i have no idea if things here are working for Raspberry Pi 1 or Raspberry Pi Zero. If you tried to use this guide on Raspberry Pi 1 or Raspberry Pi Zero, let me know if its working or not by messaging me on Discord. _Tresmos\#2135_
 
 Connect your raspberry pi using [PuTTY](https://www.putty.org/), or using [VNC ](https://howtoraspberrypi.com/raspberry-pi-vnc/)and type these commands in order to install Node.js:
