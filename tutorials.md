@@ -26,15 +26,15 @@ There are a few ways to store and reuse information in DBM.
 
 ## Store Command Parameters
 
-You can store parameters entered into a command using the "Store command parameters" action. This will assume your parameters are using the default `space` \(`\s+`\) as a seperator.
+You can store parameters entered into a command using the "Store command parameters" action. This will assume your parameters are using the default `space` \(`\s+`\) as a separator.
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/storeparams.png)
 
 * Parameter Number:
   * This tells the bot which word to start on. Using 1 would mean "the first word after the command"; 2 would mean "the second word after the command" and so on.
-  * DBM defines a "word" as a complete string of characters between your parameter seperator
-    * ex: If your seperator is a space, a "world" would be anything between spaces - `this is four words`
-    * ex: if your seperator is a comma, a "word" would be anything between commas - `this is, two things`
+  * DBM defines a "word" as a complete string of characters between your parameter separator
+    * ex: If your separator is a space, a "world" would be anything between spaces - `this is four words`
+    * ex: if your separator is a comma, a "word" would be anything between commas - `this is, two things`
     * Source Info:
 
 * **One Parameter** - creates a parameter using a single word, beginning at the \# given in the "parameter number" field.
