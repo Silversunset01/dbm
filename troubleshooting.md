@@ -11,7 +11,7 @@ A common bot task is to add roles to users either automatically on join, or via 
 **Cause:** When adding a role some users will attempt to add the role name directly into the "Add Member Role" field. DBM requires a role object in order to apply the role to a user.<br/>
 **Solution:** Instead of typing directly into the Source Role field, first you should use the Find Role action, store the role as a variable, and then use that variable in the Source Role field.<br/>
 
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/roleexample.jpg)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/roleexample2.JPG)
 
 ### Invalid Permissions
 **Error:** From bot logs: _Error with Event "Add Member Role", Action ##: DiscordAPIError: Missing Permissions_<br/>
