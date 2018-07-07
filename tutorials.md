@@ -323,6 +323,53 @@ You can install a script called **Forever.js** that will automatically restart y
 * `forever start bot.js` - Start the bot program using "Forever" \(this will keep the bot running and restart it if it crashes\)
 
 # Miscellaneous Tutorials
+## Activating the bot with @mention
+Soon I will write a real tutorial. For now this is the raw code for an event (YOU DO NOT NEED BETA OR MODS) to ping the bot instead of using a command
+```{
+    "name": "pingbot",
+    "temp": "msg_sent",
+    "event-type": "2",
+    "actions": [{
+        "message": "1",
+        "varName": "msg_sent",
+        "info": "2",
+        "storage": "1",
+        "varName2": "msg_text",
+        "name": "Store Message Info"
+    }, {
+        "storage": "1",
+        "varName": "msg_text",
+        "comparison": "5",
+        "value": "'<@403205552064430100>'",
+        "iftrue": "0",
+        "iftrueVal": "",
+        "iffalse": "1",
+        "iffalseVal": "",
+        "name": "Check Variable"
+    }, {
+        "message": "1",
+        "varName": "msg_sent",
+        "info": "3",
+        "storage": "1",
+        "varName2": "msg_auth",
+        "name": "Store Message Info"
+    }, {
+        "message": "1",
+        "varName": "msg_sent",
+        "info": "4",
+        "storage": "1",
+        "varName2": "msg_channel",
+        "name": "Store Message Info"
+    }, {
+        "channel": "5",
+        "varName": "msg_channel",
+        "message": "hello ${tempVars(\"msg_auth\")}!",
+        "storage": "0",
+        "varName2": "",
+        "name": "Send Message"
+    }]
+}```
+
 ## Adding a role on-join
 Adding a role to users who join your server is quite simple.
 
