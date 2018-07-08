@@ -76,6 +76,7 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 
 | Usage | Script |
 | :--- | :--- |
+| Return List of Members in a Role | `tempVars("role").members.map(m=>m.user.tag)`
 | Return Server Icon URL | `${msg.guild.iconURL}` |
 | Return Server Verification Level | `${msg.guild.verificationLevel}` |
 | Return Server Explicit Content Filter | `${msg.guild.explicitContentFilter}` |
@@ -98,7 +99,7 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 | Return Server Count of Voice Channels | `${msg.guild.channels.findAll('type', 'voice').length}` |
 | Return Server AFK Channel | `${msg.guild.afkChannel}` |
 | Return Server AFK Timeout \(in seconds\) | `${msg.guild.afkTimeout}` |
-| Store members in a role | `${tempVars("role").members.array().length}`|
+| Store Count members in a role | `${tempVars("role").members.array().length}`|
 
 # Messaging
 ## Embeds
