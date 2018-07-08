@@ -484,20 +484,20 @@ These keywords refer to how the thread is treated and how the program flows. Whe
 
 Purpose: This is useful in multithreading. Take this example:  
 
-Main Thread:
+`Main Thread:
 ControlVariable(A to 1)
 CallCommand(Called, Sync)
 ControlVariable(A to 7)
-${A + 1}
+${A + 1}`
 
-Called Thread:
-ControlVariable(A o 4)
+`Called Thread:
+ControlVariable(A o 4)`
 
 This would output 8, However take this example with Asynchronous:
-ControlVariable(A to 1)
+`ControlVariable(A to 1)
 CallCommand(Called, Async)
 ControlVariable(A to 7)
-${A + 1}
+${A + 1}`
 
 Called Thread:
 ControlVariable(A to 4)
@@ -505,6 +505,8 @@ ControlVariable(A to 4)
 This would either output 5 or 8, depends on which thread changes the variable's value last.
 Async has its purpose, you need to think about how to use which callback function or call type to use in which case.
 
+See [dbm/raw/callback.txt](https://github.com/ArztVielfrass/dbm/blob/master/raws/callback.txt) for actual dbm raw
+=======
 **Silver's Stealth Edit:** _Synchronous in the context of a loop action basically means "finish this item before i go to the next one" while asynchronous means "attempt process all of the items in my loop at the same time"_
 
 ## Working with Time
