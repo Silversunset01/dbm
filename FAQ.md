@@ -1,0 +1,7 @@
+# Frequently Asked Questions
+
+# Running the bot
+## Can I run two bots at the same time? 
+
+Sort of. You cannot run two bots in DBM at the same time, but you can run a second instance of your bot via command prompt. [Click Here](https://silversunset.net/dbm/tutorials#running-your-bot-247-running-your-bot-with-cmd) for instructions.
+
