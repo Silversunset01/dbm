@@ -14,7 +14,7 @@ No. This is API abuse and is not allowed by the Discord API. [More information o
 
 `2.7 Rate Limits. You will not attempt to exceed or circumvent limitations on access to and use of the SDK or API, exceed or circumvent any limitation on the API calls you may make, or otherwise use the SDK or API in a manner that exceeds reasonable request volume, or constitutes excessive or abusive usage (“Rate Limits”). If Discord, in its sole discretion, determines that you have attempted to exceed or circumvent Rate Limits, or other controls that limit use of the SDK or API, then your ability to use the SDK or API may be temporarily suspended or permanently blocked.`
 
-# Miscellanous
+# Miscellaneous
 ## Are there any tutorials for DBM? 
 Yes, SRD made some youtube videos [you can watch here](https://www.youtube.com/playlist?list=PLkfg3Bt9RE055BeP8DeDZSUCYxeSLnobe). Additionally there are some [included in this guide](https://silversunset.net/dbm/tutorials).
 
