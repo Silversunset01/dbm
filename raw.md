@@ -15,7 +15,7 @@ in action: https://i.imgur.com/w9a6V1m.png
 ![](https://i.imgur.com/w9a6V1m.png)
 
 ## Current Time in Timezone
-**Show current time in a specified timezone (mods needed for the bot member items)**
+**Show current time in a specified timezone (mods needed for the bot member items)**  
 This command will show you the current time in a requested timezone. It only comes with 8 timezones preconfigured (PST, MST, CST, EST, UTC, GMT, EET, AEST).   
 To add more, add them in the 'run script' action, add a new case "ABBR": for each one you'd like.  
 Running the command without a timezone will give a syntax message instead.  
@@ -26,7 +26,7 @@ screenshot: https://i.imgur.com/xo39CJJ.png
 **The Bot will need to run via CMD otherwise DBM will error!**
 
 ## Time until Specified time
-**Display time until "specified time" (mods needed for bot member info)**
+**Display time until "specified time" (mods needed for bot member info)**  
 This command will show the time between "now" and "a specified time" that you type in on the command. Typing !timeto without a correct date will give a syntax message.   
 Times must be in the following format: March 4, 2018 23:18:00 GMT-0500 (if you leave off GMT-0500 it will assume UTC)  
 code: https://silversunset.net/paste/96 *converted from ghostbin*  
@@ -43,13 +43,13 @@ Screenshot: https://i.imgur.com/wd2grr0.png
 ![](https://i.imgur.com/wd2grr0.png)  
 
 ## Move user to voice channel
-**Move User from one voice channel to another**
+**Move User from one voice channel to another**  
 command syntax is `.voice <channel name> @user` and will move the mentioned user from their current voice channel to a new one.  
 NOTE if they are not currently IN a voice channel this will do nothing.  
 https://silversunset.net/paste/71  
 
 ## Replace [prefix] with @bot ping
-**Activate the bot with an @mention instead of a command**
+**Activate the bot with an @mention instead of a command**  
 This is an event that will let you `@mention` your bot rather than needing a command.  
 This does not need beta or mods to function  
 In use: copy the raw code from https://silversunset.net/paste/86  
@@ -61,7 +61,8 @@ This does not require beta or mods
 Command: https://silversunset.net/paste/87  
 
 # API Use
-## Mojang Services Status (mods required)
+## Mojang Services Status 
+**Mojang Services Status (mods required)** 
 This is a combination of one event and one command.  
 - The event will ping Mojang's services api's every 60 seconds and save the data (this is to prevent being ip-blocked from too many queries)  
 - The command will query the saved data and return "all is well" or "something may be broken" for each service  
@@ -71,7 +72,8 @@ Event raw data: https://pastebin.com/BdPRDCGH | https://silversunset.net/paste/9
 In action: https://i.imgur.com/l1PBeE7.png  
 ![](https://i.imgur.com/l1PBeE7.png)
 
-## MCStatus (mods required)
+## MCStatus
+**MC Status  (mods required)**  
 This is one command and one event that work together to prove specific minecraft server status information.   
 - The event: pings your desired minecraft servers (currently supports 5 but you can add/remove as needed) every 60 seconds and saves the data to a server variable  
 - The command (!mcstatus) pulls the data from the server variables and displays the # of users online (i.e. 10 of 200 users)
