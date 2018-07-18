@@ -1,6 +1,9 @@
-# Miscellaneous Raw Data
+# Silver's Raw Data
 
 This section is entirely for my raw code pastes so I dont lose project i've made. I do not use beta, so use at your own risk.
+Mostly this was updated because ghostbin keeps dying and i wanted to have all of my raw data hosted on my own pastebin.
+
+Commands are sorted into categories from the Raw Data server. 
 
 # useful
 ## Comprehensive Server info command - no mods needed
