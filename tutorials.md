@@ -52,6 +52,7 @@ By now you may have noticed that when you close DBM your bot shuts down. [This t
 
 ## Exporting the bot
 Everything begins with exporting your bot from DBM and running it elsewhere. This video tutorial explains how  
+
 [DBM Tutorial - #7 Exporting the bot >](https://www.youtube.com/watch?v=MNw7anSA06g&feature=youtu.be)
 
 
