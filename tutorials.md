@@ -50,6 +50,11 @@ You can store parameters entered into a command using the "Store command paramet
 # Running your bot 24/7
 By now you may have noticed that when you close DBM your bot shuts down. [This tutorial](https://www.youtube.com/watch?v=MNw7anSA06g&t=2s) will explain how to export your bot to run in a command terminal.
 
+## Exporting the bot
+Everything begins with exporting your bot from DBM and running it elsewhere. This video tutorial explains how  
+[DBM Tutorial - #7 Exporting the bot >](https://www.youtube.com/watch?v=MNw7anSA06g&feature=youtu.be)
+
+
 ## Running your bot with cmd
 
 1. Open project directory
