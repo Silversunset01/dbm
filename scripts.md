@@ -51,6 +51,7 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 | Program memory usage \(in MB\) | `${Math.floor((process.memoryUsage().heapUsed / 1024)/1024)} MB` |
 |Store the bot as a user (using the message sent)| `${msg.guild.me}`
 |Bot Ping | `${this.getDBM().Bot.bot.ping}` <br/>or<br/> `${client.ping}`
+|Bots CPU | `${(process.cpuUsage().user / 1000000).toFixed(2)} Seconds`
 
 
 ## User Info
