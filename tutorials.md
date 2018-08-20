@@ -126,27 +126,27 @@ Command 1 raw code: https://silversunset.net/paste/120
 Command 2 raw code: https://silversunset.net/paste/121  
 
 **1. command *?rndtext* - set up and edit the list of responses**
-![](https://github.com/Silversunset01/dbm/blob/master/screenshots/rndtextlist1.PNG)  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist1.PNG)  
 This command will allow you to either create a new list (if the list is deleted), or add items to the list. *Please note:* if you do not have beta you cannot use the Save Variable action, which means the list will be deleted every time the bot restarts. In that case you'll need to recreate and add the text each time. 
 
 After actions 1 and 2 (to store the 'type' and 'text' if any) you'll need to use CHECK VARIABLE to determine what kind of command you're running: 
 
 Action 3: Checks to see if the response = "new", if it does it will create the list named "rndlist" as a server variable (in action 5).    
-![](https://github.com/Silversunset01/dbm/blob/master/screenshots/rndtextlist3.PNG)  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist3.PNG)  
 
 Action 4: Checks to see if the response = "add", if it does it adds the text you've input to the list.  
-![](https://github.com/Silversunset01/dbm/blob/master/screenshots/rndtextlist2.PNG)    
-![](https://github.com/Silversunset01/dbm/blob/master/screenshots/rndtextlist4.PNG)  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist2.PNG)    
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist4.PNG)  
 
 Action 9: this is a catch-all. If you do not enter *?rndtext new* or *?rndtext add* this message will pop up reminding you of the proper syntax  
-![](https://github.com/Silversunset01/dbm/blob/master/screenshots/rndtextlist5.PNG)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist5.PNG)
 
 **2. command *?rndresponse* - retrieve random text from the list**  
 This command simply pulls a random item from the list you created and prints it to chat
-![](https://github.com/Silversunset01/dbm/blob/master/screenshots/rndtextlist7.PNG)  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist7.PNG)  
 
 Make sure to select the SERVER var as your source list
-![](https://github.com/Silversunset01/dbm/blob/master/screenshots/rndtextlist6.PNG)  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist6.PNG)  
 
 When you've got that simply print the `${tempVars("rnd_response")}` to a send-message.
 
@@ -190,10 +190,10 @@ If you've copied all of the steps above you should end up with an embed like thi
 If you'd like to be able to type a message and speak as the bot its quite simple. This example makes the assumption that you will make the bot speak in *another* channel from the one you type into. The command would be `?say #channel <message>`
 
 **1. Store the text you'd like the bot to repeat**  
-![](https://github.com/Silversunset01/dbm/blob/master/screenshots/say1.PNG)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/screenshots/say1.PNG)
 
 **2. Send the message to the #channel you mentioned**  
-![](https://github.com/Silversunset01/dbm/blob/master/screenshots/say2.PNG)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/screenshots/say2.PNG)
 
 
 ## Synchronous or Asynchronous
