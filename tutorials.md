@@ -190,10 +190,10 @@ If you've copied all of the steps above you should end up with an embed like thi
 If you'd like to be able to type a message and speak as the bot its quite simple. This example makes the assumption that you will make the bot speak in *another* channel from the one you type into. The command would be `?say #channel <message>`
 
 **1. Store the text you'd like the bot to repeat**  
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/screenshots/say1.PNG)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/say1.PNG)
 
 **2. Send the message to the #channel you mentioned**  
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/screenshots/say2.PNG)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/say2.PNG)
 
 
 ## Synchronous or Asynchronous
