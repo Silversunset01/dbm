@@ -47,6 +47,319 @@ You can store parameters entered into a command using the "Store command paramet
 * **Mentioned Role** - stores the `@role` from a command as a parameter
 * **Mentioned Channel** - stores the `#channel` from a command as a parameter
 
+# Miscellaneous Tutorials
+## Adding a role on-join
+Adding a role to users who join your server is quite simple.
+
+1. **Create an event that is triggered ON MEMBER JOIN**
+
+This event will detect every time someone joins your server, and when you enter a variable name in the box labelled `Temp Variable Name (stores member that joined):` it will store the user that joined. For this example we will call the variable `new-user`
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/autorole1.PNG)
+
+2. **Find the role you want to apply to users** 
+
+To apply a role you must first obtain the role object. Do this with a Find Role action. You can search by Role ID, Role Name, or Role Color (name or ID are the best options for this as they are the least likely to duplicate).
+
+Give this role a variable name that you can easily identify later. Here we will search for the role called `Players` and store it as the variable name `default-role`
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/autorole2.PNG)
+
+3. **Add the role to the member that joined**
+
+You have stored both the member object for the user that joined (variable `new-user`) and the role object for your default role (variable `default-role`). Now you will select a ADD MEMBER ROLE action, and apply the role you stored to the member you stored.
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/autorole3.PNG)
+
+**Thats it!**
+
+Your new user now has a shiny new role.
+
+## Generating a Random Response
+A random response generator works for anything from a Magic 8 ball command to a coin toss command, to a random image, joke, phrase, or even paper/scissors/rock command. The bot will generate a random number and select a response based on the number chosen.
+
+### Using Hardcoded Responses
+**Action 1: Generate a random number** this will allow the bot to select one of your pre-programmed responses.
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/randtext.png)
+
+**Action 2: Send message based on the number generated** using a switch/case script.
+
+Switch/case basically evaluates the statement defined in `switch(tempVars("rand-num"))` and selects the matching response from the list of `case` items. The last item should always be `default` this is often used for error handling if no `case` match is found. In this case the possible outcomes of the `rand-num` variable are known and such a short list that `default` can be used to indicate the last match rather than an error.
+
+`msg.channel.send("text")` will send a message to the current channel.
+
+`break;` ends the action
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/randtext2.png)
+
+#### Copyable code
+
+#### Send message to the current channel:
+
+```
+switch(tempVars("rand-num")){
+case 1: msg.channel.send("Answer 1"); break;
+case 2: msg.channel.send("Answer 2"); break;
+case 3: msg.channel.send("Answer 3"); break;
+case 4: msg.channel.send("Answer 4"); break;
+default: msg.channel.send("Answer 5"); break;
+}
+```
+
+#### Save message as a variable to use later:
+```
+switch(tempVars("rand-num")){
+case 1: var resp = "Answer 1"; break;
+case 2: var resp = "Answer 2"; break;
+case 3: var resp = "Answer 3"; break;
+case 4: var resp = "Answer 4"; break;
+default: var resp = "Answer 5"; break;
+};
+this.storeValue(resp, 1 ,"answer", cache);
+```
+(you would use `tempVars("answer")` to call this variable
+
+## Using an Updatable List
+This requires two commands, the first command will let you set up and add text to the list. The second will choose a response and print it.  
+Command 1 raw code: https://silversunset.net/paste/120  
+Command 2 raw code: https://silversunset.net/paste/121  
+
+**1. command *?rndtext* - set up and edit the list of responses**
+![](https://github.com/Silversunset01/dbm/blob/master/screenshots/rndtextlist1.PNG)  
+This command will allow you to either create a new list (if the list is deleted), or add items to the list. *Please note:* if you do not have beta you cannot use the Save Variable action, which means the list will be deleted every time the bot restarts. In that case you'll need to recreate and add the text each time. 
+
+After actions 1 and 2 (to store the 'type' and 'text' if any) you'll need to use CHECK VARIABLE to determine what kind of command you're running: 
+
+Action 3: Checks to see if the response = "new", if it does it will create the list named "rndlist" as a server variable (in action 5).    
+![](https://github.com/Silversunset01/dbm/blob/master/screenshots/rndtextlist3.PNG)  
+
+Action 4: Checks to see if the response = "add", if it does it adds the text you've input to the list.  
+![](https://github.com/Silversunset01/dbm/blob/master/screenshots/rndtextlist2.PNG)    
+![](https://github.com/Silversunset01/dbm/blob/master/screenshots/rndtextlist4.PNG)  
+
+Action 9: this is a catch-all. If you do not enter *?rndtext new* or *?rndtext add* this message will pop up reminding you of the proper syntax  
+![](https://github.com/Silversunset01/dbm/blob/master/screenshots/rndtextlist5.PNG)
+
+**2. command *?rndresponse* - retrieve random text from the list**  
+This command simply pulls a random item from the list you created and prints it to chat
+![](https://github.com/Silversunset01/dbm/blob/master/screenshots/rndtextlist7.PNG)  
+
+Make sure to select the SERVER var as your source list
+![](https://github.com/Silversunset01/dbm/blob/master/screenshots/rndtextlist6.PNG)  
+
+When you've got that simply print the `${tempVars("rnd_response")}` to a send-message.
+
+## How to Create an Embed Message
+Your bot can send two types of message, a normal message (that looks like something you would type) an an embed message.
+#### To create an embed you must have at least three actions
+
+**1. Create embed** - you must create an embed first. If you've not created an embed you won't be able to send it.
+[THIS IMAGE](https://dbm-mods.xyz/files/opera_2018-03-05_15-51-27.png) is a full explaination of what the fields mean.
+For this example we'll use the following settings:
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest.png)
+
+**2. Add embed field OR set embed description** - If you want to add more content to your embed you can add a field or description. You can do both if you wish as well. The main difference is that the *Description* field does not have a required header, as the "embed title" is considered the header. the *embed field* item requires both a name and a description.
+For this example we'll use the following settings (Both an embed description AND an embed field):
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest2.png)
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest3.png)
+
+**3. Add a footer (with a script)** - If you don't have DBM Mods you can add an embed footer with a script. This will add the authors username and avatar to the embed footer.
+If you want to add more text you can modify the script text.
+
+*Script Text:* `tempVars("e").setFooter(member.displayName, msg.author.avatarURL)`
+
+*Modified Script Text:* `tempVars("e").setFooter(member.displayName + " Some Other Text", msg.author.avatarURL)`
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest4.png)
+
+**4. Send the embed** - after you've created the embed with all its fancy fields you must send it!
+DBM Defaults to "Same Channel" which will send the embed to the same channel as the command message. You've got the same options here as you do a normal send-message. (If you send the message to a user the user will recieve a DM unless they have those blocked)
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest5.png)
+
+**THE RESULT**:
+If you've copied all of the steps above you should end up with an embed like this:
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest6.png)
+
+## How to create a SAY command
+If you'd like to be able to type a message and speak as the bot its quite simple. This example makes the assumption that you will make the bot speak in *another* channel from the one you type into. The command would be `?say #channel <message>`
+
+**1. Store the text you'd like the bot to repeat**  
+![](https://github.com/Silversunset01/dbm/blob/master/screenshots/say1.PNG)
+
+**2. Send the message to the #channel you mentioned**  
+![](https://github.com/Silversunset01/dbm/blob/master/screenshots/say2.PNG)
+
+
+## Synchronous or Asynchronous
+Thread: the flow of actions, starting from one until it ends
+
+These keywords refer to how the thread is treated and how the program flows. Whenever the call type is Sync, it waits until it recieves a callback or when the thread ends. Meaning that when the event or command is called, the main thread starts first, and if it is ever interrupted by a call, it does that action and if that action ends, returns to the main thread. Async is similar to Sync however, it runs alongside with the main thread.  
+
+Purpose: This is useful in multithreading. Take this example:  
+
+`Main Thread:
+ControlVariable(A to 1)
+CallCommand(Called, Sync)
+ControlVariable(A to 7)
+${A + 1}`
+
+`Called Thread:
+ControlVariable(A o 4)`
+
+This would output 8, However take this example with Asynchronous:
+`ControlVariable(A to 1)
+CallCommand(Called, Async)
+ControlVariable(A to 7)
+${A + 1}`
+
+Called Thread:
+ControlVariable(A to 4)
+
+This would either output 5 or 8, depends on which thread changes the variable's value last.
+Async has its purpose, you need to think about how to use which callback function or call type to use in which case.
+
+See [dbm/raw/callback.txt](https://github.com/ArztVielfrass/dbm/blob/master/raws/callback.txt) for actual dbm raw
+
+**Silver's Stealth Edit:** _Synchronous in the context of a loop action basically means "finish this item before i go to the next one" while asynchronous means "attempt process all of the items in my loop at the same time"_
+
+## Using @botname to trigger the bot
+To call the bot via @botname instead of using a command you can follow these steps:
+
+**1. create an EVENT that triggers on ANY MESSAGE**
+This event will evaluate each message and look for a mention that matches the bot's ID
+![](https://github.com/Silversunset01/dbm/blob/master/screenshots/ping1.png)
+
+**2. Store the text of the message
+
+**3. use Check Variable to see if the messsage contains the ping for your bot**
+If it contains the ping you're checking for, continue the actions. Otherwise have it stop or your bot will just process on every message sent which is crazy.
+*protip: you can use any ping here if you wanted to have it look for a specific user or role*
+![](https://github.com/Silversunset01/dbm/blob/master/screenshots/ping3.PNG)
+
+**4. Store any other information that you want from the message**
+At the very least i reccomend storing the channel so you can send a response in the same channel.
+If you're using the @botname to trigger a command you'd then need to parse the text of your message for the rest of the command. That can be a bit complicated and will require you to learn some JS.
+
+**5. Send a message (or whatever else you want)
+
+The rawcode for this example can be found here https://silversunset.net/paste/86
+make sure you add it as an EVENT, not a command.
+
+## Working with Time
+**Time is an illusion. Lunchtime doubly so. **
+Trying to code things with time in javascript will most likely set your hair on fire. Please proceed with caution.
+
+First, go [to this site](https://www.w3schools.com/jsref/jsref_obj_date.asp), bookmark it, and make it your new best friend. This will give you all the bits and pieces of time you could ever want.
+
+### Basic Timestamps
+* Getting the current time
+Getting the current time in javascript is easy.
+`${new Date()}` is all you really need. When you run this you're going to get something that looks like `Wed Apr 04 2018 20:18:02 GMT-0400 (Eastern Daylight Time)`
+**but be careful** - this will give you the time in the bot's timezone. So if you're running it on your home computer you'll get your local time, but when you save it out to a VPS you'll get whatever the servers 'local time' is.
+
+### Getting the current UTC time
+
+This is a bit more tricky, and will take multiple steps. All of this is done in a single `run script` action in DBM.<br/>
+`var now = new Date();` = this will get the current time and create the variable "now" to use<br/>
+`var year = now.getUTCFullYear();` = stores the UTC Year<br/>
+`var month = now.getUTCMonth() + 1;` = stores the UTC month (months are 0-11 so you have to add 1)<br/>
+`var day = now.getUTCDate();` = stores the UTC Date<br/>
+`var hour = now.getUTCHours();` = stores the UTC Hour<br/>
+`var minutes = now.getUTCMinutes();` = stores the UTC Minutes<br/>
+
+You can then add:
+`msg.channel.send("The time is: " + month + "/" + day + "/" + year + "; " + hour + ":" + minutes)`
+to display the following:
+`The time is: 4/4/2018; 23:23`
+
+**but** what if the minutes are < 10, you'd see the time as `23:1` instead of `23:01`
+And how can you tell if the date is month/day/year or day/month/year (different countries have different conventions)
+
+### Formatting Current UTC Time
+The final change to our script is going to be to add formatting to the month, to display "April" instead of "4", as well as padding leading zeros in the hour/minutes of the time.
+
+**this is the full run-script action code**
+
+```
+var now = new Date();
+var year = now.getUTCFullYear();
+var month = now.getUTCMonth() + 1;
+var day = now.getUTCDate();
+var hour = now.getUTCHours();
+var minutes = now.getUTCMinutes();
+
+switch(month){
+case 1: var monthname = "January"; break;
+case 2: var monthname = "February"; break;
+case 3: var monthname = "March"; break;
+case 4: var monthname = "April"; break;
+case 5: var monthname = "May"; break;
+case 6: var monthname = "June"; break;
+case 7: var monthname = "July"; break;
+case 8: var monthname = "August"; break;
+case 9: var monthname = "September"; break;
+case 10: var monthname = "October"; break;
+case 11: var monthname = "November"; break;
+case 12: var monthname = "December"; break;
+}
+
+msg.channel.send("The time is: " + monthname + " " + day + ", " + year + "; " + (hour > 9 ? hour : "0" + hour) + ":" + (minutes > 9 ? minutes : "0" + minutes))
+```
+
+we're using a few javascript tricks here.
+1. A [switch statement](https://www.w3schools.com/js/js_switch.asp) is being used to display the month name instead of the number
+2. A [conditional operator](https://www.w3schools.com/jsref/jsref_operators.asp) is being used to pad the zeros on the date
+
+### Using .toLocaleString()
+**WARNING WARNING WARNING**
+If you use this method in DBM you WILL NOT be able to run your bot directly in DBM. It will be fine on your vps or running via cmd locally.
+**YOU HAVE BEEN WARNED**
+
+[.toLocaleString()](https://www.w3schools.com/jsref/jsref_tolocalestring.asp) allows you to display a string using location-specific formatting. If your string is a date, it will show the current time as `4/4/2018, 7:40:32 PM` since that is the local settings for where the bot is currently running. **AGAIN** if you save the bot to a VPS it will use the bots server settings instead, BUT you can tell the program which settings you want it to use rather than the 'local' ones. 
+`new Date().toLocaleString("en-US", {timeZone: "UTC"})` will show the current UTC time in an American format
+`new Date().toLocaleString("en-US", {timeZone: "America/Chicago"})` will show the current CST time in an American format.
+[This Document](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString) has more information on locale string settings.
+
+### Finding the time between actions
+Another common use for time in javascript is determining "when the last time something was done"
+
+To do this you'll need to store the last time something was run and compare it to the current time.
+**[This link](https://pastebin.com/EaBjackY) is the raw-data for the below command tutorial.**
+
+The real magic however is this script:
+```
+var duration = tempVars("time_var");
+var ms = parseInt((duration%1000)/100);
+var s = parseInt((duration/1000)%60);
+var m = parseInt((duration/(1000*60))%60);
+var h = parseInt((duration/(1000*60*60))%24);
+
+var timeoutput = h + "h:" + m + "m:" + s + "s:" + ms + "ms";
+this.storeValue(timeoutput,1,"donetime",cache)
+```
+which converts the # of milliseconds between "current run" and "last run" to a human readable format.
+
+For this example, we'll time "when was the last time [User] ran [Command]"
+
+**...ASSUMING YOUVE INSTALLED THE RAW DATA...**
+This is what each action is doing:
+
+**Action 1**: **required** Checks the last time the command was run, using store-member-data. This will be stored in milliseceonds. *note: if this is the first time the command was run you may get a NaN error, or some weird number.
+
+**Action 2**: **required** Checks the difference between the "Current Time" and "The Last Time The Command Was Run" - this will return a number in MILLISECONDS
+
+**Action 3**: OPTIONAL: Format the time from milliseconds to a human-readable format. This will output your time as `0h:2m:34s:4ms`
+
+**Action 4**: Send some message with the information (Or do whatever else you want with it really). For the purposes of this tutorial you should get two lines, one in milliseconds and one formatted.
+
+**Action 5**: **required** Save the new current time to the member data, overwriting the old one and storing the new 'last time this command was run for that user.
+
 # Running your bot 24/7
 By now you may have noticed that when you close DBM your bot shuts down. [This tutorial](https://www.youtube.com/watch?v=MNw7anSA06g&t=2s) will explain how to export your bot to run in a command terminal.
 
@@ -327,299 +640,3 @@ You can install a script called **Forever.js** that will automatically restart y
 * `chmod -R a+rwx <bot folder>`- Give the bot folder permission to be read/write and executable
 * `cd <bot folder>` - Change to the bots directory
 * `forever start bot.js` - Start the bot program using "Forever" \(this will keep the bot running and restart it if it crashes\)
-
-# Miscellaneous Tutorials
-## Activating the bot with @mention
-Soon I will write a real tutorial. For now this is the raw code for an event (YOU DO NOT NEED BETA OR MODS) to ping the bot instead of using a command
-```{
-    "name": "pingbot",
-    "temp": "msg_sent",
-    "event-type": "2",
-    "actions": [{
-        "message": "1",
-        "varName": "msg_sent",
-        "info": "2",
-        "storage": "1",
-        "varName2": "msg_text",
-        "name": "Store Message Info"
-    }, {
-        "storage": "1",
-        "varName": "msg_text",
-        "comparison": "5",
-        "value": "'<@403205552064430100>'",
-        "iftrue": "0",
-        "iftrueVal": "",
-        "iffalse": "1",
-        "iffalseVal": "",
-        "name": "Check Variable"
-    }, {
-        "message": "1",
-        "varName": "msg_sent",
-        "info": "3",
-        "storage": "1",
-        "varName2": "msg_auth",
-        "name": "Store Message Info"
-    }, {
-        "message": "1",
-        "varName": "msg_sent",
-        "info": "4",
-        "storage": "1",
-        "varName2": "msg_channel",
-        "name": "Store Message Info"
-    }, {
-        "channel": "5",
-        "varName": "msg_channel",
-        "message": "hello ${tempVars(\"msg_auth\")}!",
-        "storage": "0",
-        "varName2": "",
-        "name": "Send Message"
-    }]
-}```
-
-## Adding a role on-join
-Adding a role to users who join your server is quite simple.
-
-1. **Create an event that is triggered ON MEMBER JOIN**
-
-This event will detect every time someone joins your server, and when you enter a variable name in the box labelled `Temp Variable Name (stores member that joined):` it will store the user that joined. For this example we will call the variable `new-user`
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/autorole1.PNG)
-
-2. **Find the role you want to apply to users** 
-
-To apply a role you must first obtain the role object. Do this with a Find Role action. You can search by Role ID, Role Name, or Role Color (name or ID are the best options for this as they are the least likely to duplicate).
-
-Give this role a variable name that you can easily identify later. Here we will search for the role called `Players` and store it as the variable name `default-role`
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/autorole2.PNG)
-
-3. **Add the role to the member that joined**
-
-You have stored both the member object for the user that joined (variable `new-user`) and the role object for your default role (variable `default-role`). Now you will select a ADD MEMBER ROLE action, and apply the role you stored to the member you stored.
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/autorole3.PNG)
-
-**Thats it!**
-
-Your new user now has a shiny new role.
-
-## Generating a Random Response
-A random response generator works for anything from a Magic 8 ball command to a coin toss command, to a random image, joke, phrase, or even paper/scissors/rock command. The bot will generate a random number and select a response based on the number chosen.
-
-**Action 1: Generate a random number** this will allow the bot to select one of your pre-programmed responses.
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/randtext.png)
-
-**Action 2: Send message based on the number generated** using a switch/case script.
-
-Switch/case basically evaluates the statement defined in `switch(tempVars("rand-num"))` and selects the matching response from the list of `case` items. The last item should always be `default` this is often used for error handling if no `case` match is found. In this case the possible outcomes of the `rand-num` variable are known and such a short list that `default` can be used to indicate the last match rather than an error.
-
-`msg.channel.send("text")` will send a message to the current channel.
-
-`break;` ends the action
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/randtext2.png)
-
-#### Copyable code
-
-#### Send message to the current channel:
-
-```
-switch(tempVars("rand-num")){
-case 1: msg.channel.send("Answer 1"); break;
-case 2: msg.channel.send("Answer 2"); break;
-case 3: msg.channel.send("Answer 3"); break;
-case 4: msg.channel.send("Answer 4"); break;
-default: msg.channel.send("Answer 5"); break;
-}
-```
-
-#### Save message as a variable to use later:
-```
-switch(tempVars("rand-num")){
-case 1: var resp = "Answer 1"; break;
-case 2: var resp = "Answer 2"; break;
-case 3: var resp = "Answer 3"; break;
-case 4: var resp = "Answer 4"; break;
-default: var resp = "Answer 5"; break;
-};
-this.storeValue(resp, 1 ,"answer", cache);
-```
-(you would use `tempVars("answer")` to call this variable
-
-## How to Create an Embed Message
-Your bot can send two types of message, a normal message (that looks like something you would type) an an embed message.
-#### To create an embed you must have at least three actions
-
-**1. Create embed** - you must create an embed first. If you've not created an embed you won't be able to send it.
-[THIS IMAGE](https://dbm-mods.xyz/files/opera_2018-03-05_15-51-27.png) is a full explaination of what the fields mean.
-For this example we'll use the following settings:
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest.png)
-
-**2. Add embed field OR set embed description** - If you want to add more content to your embed you can add a field or description. You can do both if you wish as well. The main difference is that the *Description* field does not have a required header, as the "embed title" is considered the header. the *embed field* item requires both a name and a description.
-For this example we'll use the following settings (Both an embed description AND an embed field):
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest2.png)
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest3.png)
-
-**3. Add a footer (with a script)** - If you don't have DBM Mods you can add an embed footer with a script. This will add the authors username and avatar to the embed footer.
-If you want to add more text you can modify the script text.
-
-*Script Text:* `tempVars("e").setFooter(member.displayName, msg.author.avatarURL)`
-
-*Modified Script Text:* `tempVars("e").setFooter(member.displayName + " Some Other Text", msg.author.avatarURL)`
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest4.png)
-
-**4. Send the embed** - after you've created the embed with all its fancy fields you must send it!
-DBM Defaults to "Same Channel" which will send the embed to the same channel as the command message. You've got the same options here as you do a normal send-message. (If you send the message to a user the user will recieve a DM unless they have those blocked)
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest5.png)
-
-**THE RESULT**:
-If you've copied all of the steps above you should end up with an embed like this:
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest6.png)
-
-## Synchronous or Asynchronous
-Thread: the flow of actions, starting from one until it ends
-
-These keywords refer to how the thread is treated and how the program flows. Whenever the call type is Sync, it waits until it recieves a callback or when the thread ends. Meaning that when the event or command is called, the main thread starts first, and if it is ever interrupted by a call, it does that action and if that action ends, returns to the main thread. Async is similar to Sync however, it runs alongside with the main thread.  
-
-Purpose: This is useful in multithreading. Take this example:  
-
-`Main Thread:
-ControlVariable(A to 1)
-CallCommand(Called, Sync)
-ControlVariable(A to 7)
-${A + 1}`
-
-`Called Thread:
-ControlVariable(A o 4)`
-
-This would output 8, However take this example with Asynchronous:
-`ControlVariable(A to 1)
-CallCommand(Called, Async)
-ControlVariable(A to 7)
-${A + 1}`
-
-Called Thread:
-ControlVariable(A to 4)
-
-This would either output 5 or 8, depends on which thread changes the variable's value last.
-Async has its purpose, you need to think about how to use which callback function or call type to use in which case.
-
-See [dbm/raw/callback.txt](https://github.com/ArztVielfrass/dbm/blob/master/raws/callback.txt) for actual dbm raw
-
-**Silver's Stealth Edit:** _Synchronous in the context of a loop action basically means "finish this item before i go to the next one" while asynchronous means "attempt process all of the items in my loop at the same time"_
-
-## Working with Time
-**Time is an illusion. Lunchtime doubly so. **
-Trying to code things with time in javascript will most likely set your hair on fire. Please proceed with caution.
-
-First, go [to this site](https://www.w3schools.com/jsref/jsref_obj_date.asp), bookmark it, and make it your new best friend. This will give you all the bits and pieces of time you could ever want.
-
-### Basic Timestamps
-* Getting the current time
-Getting the current time in javascript is easy.
-`${new Date()}` is all you really need. When you run this you're going to get something that looks like `Wed Apr 04 2018 20:18:02 GMT-0400 (Eastern Daylight Time)`
-**but be careful** - this will give you the time in the bot's timezone. So if you're running it on your home computer you'll get your local time, but when you save it out to a VPS you'll get whatever the servers 'local time' is.
-
-### Getting the current UTC time
-
-This is a bit more tricky, and will take multiple steps. All of this is done in a single `run script` action in DBM.<br/>
-`var now = new Date();` = this will get the current time and create the variable "now" to use<br/>
-`var year = now.getUTCFullYear();` = stores the UTC Year<br/>
-`var month = now.getUTCMonth() + 1;` = stores the UTC month (months are 0-11 so you have to add 1)<br/>
-`var day = now.getUTCDate();` = stores the UTC Date<br/>
-`var hour = now.getUTCHours();` = stores the UTC Hour<br/>
-`var minutes = now.getUTCMinutes();` = stores the UTC Minutes<br/>
-
-You can then add:
-`msg.channel.send("The time is: " + month + "/" + day + "/" + year + "; " + hour + ":" + minutes)`
-to display the following:
-`The time is: 4/4/2018; 23:23`
-
-**but** what if the minutes are < 10, you'd see the time as `23:1` instead of `23:01`
-And how can you tell if the date is month/day/year or day/month/year (different countries have different conventions)
-
-### Formatting Current UTC Time
-The final change to our script is going to be to add formatting to the month, to display "April" instead of "4", as well as padding leading zeros in the hour/minutes of the time.
-
-**this is the full run-script action code**
-
-```
-var now = new Date();
-var year = now.getUTCFullYear();
-var month = now.getUTCMonth() + 1;
-var day = now.getUTCDate();
-var hour = now.getUTCHours();
-var minutes = now.getUTCMinutes();
-
-switch(month){
-case 1: var monthname = "January"; break;
-case 2: var monthname = "February"; break;
-case 3: var monthname = "March"; break;
-case 4: var monthname = "April"; break;
-case 5: var monthname = "May"; break;
-case 6: var monthname = "June"; break;
-case 7: var monthname = "July"; break;
-case 8: var monthname = "August"; break;
-case 9: var monthname = "September"; break;
-case 10: var monthname = "October"; break;
-case 11: var monthname = "November"; break;
-case 12: var monthname = "December"; break;
-}
-
-msg.channel.send("The time is: " + monthname + " " + day + ", " + year + "; " + (hour > 9 ? hour : "0" + hour) + ":" + (minutes > 9 ? minutes : "0" + minutes))
-```
-
-we're using a few javascript tricks here.
-1. A [switch statement](https://www.w3schools.com/js/js_switch.asp) is being used to display the month name instead of the number
-2. A [conditional operator](https://www.w3schools.com/jsref/jsref_operators.asp) is being used to pad the zeros on the date
-
-### Using .toLocaleString()
-**WARNING WARNING WARNING**
-If you use this method in DBM you WILL NOT be able to run your bot directly in DBM. It will be fine on your vps or running via cmd locally.
-**YOU HAVE BEEN WARNED**
-
-[.toLocaleString()](https://www.w3schools.com/jsref/jsref_tolocalestring.asp) allows you to display a string using location-specific formatting. If your string is a date, it will show the current time as `4/4/2018, 7:40:32 PM` since that is the local settings for where the bot is currently running. **AGAIN** if you save the bot to a VPS it will use the bots server settings instead, BUT you can tell the program which settings you want it to use rather than the 'local' ones. 
-`new Date().toLocaleString("en-US", {timeZone: "UTC"})` will show the current UTC time in an American format
-`new Date().toLocaleString("en-US", {timeZone: "America/Chicago"})` will show the current CST time in an American format.
-[This Document](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString) has more information on locale string settings.
-
-### Finding the time between actions
-Another common use for time in javascript is determining "when the last time something was done"
-
-To do this you'll need to store the last time something was run and compare it to the current time.
-**[This link](https://pastebin.com/EaBjackY) is the raw-data for the below command tutorial.**
-
-The real magic however is this script:
-```
-var duration = tempVars("time_var");
-var ms = parseInt((duration%1000)/100);
-var s = parseInt((duration/1000)%60);
-var m = parseInt((duration/(1000*60))%60);
-var h = parseInt((duration/(1000*60*60))%24);
-
-var timeoutput = h + "h:" + m + "m:" + s + "s:" + ms + "ms";
-this.storeValue(timeoutput,1,"donetime",cache)
-```
-which converts the # of milliseconds between "current run" and "last run" to a human readable format.
-
-For this example, we'll time "when was the last time [User] ran [Command]"
-
-**...ASSUMING YOUVE INSTALLED THE RAW DATA...**
-This is what each action is doing:
-
-**Action 1**: **required** Checks the last time the command was run, using store-member-data. This will be stored in milliseceonds. *note: if this is the first time the command was run you may get a NaN error, or some weird number.
-
-**Action 2**: **required** Checks the difference between the "Current Time" and "The Last Time The Command Was Run" - this will return a number in MILLISECONDS
-
-**Action 3**: OPTIONAL: Format the time from milliseconds to a human-readable format. This will output your time as `0h:2m:34s:4ms`
-
-**Action 4**: Send some message with the information (Or do whatever else you want with it really). For the purposes of this tutorial you should get two lines, one in milliseconds and one formatted.
-
-**Action 5**: **required** Save the new current time to the member data, overwriting the old one and storing the new 'last time this command was run for that user.
