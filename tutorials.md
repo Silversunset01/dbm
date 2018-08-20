@@ -120,7 +120,7 @@ this.storeValue(resp, 1 ,"answer", cache);
 ```
 (you would use `tempVars("answer")` to call this variable
 
-## Using an Updatable List
+### Using an Updatable List
 This requires two commands, the first command will let you set up and add text to the list. The second will choose a response and print it.  
 Command 1 raw code: https://silversunset.net/paste/120  
 Command 2 raw code: https://silversunset.net/paste/121  
