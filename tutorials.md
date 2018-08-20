@@ -232,15 +232,15 @@ See [dbm/raw/callback.txt](https://github.com/ArztVielfrass/dbm/blob/master/raws
 To call the bot via @botname instead of using a command you can follow these steps:
 
 **1. create an EVENT that triggers on ANY MESSAGE**
-This event will evaluate each message and look for a mention that matches the bot's ID
-![](https://github.com/Silversunset01/dbm/blob/master/screenshots/ping1.png)
+This event will evaluate each message and look for a mention that matches the bot's ID  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/ping1.png)
 
 **2. Store the text of the message
 
 **3. use Check Variable to see if the messsage contains the ping for your bot**
 If it contains the ping you're checking for, continue the actions. Otherwise have it stop or your bot will just process on every message sent which is crazy.
-*protip: you can use any ping here if you wanted to have it look for a specific user or role*
-![](https://github.com/Silversunset01/dbm/blob/master/screenshots/ping3.PNG)
+*protip: you can use any ping here if you wanted to have it look for a specific user or role*  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/ping3.PNG)
 
 **4. Store any other information that you want from the message**
 At the very least i reccomend storing the channel so you can send a response in the same channel.
