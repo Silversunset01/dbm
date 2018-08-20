@@ -131,10 +131,10 @@ This command will allow you to either create a new list (if the list is deleted)
 
 After actions 1 and 2 (to store the 'type' and 'text' if any) you'll need to use CHECK VARIABLE to determine what kind of command you're running: 
 
-Action 3: Checks to see if the response = "new", if it does it will create the list named "rndlist" as a server variable (in action 5).    
+Action 3: Checks to see if the response = "add", if it does it will create the list named "rndlist" as a server variable (in action 5).    
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist3.PNG)  
 
-Action 4: Checks to see if the response = "add", if it does it adds the text you've input to the list.  
+Action 4: Checks to see if the response = "new", if it does it adds the text you've input to the list.  
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist2.PNG)    
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist4.PNG)  
 
