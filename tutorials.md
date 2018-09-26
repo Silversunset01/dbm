@@ -48,7 +48,7 @@ You can store parameters entered into a command using the "Store command paramet
 * **Mentioned Channel** - stores the `#channel` from a command as a parameter
 
 # Miscellaneous Tutorials
-## Creating Custom Command Categories
+## Custom Command Categories
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/category.PNG)  
 To create a custom command seperator category in DBM you can use HTML codes. The three pictured above are set as follows:  
 `<center><b><div style="color:yellow;">MODERATION</div></center>`  
