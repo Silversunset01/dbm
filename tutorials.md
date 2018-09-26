@@ -50,7 +50,7 @@ You can store parameters entered into a command using the "Store command paramet
 # Miscellaneous Tutorials
 ## Custom Command Categories
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/category.PNG)  
-To create a custom command seperator category in DBM you can use HTML codes. The three pictured above are set as follows:  
+To create a custom command seperator category in DBM you can use HTML codes. The four pictured above are set as follows:  
 `<center><b><div style="color:yellow;">MODERATION</div></center>`  
 `<b><div style="color:red;">LEFT_ALIGNED</div>`  
 `<b><div style="color:blue;text-align:right;">RIGHT_ALIGNED</div>`  
