@@ -54,6 +54,7 @@ To create a custom command seperator category in DBM you can use HTML codes. The
 `<center><b><div style="color:yellow;">MODERATION</div></center>`  
 `<b><div style="color:red;">LEFT_ALIGNED</div>`  
 `<b><div style="color:blue;text-align:right;">RIGHT_ALIGNED</div>`  
+Bonus: Solid line `<s><center><span style="cyan">------------</span></center></s>`  
 
 ## Adding a role on-join
 Adding a role to users who join your server is quite simple.
