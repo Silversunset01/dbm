@@ -84,7 +84,7 @@ Unexpected Token has nothing to do with your bots token. It means you've got an 
 
 ## Error: Uncaught, unspecific "error" event.
 This error appears in your console because your hosting service or discord has a few internet problems. That's normal! Problem: It crashs your bot. 
-To solve this you can add this easy code into a "On Initialisation" event. Make sure to put it into a "Run Script" action:
+To solve this you can add this easy code into a "Bot Initialization" event. Make sure to put it into a "Run Script" action:
 ```js
 client.on('error', (error) => {    
   if(error.message == 'Unexpected server response: 520'){
@@ -94,4 +94,5 @@ client.on('error', (error) => {
   }else{
     console.error(error);
   }            
-});```
+});
+```
