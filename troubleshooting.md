@@ -48,7 +48,7 @@ _note: if you have mods installed you will need to reinstall them after this pro
 10. Type npm i
 11. Close everything and restart DBM
 
-_note: if you have beta, you can simply press this:
+_note: if you have beta, you can simply press this:_
 
 ![](https://i.need.dbm-support.site/fsot.png)
 
