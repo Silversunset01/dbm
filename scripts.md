@@ -128,11 +128,12 @@ Collect reactions to a message | ```const filter = (reaction, user) => reaction.
 ## Identifiers
 | Usage | Script |
 | :--- | :--- |
-| get the bot as a client (user) | `${this.getDBM().Bot.bot` |
-| get the bot as a client (user) | `${client` |
-| the command message | `${msg` |
-| the current server | `${msg.guild` |
-| the command channel | `${msg.channel` |
+| Get the bot as a client (user) | `${this.getDBM().Bot.bot` |
+| Get the bot as a client (user) | `${client` |
+| The command message | `${msg` |
+| The current server | `${msg.guild` |
+| The command channel | `${msg.channel` |
+| The command author | `${msg.author` |
 
 ## Lists
 Usage | Script
@@ -151,11 +152,12 @@ Usage | Script
 Ban User <br/><i>requires user's ID</i> | `msg.guild.ban(tempVars("user_id"))`<br/>`.then(user => console.log("Banned " + user.username + " from" + msg.guild.name))`<br/>`.catch(console.error);`
 Unban User <br/><i>requires user's ID</i> | `msg.guild.unban(tempVars("user_id"))`<br/>`.then(user => console.log("Unbanned " + user.username + " from" + msg.guild.name))`<br/>`.catch(console.error);`
 Find Emoji | `client.emojis.find("name", "NameOfTheEmoji")`
-skip ahead some number<br/>_there are kinks to this still_ | `this.callNextAction(#)`
+Skip ahead some number<br/>_there are kinks to this still_ | `this.callNextAction(#)`
 Show current date/time in timezone | `new Date().toLocaleString("en-US", {timeZone: "America/New_York"})`
 Create server invite | `msg.channel.createInvite({temporary: true}," Showing the usage").then(invite=> msg.channel.send(invite.url))`
+Create server invite (Variable) | `msg.guild.channels.find("name", tempVars("channel_name")).then(invite=> msg.channel.send(invite.url))` <br/>*can use "ID" instead of "Name"*
 Add role to cmd author | `member.addRole(tempVars("newrolename"));`
-Stop the bot | `process.exit(0);`
+Stop the bot | `process.exit();`
 Change nickname (command author) | `msg.member.setNickname(tempVars("new_nick"))`<br/>`.then(console.log)`<br/>`.catch(console.error);`
 Get Variable value | `this.getVariable(1,"varname",cache);`
 Store Variables via script | `this.storeValue(output, 1 ,"totalUsers", cache)` <br /> (*1 = temp, 2 = server, 3 = global*)
