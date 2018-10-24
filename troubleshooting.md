@@ -48,6 +48,10 @@ _note: if you have mods installed you will need to reinstall them after this pro
 10. Type npm i
 11. Close everything and restart DBM
 
+_note: if you have beta, you can simply press this:
+
+![](https://i.need.dbm-support.site/fsot.png)
+
 ## Error: There was an error parsing `players.json` |  `commands.json` | `events.json` 
 Navigate to your bots folder > DATA > and open the file that is unable to parse in a text editor. 
 
