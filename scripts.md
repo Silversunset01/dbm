@@ -110,6 +110,7 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 Usage | Script
 :- | :-
 Add Field to Embed message | `tempVars("test").addField("Test Name","Test Value",[inline]);` <br/> `[inline]` = True or False
+Add Blank Field to Embed Message | `tempVars("test").addBlankField()`
 Add Footer to Embed message | `tempVars("test").setFooter(member.displayName, msg.author.avatarURL)`
 
 ## Miscellaneous
@@ -127,11 +128,12 @@ Collect reactions to a message | ```const filter = (reaction, user) => reaction.
 ## Identifiers
 | Usage | Script |
 | :--- | :--- |
-| get the bot as a client (user) | `${this.getDBM().Bot.bot` |
-| get the bot as a client (user) | `${client` |
-| the command message | `${msg` |
-| the current server | `${msg.guild` |
-| the command channel | `${msg.channel` |
+| Get the bot as a client (user) | `${this.getDBM().Bot.bot` |
+| Get the bot as a client (user) | `${client` |
+| The command message | `${msg` |
+| The current server | `${msg.guild` |
+| The command channel | `${msg.channel` |
+| The command author | `${msg.author` |
 
 ## Lists
 Usage | Script
@@ -144,17 +146,24 @@ Remove item from list | `${tempVars("yourList").splice(# to remove, 1)}`
 Return the last # of items in a list | `tempVars("your variable").slice(Math.max(tempVars("your variable").length - 5, 1))` <br/> *where 5 is the number of items to return*
 Return item at [position] from [list] | `tempVars("list").slice(tempVars("pos_num")-1,tempVars("pos_num"))`
 
+## Webhooks
+Usage | Script
+:- | :-
+Create Webhook | `msg.channel.createWebHook('Webhook Name', 'https://i.imgur.com/9kgJteG.png')`
+Send Embed to Webhook | `const Discord = require('discord.js');`<br/>`const hook = new Discord.WebhookClient('webhook_id', 'webhook_token');`<br/>`const message = new Discord.RichEmbed()`<br/>`.setTitle(member.displayName)`<br/>`.setDescription('Embed Description')`<br/>`.addBlankField()`<br/>`.addField('Embed Field Title', 'Embed Field Title')`<br/>`.setAuthor(member.displayName, msg.author.avatarURL)`<br/>`.addBlankField()`<br/>`.setThumbnail(msg.author.avatarURL)`<br/>`.setImage('https://i.imgur.com/9kgJteG.png')`<br/>`.setColor('#41ff00')`<br/>`.setFooter('Embed Footer', msg.author.avatarURL)`<br/>`.setTimestamp()`<br/>`hook.send(message);`<br/>_the color must be in hex format_
+
 ## Uncategorized
 Usage | Script
 :- | :-
 Ban User <br/><i>requires user's ID</i> | `msg.guild.ban(tempVars("user_id"))`<br/>`.then(user => console.log("Banned " + user.username + " from" + msg.guild.name))`<br/>`.catch(console.error);`
 Unban User <br/><i>requires user's ID</i> | `msg.guild.unban(tempVars("user_id"))`<br/>`.then(user => console.log("Unbanned " + user.username + " from" + msg.guild.name))`<br/>`.catch(console.error);`
 Find Emoji | `client.emojis.find("name", "NameOfTheEmoji")`
-skip ahead some number<br/>_there are kinks to this still_ | `this.callNextAction(#)`
+Skip ahead some number<br/>_there are kinks to this still_ | `this.callNextAction(#)`
 Show current date/time in timezone | `new Date().toLocaleString("en-US", {timeZone: "America/New_York"})`
 Create server invite | `msg.channel.createInvite({temporary: true}," Showing the usage").then(invite=> msg.channel.send(invite.url))`
+Create server invite (Variable) | `msg.guild.channels.find("name", tempVars("channel_name")).then(invite=> msg.channel.send(invite.url))` <br/>*can use "ID" instead of "Name"*
 Add role to cmd author | `member.addRole(tempVars("newrolename"));`
-Stop the bot | `process.exit(0);`
+Stop the bot | `process.exit();`
 Change nickname (command author) | `msg.member.setNickname(tempVars("new_nick"))`<br/>`.then(console.log)`<br/>`.catch(console.error);`
 Get Variable value | `this.getVariable(1,"varname",cache);`
 Store Variables via script | `this.storeValue(output, 1 ,"totalUsers", cache)` <br /> (*1 = temp, 2 = server, 3 = global*)
