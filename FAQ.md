@@ -8,12 +8,16 @@ Sort of. You cannot run two bots in DBM at the same time, but you can run a seco
 When you close DBM your bot will shut down. If you want your bot to run always you'll need to keep DBM running, run the bot via command prompt (which you must also keep on and running), or host it externally on a VPS (virtual private server). 
 You can run `!info vps` in the discord server for some VPS options, and some hosting tutorials can be found [here](https://silversunset.net/dbm/tutorials#running-your-bot-247). 
 
-# Roles
-## Can I make rainbow roles? 
+# Can I ...
+## ...make rainbow roles? 
 No. This is API abuse and is not allowed by the Discord API. [More information on rate limits can be found here](https://discordapp.com/developers/docs/topics/rate-limits). More specifically because of [this](https://discordapp.com/developers/docs/legal) from the Discord TOS:
 
 `2.7 Rate Limits. You will not attempt to exceed or circumvent limitations on access to and use of the SDK or API, exceed or circumvent any limitation on the API calls you may make, or otherwise use the SDK or API in a manner that exceeds reasonable request volume, or constitutes excessive or abusive usage (“Rate Limits”). If Discord, in its sole discretion, determines that you have attempted to exceed or circumvent Rate Limits, or other controls that limit use of the SDK or API, then your ability to use the SDK or API may be temporarily suspended or permanently blocked.` 
 ![](https://i.imgur.com/JAL0vNl.png)
+
+## ...have a space between my prefix & command? 
+Sort of. The way the bot is coded you cannot have a space between the prefix/command or in the command itself. The only way around this is to do an "any message" event (or command if you have beta), and evaluate the message to see if your desired string is included in the text, and if so run the command. You may also want to add logic to see if your string is at the beginning of the message to avoid false triggers.
+So yes, you **can** do it, but not simply by throwing a space in the command name. 
 
 # Miscellaneous
 ## Are there any tutorials for DBM? 
