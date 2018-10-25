@@ -41,7 +41,7 @@ _note: if you have mods installed you will need to reinstall them after this pro
 3. Press Enter
 4. Start DBM
 5. Click on Project -> Open Project Directory
-6. Right click on the bar at the top with your path
+6. Right click on the bar at the top with your path 
 7. Click on Copy path
 8. Go back to your CMD window
 9. Type cdPasteYourPathHere and press enter
@@ -52,8 +52,10 @@ _note: if you have beta, you can simply press this:_
 
 ![](https://i.need.dbm-support.site/fsot.png)
 
-## Error: There was an error parsing `players.json` |  `commands.json` | `events.json` 
+## Error: There was an error parsing `players.json` |  `commands.json` | `events.json`
 Navigate to your bots folder > DATA > and open the file that is unable to parse in a text editor. 
+
+_note: this also applies to server.json, serverVars.json and globalVars.json_
 
 ### If your file is empty
 
