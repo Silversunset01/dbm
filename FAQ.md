@@ -1,5 +1,13 @@
 # Frequently Asked Questions
 
+# What...
+## ...language is DBM/my bot written in?
+DBM uses javascript (with node.js and Discord.js) to create your bot. 
+
+## ...is the airspeed velocity of an unladen swallow? 
+An unladen european swallow travels at approx 24mph (or 11 meters per second). You're welcome.
+
+
 # How...
 ## ...can I add actions to my bot that do not already exist? 
 You can use the run-script action to create your own custom actions using javascript & Discord.js. Or you can download mods which are user-created actions that are available for use. You can type `!info mods` in the discord server or visit https://dbm-mods.xyz/
