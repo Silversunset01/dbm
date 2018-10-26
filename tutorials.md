@@ -49,12 +49,13 @@ You can store parameters entered into a command using the "Store command paramet
 
 # Miscellaneous Tutorials
 ## Custom Command Categories
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/category.PNG)  
-To create a custom command seperator category in DBM you can use HTML codes. The four pictured above are set as follows:  
+![](https://i.imgur.com/Aw9bUbc.png)  
+To create a custom command seperator category in DBM you can use HTML codes (_On the command name_). The fivefour pictured above are set as follows:  
+`<s><center>--------------------</center></s>`  
 `<center><b><div style="color:yellow;">MODERATION</div></center>`  
 `<b><div style="color:red;">LEFT_ALIGNED</div>`  
-`<b><div style="color:blue;text-align:right;">RIGHT_ALIGNED</div>`  
-`<s><center>--------------------</center></s>`  
+`<b><div style="color:blue;text-align:right;">RIGHT_ALIGNED</div>`
+`<hr color=white width=75%>`
 
 ## Adding a role on-join
 Adding a role to users who join your server is quite simple.
