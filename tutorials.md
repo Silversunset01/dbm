@@ -530,7 +530,6 @@ Just click **New Site**
 
 After saving that and connecting, you can upload your bot files with just simple drag&drop to right side
 
-![](https://i.hizliresim.com/W7vZ4m.gif)
 
 ##### VNC Viewer
 
@@ -579,7 +578,6 @@ Thats it!
 
 _In this way you can close VNC Viewer and your bot will still run, however if you close that terminal window bot will stop working._
 
-![](https://i.hizliresim.com/PlWorb.gif)
 
 ## Stopping the bot
 Sometimes you need to stop your bot. If you're running a script like `forever` this may automatically restart your bot, otherwise it will just shut the whole bot down.
