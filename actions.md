@@ -1,11 +1,6 @@
 # Coming soon
 This will be populated Soon™ - like when its not 1:30am.
 
-# Bot Client Control
-## Get Bot as member
-## Leave Server
-## Set bot Activity
-
 # Other Stuff
 
 ## Call Command/Event
