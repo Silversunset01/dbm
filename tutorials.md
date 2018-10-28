@@ -364,6 +364,12 @@ This is what each action is doing:
 
 **Action 5**: **required** Save the new current time to the member data, overwriting the old one and storing the new 'last time this command was run for that user.
 
+## How do I set my bot's activity to "... on X servers"
+
+Without mods, you can set the bot's activity to playing or streaming. Using mods, you can also set it to watching and listening.
+So, the only thing you'll need is a `Set Bot Game` (using mods) or a `Set Bot Activity` (using mods) action. Create one of them, and set the text to: `${this.getDBM().Bot.bot.guilds.array().length} servers`. And.. that's it! Now run the command or put the action inside a On Bot Initialization event!
+![](https://i.imgur.com/zjSkZ56.png)
+
 # Running your bot 24/7
 By now you may have noticed that when you close DBM your bot shuts down. [This tutorial](https://www.youtube.com/watch?v=MNw7anSA06g&t=2s) will explain how to export your bot to run in a command terminal.
 
