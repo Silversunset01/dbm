@@ -111,7 +111,7 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 ## Embeds
 Usage | Script
 :- | :-
-Add Field to Embed message | `tempVars("test").addField("Test Name","Test Value",[inline]);` <br/> `[inline]` = True or False
+Add Field to Embed message | `tempVars("test").addField("Test Name", "Test Value", [inline]);` <br/> `[inline]` = True or False
 Add Blank Field to Embed Message | `tempVars("test").addBlankField()`
 Add Footer to Embed message | `tempVars("test").setFooter(member.displayName, msg.author.avatarURL)`
 
