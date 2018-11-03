@@ -169,3 +169,4 @@ Stop the bot | `process.exit();`
 Change nickname (command author) | `msg.member.setNickname(tempVars("new_nick"))`<br/>`.then(console.log)`<br/>`.catch(console.error);`
 Get Variable value | `this.getVariable(1,"varname",cache);`
 Store Variables via script | `this.storeValue(output, 1 ,"totalUsers", cache)` <br /> (*1 = temp, 2 = server, 3 = global*)
+Set Bot Avatar via script | `	this.getDBM().Bot.botuser.setAvatar('image_link')`
