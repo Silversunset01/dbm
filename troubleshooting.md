@@ -21,7 +21,7 @@ A common bot task is to add roles to users either automatically on join, or via 
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rolelist1.jpg)
 
-## Error: Cannot find module 'discord.js'
+## Error: Cannot find module `discord.js`
 1. Delete node_modules 
 2. type `npm i` (this will reinstall modules)
 
