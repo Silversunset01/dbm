@@ -25,6 +25,21 @@ A common bot task is to add roles to users either automatically on join, or via 
 1. Delete node_modules 
 2. type `npm i` (this will reinstall modules)
 
+## Error: Cannot find module `./constants`
+You need to reinstall your node modules from package.json  
+### For Windows: 
+1. In CMD type `CD/your bot directory` (if youre not already in it)
+2. Enter the following exactly `rd /s /q node_modules`
+3. Reinstall modules with `npm i`
+
+### For Linux
+1. From the termnial CD to your bots folder
+2. type `rm -rf node_modules`
+3. Reinstall modules with `npm i`
+
+### To install specific modules
+1. type `npm i <modulename> --save`
+
 ## Error: DBM won't start
 1. Launch Steam
 2. Open Software Library section 
