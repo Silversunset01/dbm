@@ -386,16 +386,6 @@ Everything begins with exporting your bot from DBM and running it elsewhere. Thi
 3. At the beginning type "cmd" and hit enter (this will open a cmd prompt in this folder)
 4. type `node bot.js`
 
-## Running your bot with NODEMON
-
-`node bot.js` will have to be restarted every time you make changes. You can use Nodemon to do this automatically
-
-1. Install nodemon with `npm i -g nodemon`
-2. Open project directory
-3. Click into the address bar
-4. At the beginning type "cmd" and hit enter (this will open a cmd prompt in this folder)
-5. Type `nodemon --inspect --watch actions --watch data/commands.json --watch data/events.json --watch node_modules --watch js bot.js`
-
 ## VPS Hosting - Heroku
 ### Disclaimers
 From R. Danny (Discord's API server bot)
@@ -648,3 +638,13 @@ You can install a script called **Forever.js** that will automatically restart y
 * `chmod -R a+rwx <bot folder>`- Give the bot folder permission to be read/write and executable
 * `cd <bot folder>` - Change to the bots directory
 * `forever start bot.js` - Start the bot program using "Forever" \(this will keep the bot running and restart it if it crashes\)
+
+### NODEMON
+
+`node bot.js` will have to be restarted every time you make changes. You can use Nodemon to do this automatically
+
+1. Install nodemon with `npm i -g nodemon`
+2. Open project directory
+3. Click into the address bar
+4. At the beginning type "cmd" and hit enter (this will open a cmd prompt in this folder)
+5. Type `nodemon --inspect --watch actions --watch data/commands.json --watch data/events.json --watch node_modules --watch js bot.js`
