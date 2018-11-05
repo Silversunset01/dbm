@@ -152,6 +152,7 @@ Return item at [position] from [list] | `tempVars("list").slice(tempVars("pos_nu
 Usage | Script
 :- | :-
 Create Webhook | `msg.channel.createWebHook('Webhook Name', 'https://i.imgur.com/9kgJteG.png')`
+Send Message to Webhook | `const hook = new DiscordJS.WebhookClient('webhook_id', 'webhook_token');`<br/>`hook.send('a very cool message');`
 Send Embed to Webhook | `const Discord = require('discord.js');`<br/>`const hook = new Discord.WebhookClient('webhook_id', 'webhook_token');`<br/>`const message = new Discord.RichEmbed()`<br/>`.setTitle(member.displayName)`<br/>`.setDescription('Embed Description')`<br/>`.addBlankField()`<br/>`.addField('Embed Field Title', 'Embed Field Title')`<br/>`.setAuthor(member.displayName, msg.author.avatarURL)`<br/>`.addBlankField()`<br/>`.setThumbnail(msg.author.avatarURL)`<br/>`.setImage('https://i.imgur.com/9kgJteG.png')`<br/>`.setColor('#41ff00')`<br/>`.setFooter('Embed Footer', msg.author.avatarURL)`<br/>`.setTimestamp()`<br/>`hook.send(message);`<br/>_the color must be in hex format_
 
 ## Uncategorized
