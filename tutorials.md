@@ -131,7 +131,9 @@ Command 1 raw code: https://silversunset.net/paste/120
 Command 2 raw code: https://silversunset.net/paste/121  
 
 **1. command *?rndtext* - set up and edit the list of responses**
+
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist1.PNG)  
+
 This command will allow you to either create a new list (if the list is deleted), or add items to the list. *Please note:* if you do not have beta you cannot use the Save Variable action, which means the list will be deleted every time the bot restarts. In that case you'll need to recreate and add the text each time. 
 
 After actions 1 and 2 (to store the 'type' and 'text' if any) you'll need to use CHECK VARIABLE to determine what kind of command you're running: 
@@ -148,9 +150,11 @@ Action 9: this is a catch-all. If you do not enter *?rndtext new* or *?rndtext a
 
 **2. command *?rndresponse* - retrieve random text from the list**  
 This command simply pulls a random item from the list you created and prints it to chat
+
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist7.PNG)  
 
 Make sure to select the SERVER var as your source list
+
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist6.PNG)  
 
 When you've got that simply print the `${tempVars("rnd_response")}` to a send-message.
@@ -579,6 +583,7 @@ _In this way you can close VNC Viewer and your bot will still run, however if yo
 Sometimes you need to stop your bot. If you're running a script like `forever` this may automatically restart your bot, otherwise it will just shut the whole bot down.
 
 **Action 1: send a message** to the channel so you know the bot has recognized the command
+
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/stopping.png)
 
 **Action 2: stop the bot using a script**. Its good practice to log to console that the bot is stopping, again to confirm that the action is recognized.
@@ -611,7 +616,9 @@ done
 * Use `chmod 777 start.sh` to give the file executable permission.
 * Done! Now you can start your bot by executing that file with : `./start.sh`
 
-**Tutorial Video** _\(Click on image to watch it\)_[![](https://asciinema.org/a/Gjc27yyaid3LxAIDlc8AqM4Z3.png)](https://asciinema.org/a/Gjc27yyaid3LxAIDlc8AqM4Z3)
+**Tutorial Video** _\(Click on image to watch it\)_
+
+[![](https://asciinema.org/a/Gjc27yyaid3LxAIDlc8AqM4Z3.png)](https://asciinema.org/a/Gjc27yyaid3LxAIDlc8AqM4Z3)
 
 ### Windows
 
