@@ -170,4 +170,4 @@ Change nickname (command author) | `msg.member.setNickname(tempVars("new_nick"))
 Get Variable value | `this.getVariable(1,"varname",cache);`
 Store Variables via script | `this.storeValue(output, 1 ,"totalUsers", cache)` <br /> (*1 = temp, 2 = server, 3 = global*)
 Set Bot Username via script | `this.getDBM().Bot.bot.user.setUsername('a very cool username')`
-Set Bot Avatar via script | `	this.getDBM().Bot.botuser.setAvatar('image_link')`
+Set Bot Avatar via script | `	this.getDBM().Bot.bot.user.setAvatar('image_link')`
