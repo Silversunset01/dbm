@@ -172,3 +172,5 @@ Get Variable value | `this.getVariable(1,"varname",cache);`
 Store Variables via script | `this.storeValue(output, 1 ,"totalUsers", cache)` <br /> (*1 = temp, 2 = server, 3 = global*)
 Set Bot Username via script | `this.getDBM().Bot.bot.user.setUsername('a very cool username')`
 Set Bot Avatar via script | `	this.getDBM().Bot.bot.user.setAvatar('image_link')`
+Set Server Name via script | `msg.guild.setName('a very cool name')`
+Set Server Icon via script | `msg.guild.setIcon('image_link')`
