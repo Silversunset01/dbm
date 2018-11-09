@@ -25,12 +25,12 @@ You can run JavaScript (including Discord.js) within DBM by using the RUN SCRIPT
 When using this method **do not** put brackets `${ }` around the data. A run-script action will run anything within it as a script, so adding the brackets is overkill (and will cause DBM to not understand what you're doing and the script may fail).  
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/HowToScript2.PNG)
 
+# Basic Javascript
 
-### Handy Scripting Resources
+## Handy Scripting Resources
 * [W3Schools](https://www.w3schools.com/js/) - basic javascript reference
 * [Discord.js](https://discord.js.org/#/) - discord's custom JS library
 
-# Basic Javascript
 ## Math & Operations
 Usage | Script
 :- | :-
