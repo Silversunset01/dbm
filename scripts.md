@@ -8,6 +8,10 @@ Sidenote: If you are trying to use a script in a text-entry field you'll need to
 
 ![](https://github.com/Silversunset01/dbm/raw/master/screenshots/scriptex.png)
 
+## Handy Scripting Resources
+* [W3Schools](https://www.w3schools.com/js/) - basic javascript reference
+* [Discord.js](https://discord.js.org/#/) - discord's custom JS library
+
 # How to use Scripts in DBM
 There are three main ways to use scripts within DBM. 
 
@@ -26,10 +30,6 @@ When using this method **do not** put brackets `${ }` around the data. A run-scr
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/HowToScript2.PNG)
 
 # Basic Javascript
-
-## Handy Scripting Resources
-* [W3Schools](https://www.w3schools.com/js/) - basic javascript reference
-* [Discord.js](https://discord.js.org/#/) - discord's custom JS library
 
 ## Math & Operations
 Usage | Script
