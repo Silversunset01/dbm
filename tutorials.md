@@ -224,6 +224,7 @@ And you want to do something with the roles, for example - search through all ro
 `var serverMembers = ["Moderator", "Streamer", "Player"];`
 
 There are some lists that DBM stores for you automatically:  
+
 - Server Members
 - Server Channels
 - Server Roles
