@@ -552,7 +552,7 @@ Comment: "rsa-key-[date]"
 - Putty should now connect automatically when the server is connected to
 
 ## Hosting - Glitch 
-Glitch is a **free** service that is generally used to run low to medium end applications and in general testing. Discord bots can be ran on this however, there are some limits to glitch you must watch out for. This can be a great option for small to some medium bots. It's a much better option then **heroku**. It is also **compatible with dbm beta.**
+Glitch is a **free** service that is generally used to run low to medium end applications and in general testing. Discord bots can be ran on this however, there are some limits to glitch you must watch out for. This can be a great option for small to some medium bots. It's a much better option then **heroku**. It is also **compatible with dbm beta.** This is a far better alternative then **android** and **heroku**. 
 
 If you would like to use this service follow the tutorial link here: [https://dbotmaker.io/forums/threads/glitch-hosting-free-compatible-with-beta-saves-data.305/](https://dbotmaker.io/forums/threads/glitch-hosting-free-compatible-with-beta-saves-data.305/ "Glitch Tutorial")
 
