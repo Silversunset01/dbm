@@ -48,11 +48,6 @@ You can store parameters entered into a command using the "Store command paramet
 * **Mentioned Channel** - stores the `#channel` from a command as a parameter
 
 # Miscellaneous Tutorials
-## Custom Command Categories
-![](https://i.imgur.com/Aw9bUbc.png)  
-To create a custom command seperator category in DBM you can use HTML codes (_On the command name_). The fivefour pictured above are set as follows:  
-`<s><center>--------------------</center></s>`<br/>`<center><b><div style="color:yellow;">MODERATION</div></center>`<br/>`<b><div style="color:red;">LEFT_ALIGNED</div>`<br/>`<b><div style="color:blue;text-align:right;">RIGHT_ALIGNED</div>`<br/>`<hr color=white width=75%>`
-
 ## Adding a role on-join
 Adding a role to users who join your server is quite simple.
 
@@ -79,6 +74,11 @@ You have stored both the member object for the user that joined (variable `new-u
 **Thats it!**
 
 Your new user now has a shiny new role.
+
+## Custom Command Categories
+![](https://i.imgur.com/Aw9bUbc.png)  
+To create a custom command seperator category in DBM you can use HTML codes (_On the command name_). The fivefour pictured above are set as follows:  
+`<s><center>--------------------</center></s>`<br/>`<center><b><div style="color:yellow;">MODERATION</div></center>`<br/>`<b><div style="color:red;">LEFT_ALIGNED</div>`<br/>`<b><div style="color:blue;text-align:right;">RIGHT_ALIGNED</div>`<br/>`<hr color=white width=75%>`
 
 ## Generating a Random Response
 A random response generator works for anything from a Magic 8 ball command to a coin toss command, to a random image, joke, phrase, or even paper/scissors/rock command. The bot will generate a random number and select a response based on the number chosen.
@@ -204,8 +204,98 @@ If you'd like to be able to type a message and speak as the bot its quite simple
 **2. Send the message to the #channel you mentioned**  
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/say2.PNG)
 
+## How do I set my bot's activity to "... on X servers"
 
-## Synchronous or Asynchronous
+Without mods, you can set the bot's activity to playing or streaming. Using mods, you can also set it to watching and listening.
+So, the only thing you'll need is a `Set Bot Game` (using mods) or a `Set Bot Activity` (using mods) action. Create one of them, and set the text to: `${this.getDBM().Bot.bot.guilds.array().length} servers`. And.. that's it! Now run the command or put the action inside a On Bot Initialization event!  
+![](https://i.imgur.com/zjSkZ56.png)
+
+## Lists & Loops
+### Lists
+A list in DBM is nothing more than what JavaScript calls [an array](https://www.w3schools.com/js/js_arrays.asp), which is a special type of item that can be used to store multiple values within a single variable.  
+
+For example: Say you have a list of roles:
+- Role 1: Moderator
+- Role 2: Streamer
+- Role 3: Player  
+
+And you want to do something with the roles, for example - search through all roles and find out if you have one called "Streamer". To do this,  you would put the roles into a list (array) and search through that for your matching item  
+`var serverMembers = ["Moderator", "Streamer", "Player"];`
+
+There are some lists that DBM stores for you automatically:  
+- Server Members
+- Server Channels
+- Server Roles
+- Server Emojis
+- All bot servers
+- Mentioned roles
+- Command author roles  
+
+**Creating Lists & Adding Items**
+To create your own lists in DBM with the `Create List` action.  
+
+To add items to the list you have created, you would use the `Add Item To List` action, select your list variable, and put the value you want to add to the list in the VALUE box  
+
+**To add a value from another variable**, you *do not* need to use `${}` brackets, simply right click into the box and choose your variable, or type `tempVars("variableName")`  
+
+**To add TEXT to your list** make sure to put the value in "quotation marks"
+
+### Loops
+Loops are very handy if you want to run the same code over and over, it saves you from having to type up the code for each instance.  
+
+*For example:* Without using a loop, you would have to write five lines of code *for each role*, to do the following:
+```
+- Find the FIRST member in my server
+- Find Role
+- Add Role To Member
+- Find Channel - my logging channel
+- Send Message - [USER] now has [ROLE]
+
+- Find the SECOND member in my server
+- Find Role
+- Add Role To Member
+- Find Channel - my logging channel
+- Send Message - [USER] now has [ROLE]
+
+- Find the THIRD member in my server
+- Find Role
+- Add Role To Member
+- Find Channel - my logging channel
+- Send Message - [USER] now has [ROLE]
+```  
+While this may not be bad for a handful or roles, what happens if you have 20. Or 200? Or 500? Using a loop, you would only need to write the code a single time; it would look like this:  
+```
+- Get all of my MEMBERS in an array
+- Loop through the array, and FOR EACH MEMBER
+   - Find Role
+   - Add Role To Member
+   - Find Channel - my logging channel
+   - Send Message - [USER] now has [ROLE]
+```
+Another way of looking at what a loop does is to say it like this:  
+```
+FOR EACH member IN ServerMembers DO myEvent
+
+myEvent:
+- Find Role
+- Add Role To Member
+- Find Channel
+- Send Message
+```
+
+#### How to use a LOOP in DBM  
+Adding a loop in DBM can be a little confusing. It requires TWO actions. 
+1. LOOP THROUGH LIST  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/loops.PNG)  
+**Source list:** this is the list (array) you want to cycle through  
+**Temp Variable Name:** When performing a LOOP in DBM, the software needs to create a temporary variable to save the "current item" in, and you can use that variable to perform tasks.  
+**Event:** This is the name of the event that holds all of the actions you want the bot to perform on each item in your list.  
+**Call Type:** Synchronous = "Only run one item at a time, and finish it before moving on to the next"; Asynchronous = "Try to run all items at the same time  
+
+2. An EVENT that contains all of the actions you want to perform during the loop. In this case you would use "Find Role", "Add Role to Member", "Find Channel", "Send Message" -> In the *add role to member* action, you would use the variable you created in your "Loop through list" action as your user role.
+**NOTE:** Because of the way DBM uses TEMPORARY variables, this will NOT show up in your right-click list. **YOU MUST TYPE THIS VARIABLE MANUALLY** by typing `tempVars("currentMember")` (or whatever you've named it). IT WILL STILL WORK. Just trust me.
+
+### Synchronous or Asynchronous
 Thread: the flow of actions, starting from one until it ends
 
 These keywords refer to how the thread is treated and how the program flows. Whenever the call type is Sync, it waits until it recieves a callback or when the thread ends. Meaning that when the event or command is called, the main thread starts first, and if it is ever interrupted by a call, it does that action and if that action ends, returns to the main thread. Async is similar to Sync however, it runs alongside with the main thread.  
@@ -367,12 +457,6 @@ This is what each action is doing:
 **Action 4**: Send some message with the information (Or do whatever else you want with it really). For the purposes of this tutorial you should get two lines, one in milliseconds and one formatted.
 
 **Action 5**: **required** Save the new current time to the member data, overwriting the old one and storing the new 'last time this command was run for that user.
-
-## How do I set my bot's activity to "... on X servers"
-
-Without mods, you can set the bot's activity to playing or streaming. Using mods, you can also set it to watching and listening.
-So, the only thing you'll need is a `Set Bot Game` (using mods) or a `Set Bot Activity` (using mods) action. Create one of them, and set the text to: `${this.getDBM().Bot.bot.guilds.array().length} servers`. And.. that's it! Now run the command or put the action inside a On Bot Initialization event!  
-![](https://i.imgur.com/zjSkZ56.png)
 
 # Running your bot 24/7
 By now you may have noticed that when you close DBM your bot shuts down. [This tutorial](https://www.youtube.com/watch?v=MNw7anSA06g&t=2s) will explain how to export your bot to run in a command terminal.
