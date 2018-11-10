@@ -758,4 +758,4 @@ You can install a script called **Forever.js** that will automatically restart y
 2. Open project directory
 3. Click into the address bar
 4. At the beginning type "cmd" and hit enter (this will open a cmd prompt in this folder)
-5. Type `nodemon --inspect --watch actions --watch data/commands.json --watch data/events.json --watch node_modules --watch js bot.js`
+5. Type `nodemon --inspect --watch actions --watch data/commands.json --watch data/events.json --watch node_modules --watch js --watch data/settings.json bot.js`
