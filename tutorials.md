@@ -293,7 +293,8 @@ Adding a loop in DBM can be a little confusing. It requires TWO actions.
 **Event:** This is the name of the event that holds all of the actions you want the bot to perform on each item in your list.  
 **Call Type:** Synchronous = "Only run one item at a time, and finish it before moving on to the next"; Asynchronous = "Try to run all items at the same time  
 
-**ACTION 2:** An EVENT that contains all of the actions you want to perform during the loop. In this case you would use "Find Role", "Add Role to Member", "Find Channel", "Send Message" -> In the *add role to member* action, you would use the variable you created in your "Loop through list" action as your user role.
+**ACTION 2:** An EVENT that contains all of the actions you want to perform during the loop. In this case you would use "Find Role", "Add Role to Member", "Find Channel", "Send Message" -> In the *add role to member* action, you would use the variable you created in your "Loop through list" action as your user role.  
+
 **NOTE:** Because of the way DBM uses TEMPORARY variables, this will NOT show up in your right-click list. **YOU MUST TYPE THIS VARIABLE MANUALLY** by typing `tempVars("currentMember")` (or whatever you've named it). IT WILL STILL WORK. Just trust me.
 
 ### Synchronous or Asynchronous
