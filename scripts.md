@@ -76,54 +76,53 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 |Count of Events in Bot| `${this.DBM.Files.data.events.length}`
 | Bot uptime<br/>_use tempVars("uptime-ms") to display this_ | `var uptime = process.uptime();`<br/>`var days = Math.floor((uptime % 31536000) / 86400);`<br/>`var hours = Math.floor((uptime % 86400) / 3600);`<br/>`var minutes = Math.floor((uptime % 3600) / 60);`<br/>`var seconds = Math.round(uptime % 60);`<br/>`var botuptime = (days > 0 ? days + " days, ":"") + (hours > 0 ? hours + " hours, ":"") + (minutes > 0 ? minutes + " minutes, ":"") + (seconds > 0 ? seconds + " seconds":"")`<br/>`this.storeValue(botuptime, 1, "uptime-ms", cache)`
 
-
 ## User Info
 
 | Usage | Script |
 | :--- | :--- |
-|Author Tag|`${msg.author.tag}`
-|Author Discriminator|`${msg.author.discriminator}`
 |Author Username|`${msg.author.username}`
 |Author Display Name (Nick)|`${member.displayName}`
-|Author Avatar URL|`${msg.author.avatarURL}`
+|Author Id|`${msg.author.id}`
+|Author Tag|`${msg.author.tag}`
+|Author Discriminator|`${msg.author.discriminator}`
+|Author Avatar URL|`${msg.author.displayAvatarURL}`
 |Author Role List | `${member.roles.array()}`
 |Author Role List (truncated after 3 roles) <br/>*enter `${tempVars("role_list")}` into your send-message to view this output.*<br/>*output will display as `@role1,@role2,@role3 + # more roles!`* | `var roles = member.roles.array();`<br/>`var len = roles.length;`<br/>`if (len > 3) {`<br/>`   var answer = roles.slice(0,3) + " + " + (len - 3) + " more!"`<br/>`} else {`<br/>`   var answer = roles`<br/>`};`<br/>`this.storeValue(answer, 1 ,"role_list", cache);`
-|User (variable) Tag|`${tempVars("user_object").user.tag}`
-|User (variable) Discriminator|`${tempVars("user_object").user.discriminator}`
 |User (variable) Username|`${tempVars("user_object").user.username}`
 |User (variable) Display Name (Nick)|`${tempVars("user_object").displayName}`
-|User (variable) Avatar URL|`${tempVars("user_object").user.avatarURL}`
-
-
+|User (variable) Id|`${tempVars("user_object").user.id}`
+|User (variable) Tag|`${tempVars("user_object").user.tag}`
+|User (variable) Discriminator|`${tempVars("user_object").user.discriminator}`
+|User (variable) Avatar URL|`${tempVars("user_object").user.displayAvatarURL}`
 
 ## Server Info
 
 | Usage | Script |
 | :--- | :--- |
-| Return List of Members in a Role | `tempVars("role").members.map(m=>m.user.tag)`
-| Return Server Icon URL | `${msg.guild.iconURL}` |
-| Return Server Verification Level | `${msg.guild.verificationLevel}` |
-| Return Server Explicit Content Filter | `${msg.guild.explicitContentFilter}` |
-| Return Server Creation Date | `${msg.guild.createdAt}` |
 | Return Server Name | `${msg.guild.name}` |
-| Return Server Owner Display Name | `${msg.guild.owner.displayName}` |
-| Return Server Available Status | `${msg.guild.available}` |
+| Return Server Id | `${msg.guild.id}` |
+| Return Server Icon URL | `${msg.guild.iconURL}` |
 | Return Server Region | `${msg.guild.region}` |
 | Return Server Creation Date | `${msg.guild.createdAt}` |
-| Return Server Emojis List | `${msg.guild.emojis.array()}` |
-| Return Server Emojis Count | `${msg.guild.emojis.array().length}` |
-| Return Server Count of Roles | `msg.guild.roles.array().length` |
+| Return Server Verification Level | `${msg.guild.verificationLevel}` |
+| Return Server Explicit Content Filter | `${msg.guild.explicitContentFilter}` |
+| Return Server Owner Display Name | `${msg.guild.owner.displayName}` |
+| Return Server Available Status | `${msg.guild.available}` |
 | Return Server Member Count | `${msg.guild.memberCount}` |
+| Return Server Emojis Count | `${msg.guild.emojis.array().length}` |
+| Return Server Count of Roles | `${msg.guild.roles.array().length}` |
+| Return Server Count of Channels | `${msg.guild.channels.array().length}` |
+| Return Server Count of Text Channels | `${msg.guild.channels.findAll('type', 'text').length}` |
+| Return Server Count of Voice Channels | `${msg.guild.channels.findAll('type', 'voice').length}` |
+| Store Count members in a role | `${tempVars("role").members.array().length}`|
+| Return List of Members in a Role | `tempVars("role").members.map(m=>m.user.tag)`
+| Return Server Emojis List | `${msg.guild.emojis.array()}` |
 | Return Server Online members | `${msg.guild.members.filter(m => m.user.presence.status == \"online\").size}` |
 | Return Server Offine members | `${msg.guild.members.filter(m => m.user.presence.status == \"offline\").size}` |
 | Return Server Idle members | `${msg.guild.members.filter(m => m.user.presence.status == \"idle\").size}` |
 | Return Server DND members | `${msg.guild.members.filter(m => m.user.presence.status == \"dnd\").size}` |
-| Return Server Count of Channels | `${msg.guild.channels.array().length}` |
-| Return Server Count of Text Channels | `${msg.guild.channels.findAll('type', 'text').length}` |
-| Return Server Count of Voice Channels | `${msg.guild.channels.findAll('type', 'voice').length}` |
 | Return Server AFK Channel | `${msg.guild.afkChannel}` |
 | Return Server AFK Timeout \(in seconds\) | `${msg.guild.afkTimeout}` |
-| Store Count members in a role | `${tempVars("role").members.array().length}`|
 
 # Messaging
 ## Embeds
