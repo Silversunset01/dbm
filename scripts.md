@@ -201,12 +201,12 @@ This script will select the specified number of items from a list (array), witho
 - Change the value of `sel = 5` to be however many items you want to select  
 
 ```
-//count how many emojis are in the list
+//count how many items are in the list
 var myList = tempVars("Your List Variable");
 var myListLen = myList.length;
 var sel = 5;
 
-//Select 5 random numbers from the total length of the list of emojis
+//Select # random numbers from the total length of the list of items
 var arr = []
 var ckarr = []
 while(arr.length < sel){
@@ -228,12 +228,12 @@ This script will select the specified number of items from a list (array), and m
 - Change the value of `sel = 5` to be however many items you want to select  
 
 ```
-//count how many emojis are in the list
+//count how many items are in the list
 var myList = tempVars("Your List Variable");
 var myListLen = myList.length;
 var sel = 5;
 
-//Select 5 random numbers from the total length of the list of emojis
+//Select # random numbers from the total length of the list of items
 var arr = []
 while(arr.length < sel){
     var r = Math.floor(Math.random()*myListLen) + 1;
