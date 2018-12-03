@@ -235,7 +235,6 @@ var sel = 5;
 
 //Select 5 random numbers from the total length of the list of emojis
 var arr = []
-var ckarr = []
 while(arr.length < sel){
     var r = Math.floor(Math.random()*myListLen) + 1;
     arr.push(myList.slice(r-1,r));
