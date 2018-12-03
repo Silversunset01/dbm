@@ -191,3 +191,53 @@ Set Bot Username via script | `this.getDBM().Bot.bot.user.setUsername('a very co
 Set Bot Avatar via script | `	this.getDBM().Bot.bot.user.setAvatar('image_link')`
 Set Server Name via script | `msg.guild.setName('a very cool name')`
 Set Server Icon via script | `msg.guild.setIcon('image_link')`
+
+# Advanced Scripts
+## Select # of items from List (no dups)
+This script will select the specified number of items from a list (array), without any duplicates, and puts them into a new list. These items are usable in dbm by entering `${tempVars("newList")}`   
+**TO USE**  
+- put this entire code block into a RUN SCRIPT action, set the "Interpratation Style" to "Evaluate Text Directly", and leave the "Store in" option as "Nothing"
+- Change the words "Your List Variable" to the variable name of the list you wish to use.  
+
+```
+//count how many emojis are in the list
+var myList = tempVars("Your List Variable");
+var myListLen = myList.length;
+var sel = 5;
+
+//Select 5 random numbers from the total length of the list of emojis
+var arr = []
+var ckarr = []
+while(arr.length < sel){
+    var r = Math.floor(Math.random()*myListLen) + 1;
+    if(ckarr.indexOf(r) === -1) {
+        arr.push(myList.slice(r-1,r));
+        ckarr.push(r);
+    };
+}
+this.storeValue(arr, 1, "newList", cache);
+console.log("I have selected " + sel + " items from your list: " + arr);
+```
+
+## Select # of items from List (dups)
+This script will select the specified number of items from a list (array), and may have duplicates, and puts them into a new list. These items are usable in dbm by entering `${tempVars("newList")}`  
+**TO USE**  
+- put this entire code block into a RUN SCRIPT action, set the "Interpratation Style" to "Evaluate Text Directly", and leave the "Store in" option as "Nothing"
+- Change the words "Your List Variable" to the variable name of the list you wish to use.  
+
+```
+//count how many emojis are in the list
+var myList = tempVars("Your List Variable");
+var myListLen = myList.length;
+var sel = 5;
+
+//Select 5 random numbers from the total length of the list of emojis
+var arr = []
+var ckarr = []
+while(arr.length < sel){
+    var r = Math.floor(Math.random()*myListLen) + 1;
+    arr.push(myList.slice(r-1,r));
+}
+this.storeValue(arr, 1, "newList", cache);
+console.log("I have selected " + sel + " items from your list: " + arr);
+```
