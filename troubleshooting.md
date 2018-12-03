@@ -53,7 +53,8 @@ You need to reinstall your node modules from package.json
 
 _note: if you have mods installed you will need to reinstall them after this process_
 
-## Error: FFMPEG not found
+## Error: FFMPEG Not Working
+### "FFMPEG not found"
 1. Press Windows + R
 2. Type in the field: cmd
 3. Press Enter
@@ -70,7 +71,7 @@ _note: if you have beta, you can simply press this:_
 
 ![](https://i.need.dbm-support.site/fsot.png)
 
-## Error: Bot connecting, but nothing playing
+### Bot connecting, but nothing playing
 1. Open your bot directory
 2. Go into the address bar, erase everything and type "cmd"
 3. Type "npm i node-opus --save" when that is complete...
