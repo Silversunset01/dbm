@@ -70,6 +70,14 @@ _note: if you have beta, you can simply press this:_
 
 ![](https://i.need.dbm-support.site/fsot.png)
 
+## Error: Bot connecting, but nothing playing
+1. Open your bot directory
+2. Go into the address bar, erase everything and type "cmd"
+3. Type "npm i node-opus --save" when that is complete...
+4. Type "npm i opusscript --save"
+5. Restart your bot
+6. Try your action again!
+
 ## Error: There was an error parsing `players.json` |  `commands.json` | `events.json`
 Navigate to your bots folder > DATA > and open the file that is unable to parse in a text editor. 
 
