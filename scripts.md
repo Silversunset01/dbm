@@ -193,11 +193,12 @@ Set Server Name via script | `msg.guild.setName('a very cool name')`
 Set Server Icon via script | `msg.guild.setIcon('image_link')`
 
 # Advanced Scripts
-## Select # of items from List (no dups)
+## Select items from List (no dups)
 This script will select the specified number of items from a list (array), without any duplicates, and puts them into a new list. These items are usable in dbm by entering `${tempVars("newList")}`   
 **TO USE**  
 - put this entire code block into a RUN SCRIPT action, set the "Interpratation Style" to "Evaluate Text Directly", and leave the "Store in" option as "Nothing"
 - Change the words "Your List Variable" to the variable name of the list you wish to use.  
+- Change the value of `sel = 5` to be however many items you want to select  
 
 ```
 //count how many emojis are in the list
@@ -219,11 +220,12 @@ this.storeValue(arr, 1, "newList", cache);
 console.log("I have selected " + sel + " items from your list: " + arr);
 ```
 
-## Select # of items from List (dups)
+## Select items from List (dups)
 This script will select the specified number of items from a list (array), and may have duplicates, and puts them into a new list. These items are usable in dbm by entering `${tempVars("newList")}`  
 **TO USE**  
 - put this entire code block into a RUN SCRIPT action, set the "Interpratation Style" to "Evaluate Text Directly", and leave the "Store in" option as "Nothing"
 - Change the words "Your List Variable" to the variable name of the list you wish to use.  
+- Change the value of `sel = 5` to be however many items you want to select  
 
 ```
 //count how many emojis are in the list
