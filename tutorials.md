@@ -487,6 +487,8 @@ From R. Danny (Discord's API server bot)
 * Heroku does not let you control system dependencies barely at all. This means if any of your requirements need C bindings (pynacl, lxml, etc), they'll probably not work. (this is reason 2 why voice doesn't work properly on heroku)
 * Heroku only offers a limited amount of time on their free programme for your applications. If you exceed this limit (which you probably will), they'll shut down your application until your free credit resets.
 
+If you need help with Heroku hosting please do not ask on our discord servers. You can just ask [here using our support system](https://dbm-support.site/).
+
 ### YouTube Tutorials
 
 * [HOW TO HOST YOUR DISCORD BOT FOR FREE! (Heroku)](https://www.youtube.com/watch?v=d8INsGl28xw) - Published on May 29, 2018 **most recent**
@@ -571,9 +573,10 @@ If you would like to use this service follow the tutorial link here: [https://db
 ## VPS Hosting - Raspberry Pi (Self Hosted)
 
 ### Installing Node.js on a Raspberry pi
-First of all i made this guide using Raspberry Pi 3, however it should work with Raspberry Pi 2 too, but i have no idea if things here are working for Raspberry Pi 1 or Raspberry Pi Zero. If you tried to use this guide on Raspberry Pi 1 or Raspberry Pi Zero, let me know if its working or not by messaging me on Discord. _Tresmos\#2135_
+First of all I made this guide using Raspberry Pi 3, however it should work with Raspberry Pi 2 too. But not with a Raspberry Pi Zero because it doesn't support node.js - You can just google if the your pi supports node.js. 
+_Tresmos\#2135_
 
-Connect your raspberry pi using [PuTTY](https://www.putty.org/), or using [VNC ](https://howtoraspberrypi.com/raspberry-pi-vnc/)and type these commands in order to install Node.js:
+Connect your Raspberry Pi using [PuTTY](https://www.putty.org/), or using [VNC ](https://howtoraspberrypi.com/raspberry-pi-vnc/)and type these commands in order to install Node.js:
 
 for Node.js 8:
 
