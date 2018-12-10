@@ -69,7 +69,7 @@ This does not need beta or mods to function
 In use: copy the raw code from https://silversunset.net/paste/86  
 On LINE 16, replace `403205552064430100` with your bot's ID.  
 
-## Display all members in a specified role
+## Display all users with Role
 This command `?rolelist <role name>` will display all users in a specified role. If an invalid role is given an error message will be displayed.   
 This does not require beta or mods  
 Command: https://silversunset.net/paste/87  
