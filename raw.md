@@ -6,8 +6,8 @@ Mostly this was updated because ghostbin keeps dying and i wanted to have all of
 Commands are sorted into categories from the Raw Data server. 
 
 # useful
-## ?emit <type>
-**Bot Dev Testing Command - ?emit <type>**  
+## ?emit &lt;type&gt;
+**Bot Dev Testing Command - ?emit &lt;type&gt;**  
 This command does not require mods or beta  
 https://www.silversunset.net/paste/161  
 
