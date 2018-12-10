@@ -6,6 +6,20 @@ Mostly this was updated because ghostbin keeps dying and i wanted to have all of
 Commands are sorted into categories from the Raw Data server. 
 
 # useful
+## ?emit <type>
+**Bot Dev Testing Command - ?emit <type>**  
+This command does not require mods or beta  
+https://www.silversunset.net/paste/161  
+
+When run this command will emit an event to mimic certain events for testing purposes. For example: emitting a guildMemberAdd event will simulate a user joining your server without the need for an alt account.  
+
+The current event <type> options are:  
+- memberjoin - emitted when a member joins the guild   
+- memberleave - emitted when a member leaves the guild (either willingly or via kick)   
+- ban - emitted when a member is banned  
+- unban - emitted when a member is banned  
+- error- throws an uncaught error - if you use Lasse's custom script it will log to console  
+  
 ## Server Info
 **Comprehensive Server info command - no mods needed**  
 This command uses scripts to return server information and can be run without mods.   
