@@ -47,7 +47,7 @@ code: https://silversunset.net/paste/96 *converted from ghostbin*
 screenshot: https://i.imgur.com/4PYckb7.png  
 ![](https://i.imgur.com/4PYckb7.png)  
 
-## Log all DM's to the bot to a channel
+## Log bot DM's to Channel
 **Log all DM's to the bot to a channel (No mods or beta needed)**  
 This is an event that will log all DM's users send to your bot to a single channel in a server.  
 These are EVENTS that trigger ON ANY MESSAGE. In order to use them you will need to supply your server id and your desired log channel or the commands will not work. One outputs an embed message, the other a normal bot message, your choice which to use.  
