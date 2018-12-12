@@ -5,7 +5,7 @@ Mostly this was updated because ghostbin keeps dying and i wanted to have all of
 
 Commands are sorted into categories from the Raw Data server. 
 
-# useful
+# Useful
 ## Dev Testing Cmd - ?emit
 **Bot Dev Testing Command - ?emit &lt;type&gt;**  
 This command does not require mods or beta  
