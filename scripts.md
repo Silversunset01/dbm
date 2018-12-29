@@ -178,7 +178,7 @@ Usage | Script
 Ban User <br/><i>requires user's ID</i> | `msg.guild.ban(tempVars("user_id"))`<br/>`.then(user => console.log("Banned " + user.username + " from" + msg.guild.name))`<br/>`.catch(console.error);`
 Unban User <br/><i>requires user's ID</i> | `msg.guild.unban(tempVars("user_id"))`<br/>`.then(user => console.log("Unbanned " + user.username + " from" + msg.guild.name))`<br/>`.catch(console.error);`
 Find Emoji | `client.emojis.find("name", "NameOfTheEmoji")`
-Skip ahead some number<br/>_there are kinks to this still_ | `this.callNextAction(#)`
+Jump to a specific action #<br/>_in this example you will jump to action #22_ | `jumpto = 22`<br/>`const index = Math.max(jumpto - 1, 0);`<br/>`cache.index = index - 1;`<br/>`this.callNextAction(cache)`
 Show current date/time in timezone | `new Date().toLocaleString("en-US", {timeZone: "America/New_York"})`
 Create server invite | `msg.channel.createInvite({temporary: true}," Showing the usage").then(invite=> msg.channel.send(invite.url))`
 Create server invite (Variable) | `msg.guild.channels.find("name", tempVars("channel_name")).then(invite=> msg.channel.send(invite.url))` <br/>*can use "ID" instead of "Name"*
