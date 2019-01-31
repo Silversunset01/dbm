@@ -10,7 +10,7 @@ An unladen european swallow travels at approx 24mph (or 11 meters per second). Y
 
 # How...
 ## ...can I add actions to my bot that do not already exist? 
-You can use the run-script action to create your own custom actions using javascript & Discord.js. Or you can download mods which are user-created actions that are available for use. You can type `!info mods` in the discord server or visit https://dbm-mods.xyz/
+You can use the run-script action to create your own custom actions using javascript & Discord.js. Or you can download mods which are user-created actions that are available for use. You can type `!info mods` in the discord server or visit https://dbm-network.org/mods
 
 # Why...
 ## ...won't my bot do what I am telling it to do.
