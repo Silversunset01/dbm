@@ -183,8 +183,8 @@ Unban User <br/><i>requires user's ID</i> | `msg.guild.unban(tempVars("user_id")
 Find Emoji | `client.emojis.find("name", "NameOfTheEmoji")`
 Jump to a specific action #<br/>_in this example you will jump to action #22_ | `jumpto = 22`<br/>`const index = Math.max(jumpto - 1, 0);`<br/>`cache.index = index - 1;`<br/>`this.callNextAction(cache)`
 Show current date/time in timezone | `new Date().toLocaleString("en-US", {timeZone: "America/New_York"})`
-Create server invite | `msg.channel.createInvite({temporary: true}," Showing the usage").then(invite=> msg.channel.send(invite.url))`
-Create server invite (Variable) | `msg.guild.channels.find("name", tempVars("channel_name")).then(invite=> msg.channel.send(invite.url))` <br/>*can use "ID" instead of "Name"*
+Create server invite | `msg.channel.createInvite({ maxAge: 0 }).then(invite => msg.channel.send(invite.url))`
+Create server invite (Variable) | `msg.guild.channels.find(channel => channel.name === tempVars("channel_name")).createInvite({ maxAge: 0 }).then(invite => msg.channel.send(invite.url))` <br/>*can use "ID" instead of "Name"*
 Add role to cmd author | `member.addRole(tempVars("newrolename"));`
 Stop the bot | `process.exit();`
 Change nickname (command author) | `msg.member.setNickname(tempVars("new_nick"))`<br/>`.then(console.log)`<br/>`.catch(console.error);`
