@@ -117,10 +117,10 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 | Store Count members in a role | `${tempVars("role").members.array().length}`|
 | Return List of Members in a Role | `tempVars("role").members.map(m=>m.user.tag)`
 | Return Server Emojis List | `${msg.guild.emojis.array()}` |
-| Return Server Online members | `${msg.guild.members.filter(m => m.user.presence.status == \"online\").size}` |
-| Return Server Offine members | `${msg.guild.members.filter(m => m.user.presence.status == \"offline\").size}` |
-| Return Server Idle members | `${msg.guild.members.filter(m => m.user.presence.status == \"idle\").size}` |
-| Return Server DND members | `${msg.guild.members.filter(m => m.user.presence.status == \"dnd\").size}` |
+| Return Server Online members | `${msg.guild.members.filter(m => m.user.presence.status == "online").size}` |
+| Return Server Offine members | `${msg.guild.members.filter(m => m.user.presence.status == "offline").size}` |
+| Return Server Idle members | `${msg.guild.members.filter(m => m.user.presence.status == "idle").size}` |
+| Return Server DND members | `${msg.guild.members.filter(m => m.user.presence.status == "dnd").size}` |
 | Return Server AFK Channel | `${msg.guild.afkChannel}` |
 | Return Server AFK Timeout \(in seconds\) | `${msg.guild.afkTimeout}` |
 
