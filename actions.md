@@ -24,7 +24,7 @@ This action allows you to run your own custom script within the bot. You can ent
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/actions/runscript.PNG)  
 
 ## Store Command Params
-This action allows you to store the users input and use it within the command. Additional information on storing command parameters [can be found here](https://silversunset.net/dbm/new/tutorials#store-command-parameters)  
+This action allows you to store the users input and use it within the command. Additional information on storing command parameters [can be found here](https://silversunset.net/dbm/tutorials#data-store-command-parameters)  
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/actions/storecommandparams.PNG)  
 
 ## Wait
