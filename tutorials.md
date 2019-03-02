@@ -328,7 +328,7 @@ Async has its purpose, you need to think about how to use which callback functio
 
 See [dbm/raw/callback.txt](https://github.com/ArztVielfrass/dbm/blob/master/raws/callback.txt) for actual dbm raw
 
-**Silver's Stealth Edit:** _Synchronous in the context of a loop action basically means "finish this item before i go to the next one" while asynchronous means "attempt process all of the items in my loop at the same time"_
+**Silver's Stealth Edit:** _Synchronous in the context of a loop action basically means "stop everything and run this item, and when it finishes run the next. Do not process anything else at all until this is done." while asynchronous means "attempt process all of the items in my loop at the same time, whenever you have a free minute to do it, no big deal"_
 
 ## Using @botname to trigger the bot
 To call the bot via @botname instead of using a command you can follow these steps:
