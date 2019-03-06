@@ -119,15 +119,15 @@ Unexpected Token has nothing to do with your bots token. It means you've got an 
 This error appears in your console because your hosting service or discord has a few internet problems. That's normal! Problem: It crashs your bot. 
 To solve this you can add this easy code into a "Bot Initialization" event. Make sure to put it into a "Run Script" action:
 ```js
-client.on('error', (error) => {    
-  if(error.message == 'Unexpected server response: 520'){
-    console.log("Cant connect to Discords API, Retrying...");
-  }else if(error.message == 'read ECONNRESET'){
-    console.log("Connection Reset! Reconnecting...");
-  }else{
-    console.error(error);
-  }            
-});
+client.on('error', (error) => {
+  if (error.message == 'Unexpected server response: 520') {
+    console.error('Cant connect to Discords API, Retrying...')
+  } else if (error.message == 'read ECONNRESET') {
+    console.log('Connection Reset! Reconnecting...')
+  } else {
+    console.error(error)
+  }
+})
 ```
 
 ## Error: with Event "Loop through List"
