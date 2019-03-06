@@ -4,7 +4,7 @@ If you are running your bot outside of DBM, you might get this error: `action do
 If you get this error, it means the action is missing inside your projects action folder.
 
 ## Error: Bot token is being overwritten
-Navigate to `C:\Users\your-name\AppData\local` and delete folders DBM and DBM2
+Navigate to `C:\Users\User-Name\AppData\Local` and delete the DBM2 folder.
 
 ## Error: Cannot Add Roles to User
 A common bot task is to add roles to users either automatically on join, or via command. Here we will review some common errors that can occur.
