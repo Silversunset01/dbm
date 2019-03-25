@@ -583,8 +583,6 @@ _Tresmos\#2135_
 
 Connect your Raspberry Pi using [PuTTY](https://www.putty.org/), or using [VNC ](https://howtoraspberrypi.com/raspberry-pi-vnc/)and type these commands in order to install Node.js:
 
-~~
-
 ### **for Node.js LTS:**
 
 If you have any other version of Node.js installed please uninstall them now before continuing 
@@ -631,7 +629,6 @@ sudo apt-get install -y nodejs
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
-~~
 
 After everything is done, check if Node.js is installed correctly or not with these commands:
 
