@@ -583,19 +583,55 @@ _Tresmos\#2135_
 
 Connect your Raspberry Pi using [PuTTY](https://www.putty.org/), or using [VNC ](https://howtoraspberrypi.com/raspberry-pi-vnc/)and type these commands in order to install Node.js:
 
-for Node.js 8:
+~~
+
+### **for Node.js LTS:**
+
+If you have any other version of Node.js installed please uninstall them now before continuing 
+```
+sudo apt purge node.js npm
+``` 
+
+ARM Version:
+```
+uname -m
+```
+
+output will look like: `armv#X`. \
+navigate to [nodejs.org](https://nodejs.org/en/download/) downloads page, right click on the `Linux Binaries (ARM)` version that correlates with your version (`armv#X`), click `Copy Link Address`, then go back to terminal.
+
+Getting Node.js package:
+```
+wget <Ctrl+Shift+V>
+ls (note the downloaded file `node-vx.x.x-linux-armv#X.tar.xz`)
+tar -xJf <filename>
+```
+
+Copy Node.js to /usr/local:
+```
+cd node-vx.x.x-linux-armv#X/
+sudo cp -R * /usr/local/
+```
+
+Reboot RPi
+```
+reboot
+``` 
+
+### **for Node.js 8:**
 
 ```
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-for Node.js 9:
+### **for Node.js 9:**
 
 ```
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
+~~
 
 After everything is done, check if Node.js is installed correctly or not with these commands:
 
