@@ -466,6 +466,13 @@ To make this, you'll require a simple Run Script action.<br/>
 `var search = tempVars("parameters").toLowerCase()`<br/>`var member = msg.guild.members.find(member => member.name.toLowerCase().startsWith(search) || member.name.toLowerCase().endsWith(search) || member.name.toLowerCase().includes(search))`<br/>`this.storeValue(member, 1, "member", cache)`<br/>
 _the `tempVars("parameters")` would be your input, and, to use the output, use `tempVars("member")`_
 
+## Running via Command Prompt 
+This allows you to run your bot outside of DBM using command prompt (aka CMD). Please remember when you close the window the bot will shut down.  
+1. Open project directory  
+2. Click into the address bar  
+3. At the beginning type "cmd" and hit enter (this will open a cmd prompt in this folder)  
+4. type `node bot.js` <br/>Note: If you use a restart script (see [Restarting Automatically](#running-your-bot-247-restarting-automatically) this step may be different)  
+
 ## Stopping the Bot
 
 Sometimes you need to stop your bot. If you're running a script like `forever` this may automatically restart your bot, otherwise it will just shut the whole bot down.
@@ -480,23 +487,6 @@ Sometimes you need to stop your bot. If you're running a script like `forever` t
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/stopping2.png)
 
-
-# Running your bot 24/7
-By now you may have noticed that when you close DBM your bot shuts down - this is *normal and expected behavior*, the bot can only stay online when the program running it is online.  
-  
-You have three options to keep the bot running 24/7  
-1. **Keep DBM open all the time** - This is not recommended because the bot *will* crash periodically and DBM does not automatically restart  
-2. **Run the bot on your computer via Command Prompt (CMD)** - This is *slightly* better than running directly with DBM, because you *can* create a restart script to handle the bot crashing. HOWEVER most home internet providers are not designed for this sort of always-running access, if your internet has caps you may hit them for larger (or music) bots. Using this method you can technically run the bot on any computer that will allow you to run node.js, which means you could run it on a Mac or Raspberri Pi machine should you have access to those.  
-3. **Host the bot on a VPS** - A VPS (Virtual Private Server) is a more 'correct' way to host a bot. These servers are generally located in data centers designed for always-on use, and can often be found for a couple of dollars per month. There *are* some 'free' versions (i.e. Heroku and Glitch), but they are NOT designed for bot hosting, they are designed for things like websites and if you choose to use them be aware that they are unstable and your bot will have problems.  
-
-## Running via Command Prompt 
-This allows you to run your bot outside of DBM using command prompt (aka CMD). Please remember when you close the window the bot will shut down.  
-1. Open project directory  
-2. Click into the address bar  
-3. At the beginning type "cmd" and hit enter (this will open a cmd prompt in this folder)  
-4. type `node bot.js` <br/>Note: If you use a restart script (see [Restarting Automatically](#restarting-automatically) this step may be different)  
-	
-	
 ## Restarting Automatically
 
 ### Linux
@@ -563,6 +553,15 @@ You can install a script called **Forever.js** that will automatically restart y
 5. Type `nodemon --inspect --watch actions --watch data/commands.json --watch data/events.json --watch node_modules --watch js --watch data/settings.json bot.js`
 
 
+# Running your bot 24/7
+By now you may have noticed that when you close DBM your bot shuts down - this is *normal and expected behavior*, the bot can only stay online when the program running it is online.  
+  
+You have three options to keep the bot running 24/7  
+1. **Keep DBM open all the time** - This is not recommended because the bot *will* crash periodically and DBM does not automatically restart  
+2. **Run the bot on your computer via Command Prompt (CMD)** - This is *slightly* better than running directly with DBM, because you *can* create a restart script to handle the bot crashing. HOWEVER most home internet providers are not designed for this sort of always-running access, if your internet has caps you may hit them for larger (or music) bots. Using this method you can technically run the bot on any computer that will allow you to run node.js, which means you could run it on a Mac or Raspberri Pi machine should you have access to those.<br/>[Click for Command Prompt (CMD) Tutorial](#miscellaneous-tutorials-stopping-the-bot)<br/>[Click for Restart Script Tutorials](#miscellaneous-running-your-bot-247-restarting-automatically)  
+3. **Host the bot on a VPS** - A VPS (Virtual Private Server) is a more 'correct' way to host a bot. These servers are generally located in data centers designed for always-on use, and can often be found for a couple of dollars per month. There *are* some 'free' versions (i.e. Heroku and Glitch), but they are NOT designed for bot hosting, they are designed for things like websites and if you choose to use them be aware that they are unstable and your bot will have problems.  
+[Click for VPS Tutorials](#vps-tutorials)  
+	
 # VPS Tutorials
 
 ## Digital Ocean
