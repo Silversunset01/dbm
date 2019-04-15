@@ -486,11 +486,11 @@ By now you may have noticed that when you close DBM your bot shuts down - this i
   
 You have three options to keep the bot running 24/7  
 1. **Keep DBM open all the time** - This is not recommended because the bot *will* crash periodically and DBM does not automatically restart  
-2. **Run the bot on your computer via Command Prompt** - This is *slightly* better than running directly with DBM, because you *can* create a restart script to handle the bot crashing. HOWEVER most home internet providers are not designed for this sort of always-running access, if your internet has caps you may hit them for larger (or music) bots. Using this method you can technically run the bot on any computer that will allow you to run node.js, which means you could run it on a Mac or Raspberri Pi machine should you have access to those.  
+2. **Run the bot on your computer via Command Prompt (CMD)** - This is *slightly* better than running directly with DBM, because you *can* create a restart script to handle the bot crashing. HOWEVER most home internet providers are not designed for this sort of always-running access, if your internet has caps you may hit them for larger (or music) bots. Using this method you can technically run the bot on any computer that will allow you to run node.js, which means you could run it on a Mac or Raspberri Pi machine should you have access to those.  
 3. **Host the bot on a VPS** - A VPS (Virtual Private Server) is a more 'correct' way to host a bot. These servers are generally located in data centers designed for always-on use, and can often be found for a couple of dollars per month. There *are* some 'free' versions (i.e. Heroku and Glitch), but they are NOT designed for bot hosting, they are designed for things like websites and if you choose to use them be aware that they are unstable and your bot will have problems.  
 
-## Running via Command Prompt (CMD)
-This allows you to run your bot outside of DBM using command prompt. Please remember when you close the window the bot will shut down.  
+## Running via Command Prompt 
+This allows you to run your bot outside of DBM using command prompt (aka CMD). Please remember when you close the window the bot will shut down.  
 1. Open project directory  
 2. Click into the address bar  
 3. At the beginning type "cmd" and hit enter (this will open a cmd prompt in this folder)  
@@ -569,7 +569,7 @@ You can install a script called **Forever.js** that will automatically restart y
 
 This bit assumes you are going to use `forever.js` to run the bot. You can choose another method but you'll have to check out those tutorials for further instruction)
 
-#### **Initial Server Setup**
+#### Initial Server Setup
 
 * Start a digital ocean instance (with node as your image) - the $5/month one is perfectly fine
 * [Generate an SSH key](https://www.siteground.com/kb/how_to_generate_an_ssh_key_on_windows_using_putty/) and and add it to the droplet on creation (Its much easier than doing it after)
@@ -579,7 +579,7 @@ This bit assumes you are going to use `forever.js` to run the bot. You can choos
 * `apt install unzip`
 * `npm install --no optional -g forever`
 
-#### **Unpackage and Start the bot**
+#### Unpackage and Start the bot
 
 * Upload the bot file to your droplet using something like [WinSCP](https://winscp.net/eng/download.php)
 * If you're uploading the bot for the first time it may be faster to upload is as a zip file and then unzip it on the dropletby typing `unzip <yourbot>.zip -d <bot folder>`
@@ -596,14 +596,14 @@ This bit assumes you are going to use `forever.js` to run the bot. You can choos
 #### Server Maintenance
 When you log into Digital Ocean you'll see an MOTD telling you if there are package updates. If you want/need to install them do the following:
 
-#### **Install Updates**
+#### Install Updates
 When updates are available:
 
 - `sudo apt update` - update package index
 - `sudo apt upgrade` - install updates
 - `sudo reboot` - reboots the system (server will indicate if its needed)
 
-#### **add SSH key to server file manually**
+#### add SSH key to server file manually
 If you want to add an SSH key after you've set up your droplet you can edit the authorized_keys file
 
 - edit directly in PuTTY
