@@ -466,46 +466,113 @@ To make this, you'll require a simple Run Script action.<br/>
 `var search = tempVars("parameters").toLowerCase()`<br/>`var member = msg.guild.members.find(member => member.name.toLowerCase().startsWith(search) || member.name.toLowerCase().endsWith(search) || member.name.toLowerCase().includes(search))`<br/>`this.storeValue(member, 1, "member", cache)`<br/>
 _the `tempVars("parameters")` would be your input, and, to use the output, use `tempVars("member")`_
 
+## Stopping the Bot
+
+Sometimes you need to stop your bot. If you're running a script like `forever` this may automatically restart your bot, otherwise it will just shut the whole bot down.
+
+**Action 1: send a message** to the channel so you know the bot has recognized the command
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/stopping.png)
+
+**Action 2: stop the bot using a script**. Its good practice to log to console that the bot is stopping, again to confirm that the action is recognized.
+
+`console.log("text")` is used to print text directly to the bots console logs. Anything inside the `" "` will be printed directly. If you choose to use a variable instead you would use `console.log(tempVars("name"))`
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/stopping2.png)
+
+
 # Running your bot 24/7
-By now you may have noticed that when you close DBM your bot shuts down. [This tutorial](https://www.youtube.com/watch?v=MNw7anSA06g&t=2s) will explain how to export your bot to run in a command terminal.
+By now you may have noticed that when you close DBM your bot shuts down - this is *normal and expected behavior*, the bot can only stay online when the program running it is online.  
+  
+You have three options to keep the bot running 24/7  
+1. **Keep DBM open all the time** - This is not recommended because the bot *will* crash periodically and DBM does not automatically restart
+2. **Run the bot on your computer via Command Prompt** - This is *slightly* better than running directly with DBM, because you *can* create a restart script to handle the bot crashing. HOWEVER most home internet providers are not designed for this sort of always-running access, if your internet has caps you may hit them for larger (or music) bots. Using this method you can technically run the bot on any computer that will allow you to run node.js, which means you could run it on a Mac or Raspberri Pi machine should you have access to those.
+3. **Host the bot on a VPS** - A VPS (Virtual Private Server) is a more 'correct' way to host a bot. These servers are generally located in data centers designed for always-on use, and can often be found for a couple of dollars per month. There *are* some 'free' versions (i.e. Heroku and Glitch), but they are NOT designed for bot hosting, they are designed for things like websites and if you choose to use them be aware that they are unstable and your bot will have problems.
 
-## Exporting the bot
-Everything begins with exporting your bot from DBM and running it elsewhere. This video tutorial explains how  
-
-[DBM Tutorial - #7 Exporting the bot >](https://www.youtube.com/watch?v=MNw7anSA06g&feature=youtu.be)
-
-
-## Running your bot with cmd
-
+## Running via CMD
 1. Open project directory
 2. Click into the address bar
 3. At the beginning type "cmd" and hit enter (this will open a cmd prompt in this folder)
 4. type `node bot.js`
+    * Note: If you use a restart script (see [Restarting Automatically](#restarting-automatically) this step may be different)
+	
+	
+## Restarting Automatically
 
-## VPS Hosting - Heroku
-### Disclaimers
-From R. Danny (Discord's API server bot)
+### Linux
 
-* Bots are not what the platform is designed for. Heroku is designed to provide web servers (like Django, Flask, etc). This is why they give you a domain name and open a port on their local emulator.
-* Heroku's environment is heavily containerized, making it quite significantly underpowered (this is reason 1 why voice doesn't work properly on heroku)
-* Heroku's environment is volatile. In order to handle the insane amount of users trying to use it for their own applications, Heroku will dispose your environment every time your application dies unless you pay.
-* Heroku does not let you control system dependencies barely at all. This means if any of your requirements need C bindings (pynacl, lxml, etc), they'll probably not work. (this is reason 2 why voice doesn't work properly on heroku)
-* Heroku only offers a limited amount of time on their free programme for your applications. If you exceed this limit (which you probably will), they'll shut down your application until your free credit resets.
+* Go into your bot folder with : `cd BotFolderLocation`
+* Use `nano start.sh` to create a file called `start.sh` and start editing.
+* Paste the code below :
 
-If you need help with Heroku hosting please do not ask on our discord servers. You can just ask [here using our support system](https://dbm-support.site/).
+```bash
+# /bin/sh
+while true
+do
+echo Starting Bot
+node bot.js
+echo Restarting Bot in 5 Seconds...
+sleep 5
+done
+```
 
-### YouTube Tutorials
+* Press CTRL+C then Y and ENTER to save the start.sh file.
+* Use `chmod 777 start.sh` to give the file executable permission.
+* Done! Now you can start your bot by executing that file with : `./start.sh`
 
-* [HOW TO HOST YOUR DISCORD BOT FOR FREE! (Heroku)](https://www.youtube.com/watch?v=d8INsGl28xw) - Published on May 29, 2018 **most recent**
-* [Discord Bot | Host your bot for free! (using heroku)](https://www.youtube.com/watch?v=kpIFnZ0zbsw) - Published on Mar 22, 2018
-* [HOW TO HOST A DISCORD BOT FOR FREE USING HEROKU!](https://www.youtube.com/watch?v=diq7INoHqh4) - Published on Nov 15, 2017
-* [Host your Discord bot on Heroku 24/7!](https://www.youtube.com/watch?v=NM8IMyqpvqU) - Published on Sep 10, 2017
+**Tutorial Video** _\(Click on image to watch it\)_
 
-## VPS Hosting - Digital Ocean
+[![](https://asciinema.org/a/Gjc27yyaid3LxAIDlc8AqM4Z3.png)](https://asciinema.org/a/Gjc27yyaid3LxAIDlc8AqM4Z3)
+
+### Windows
+
+
+* Create a file with `.bat` extension.
+* Paste the code below and save it.
+
+```
+@echo off
+echo Starting..
+:main
+node bot.js
+echo Restarting Bot..
+goto main
+```
+
+* Done! Now you can run your bot just executing that file.
+
+[**Tutorial Video **_\(Click to watch it\)_](https://youtu.be/1ZDE3z_Fsi4)
+
+### Forever.js
+
+You can install a script called **Forever.js** that will automatically restart your bot if it crashes. 
+
+* `npm install --no optional -g forever`
+* `chmod -R a+rwx <bot folder>`- Give the bot folder permission to be read/write and executable
+* `cd <bot folder>` - Change to the bots directory
+* `forever start bot.js` - Start the bot program using "Forever" \(this will keep the bot running and restart it if it crashes\)
+
+### Nodemon
+
+`node bot.js` will have to be restarted every time you make changes. You can use Nodemon to do this automatically
+
+1. Install nodemon with `npm i -g nodemon`
+2. Open project directory
+3. Click into the address bar
+4. At the beginning type "cmd" and hit enter (this will open a cmd prompt in this folder)
+5. Type `nodemon --inspect --watch actions --watch data/commands.json --watch data/events.json --watch node_modules --watch js --watch data/settings.json bot.js`
+
+
+# VPS Tutorials
+
+## Digital Ocean
+
+This bit assumes you are going to use `forever.js` to run the bot. You can choose another method but you'll have to check out those tutorials for further instruction)
+
 #### **Initial Server Setup**
 
-* Start a digital ocean instance \(with node as your image\)
-* Generate and add SSH keys before creating \(then you dont have to do it after\)
+* Start a digital ocean instance (with node as your image) - the $5/month one is perfectly fine
+* [Generate an SSH key](https://www.siteground.com/kb/how_to_generate_an_ssh_key_on_windows_using_putty/) and and add it to the droplet on creation (Its much easier than doing it after)
 * get server IP address
 * connect via PuTTY
 * Run commands:
@@ -517,9 +584,9 @@ If you need help with Heroku hosting please do not ask on our discord servers. Y
 * Upload the bot file to your droplet using something like [WinSCP](https://winscp.net/eng/download.php)
 * If you're uploading the bot for the first time it may be faster to upload is as a zip file and then unzip it on the dropletby typing `unzip <yourbot>.zip -d <bot folder>`
 * If you've already uploaded the bot and you're just making a change to the command.json/events.json file you can JUST upload those without zipping them
-* `chmod -R a+rwx <bot folder>`- Give the bot folder permission to be read/write and executable
-* `cd <bot folder>` - Change to the bots directory
-* `forever start bot.js` - Start the bot program using "Forever" \(this will keep the bot running and restart it if it crashes\)
+* in PuTTY type: `chmod -R a+rwx <bot folder>`- Give the bot folder permission to be read/write and executable (you only need to do this the first time you set things up)
+* in PuTTY type: `cd <bot folder>` - Change to the bots directory
+* in PuTTY type: `forever start bot.js` - Start the bot program using "Forever" \(this will keep the bot running and restart it if it crashes\)
 
 #### Stop the bot
 
@@ -558,24 +625,7 @@ Comment: "rsa-key-[date]"
 - Fill in the Auto Login username
 - Putty should now connect automatically when the server is connected to
 
-## VPS Hosting - Glitch 
-Glitch is a **free** service that is generally used to run low to medium end applications and in general testing. Discord bots can be ran on this however, there are some limits to glitch you must watch out for. This can be a great option for small to some medium bots. It's a much better option then **heroku**. It is also **compatible with dbm beta.** This is a far better alternative then **android** and **heroku**. 
-
-If you would like to use this service follow the tutorial link here: [https://dbotmaker.io/forums/threads/glitch-hosting-free-compatible-with-beta-saves-data.305/](https://dbotmaker.io/forums/threads/glitch-hosting-free-compatible-with-beta-saves-data.305/ "Glitch Tutorial")
-
-#### **Limits**
-* Projects have a limit of around **200MB of disk space** on the project however node modules don't count towards it.
-* Projects have a limit of **512MB of RAM**.
-* Projects sleep after 5 minutes (tutorial shows how to fix it) and after 12 hours of constant running before being rebooted.
-
-#### **Comparison to Heroku**
-* Glitch will save your bot files and data. This is an actual storage system compared to heroku which erases after each reboot.
-* Glitch has an easier interface compared to heroku's
-* Glitch is more focused and better supported on Javascript/node.js and NPM packages. Hence why node modules are unlimited storage space
-* Glitch has no actual "hour counter", bots will reboot after 12 hours and can run again up to 12 hours. Heroku however will shut down your bot for the rest of the month.
-
-
-## VPS Hosting - Raspberry Pi (Self Hosted)
+## Raspberry Pi
 
 ### Installing Node.js on a Raspberry pi
 First of all I made this guide using Raspberry Pi 3, however it should work with Raspberry Pi 2 too. But not with a Raspberry Pi Zero because it doesn't support node.js - You can just google if the your pi supports node.js. 
@@ -723,81 +773,38 @@ Thats it!
 
 _In this way you can close VNC Viewer and your bot will still run, however if you close that terminal window bot will stop working._
 
+## Heroku
 
-## Stopping the bot
-Sometimes you need to stop your bot. If you're running a script like `forever` this may automatically restart your bot, otherwise it will just shut the whole bot down.
+### Disclaimers
+From R. Danny (Discord's API server bot)
 
-**Action 1: send a message** to the channel so you know the bot has recognized the command
+* Bots are not what the platform is designed for. Heroku is designed to provide web servers (like Django, Flask, etc). This is why they give you a domain name and open a port on their local emulator.
+* Heroku's environment is heavily containerized, making it quite significantly underpowered (this is reason 1 why voice doesn't work properly on heroku)
+* Heroku's environment is volatile. In order to handle the insane amount of users trying to use it for their own applications, Heroku will dispose your environment every time your application dies unless you pay.
+* Heroku does not let you control system dependencies barely at all. This means if any of your requirements need C bindings (pynacl, lxml, etc), they'll probably not work. (this is reason 2 why voice doesn't work properly on heroku)
+* Heroku only offers a limited amount of time on their free programme for your applications. If you exceed this limit (which you probably will), they'll shut down your application until your free credit resets.
 
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/stopping.png)
+If you need help with Heroku hosting please do not ask on our discord servers. You can just ask [here using our support system](https://dbm-support.site/).
 
-**Action 2: stop the bot using a script**. Its good practice to log to console that the bot is stopping, again to confirm that the action is recognized.
+### YouTube Tutorials
 
-`console.log("text")` is used to print text directly to the bots console logs. Anything inside the `" "` will be printed directly. If you choose to use a variable instead you would use `console.log(tempVars("name"))`
+* [HOW TO HOST YOUR DISCORD BOT FOR FREE! (Heroku)](https://www.youtube.com/watch?v=d8INsGl28xw) - Published on May 29, 2018 **most recent**
+* [Discord Bot | Host your bot for free! (using heroku)](https://www.youtube.com/watch?v=kpIFnZ0zbsw) - Published on Mar 22, 2018
+* [HOW TO HOST A DISCORD BOT FOR FREE USING HEROKU!](https://www.youtube.com/watch?v=diq7INoHqh4) - Published on Nov 15, 2017
+* [Host your Discord bot on Heroku 24/7!](https://www.youtube.com/watch?v=NM8IMyqpvqU) - Published on Sep 10, 2017
 
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/stopping2.png)
+## Glitch
+Glitch is a **free** service that is generally used to run low to medium end applications and in general testing. Discord bots can be ran on this however, there are some limits to glitch you must watch out for. This can be a great option for small to some medium bots. It's a much better option then **heroku**. It is also **compatible with dbm beta.** This is a far better alternative then **android** and **heroku**. 
 
-## Restarting the bot Automatically
-In this guide I'll show how to create a script that will restart the bot automatically. This script restarts your bot when it crashes. You can even make a command to restart your bot with this script.
+If you would like to use this service follow the tutorial link here: [https://dbotmaker.io/forums/threads/glitch-hosting-free-compatible-with-beta-saves-data.305/](https://dbotmaker.io/forums/threads/glitch-hosting-free-compatible-with-beta-saves-data.305/ "Glitch Tutorial")
 
-### Linux
+#### **Limits**
+* Projects have a limit of around **200MB of disk space** on the project however node modules don't count towards it.
+* Projects have a limit of **512MB of RAM**.
+* Projects sleep after 5 minutes (tutorial shows how to fix it) and after 12 hours of constant running before being rebooted.
 
-* Go into your bot folder with : `cd BotFolderLocation`
-* Use `nano start.sh` to create a file called `start.sh` and start editing.
-* Paste the code below :
-
-```bash
-# /bin/sh
-while true
-do
-echo Starting Bot
-node bot.js
-echo Restarting Bot in 5 Seconds...
-sleep 5
-done
-```
-
-* Press CTRL+C then Y and ENTER to save the start.sh file.
-* Use `chmod 777 start.sh` to give the file executable permission.
-* Done! Now you can start your bot by executing that file with : `./start.sh`
-
-**Tutorial Video** _\(Click on image to watch it\)_
-
-[![](https://asciinema.org/a/Gjc27yyaid3LxAIDlc8AqM4Z3.png)](https://asciinema.org/a/Gjc27yyaid3LxAIDlc8AqM4Z3)
-
-### Windows
-
-* Create a file with `.bat` extension.
-* Paste the code below and save it.
-
-```
-@echo off
-echo Starting..
-:main
-node bot.js
-echo Restarting Bot..
-goto main
-```
-
-* Done! Now you can run your bot just executing that file.
-
-[**Tutorial Video **_\(Click to watch it\)_](https://youtu.be/1ZDE3z_Fsi4)
-
-### Forever.js
-You can install a script called **Forever.js** that will automatically restart your bot if it crashes. 
-
-* `npm install --no optional -g forever`
-* `chmod -R a+rwx <bot folder>`- Give the bot folder permission to be read/write and executable
-* `cd <bot folder>` - Change to the bots directory
-* `forever start bot.js` - Start the bot program using "Forever" \(this will keep the bot running and restart it if it crashes\)
-
-### NODEMON
-
-`node bot.js` will have to be restarted every time you make changes. You can use Nodemon to do this automatically
-
-1. Install nodemon with `npm i -g nodemon`
-2. Open project directory
-3. Click into the address bar
-4. At the beginning type "cmd" and hit enter (this will open a cmd prompt in this folder)
-5. Type `nodemon --inspect --watch actions --watch data/commands.json --watch data/events.json --watch node_modules --watch js --watch data/settings.json bot.js`
-
+#### **Comparison to Heroku**
+* Glitch will save your bot files and data. This is an actual storage system compared to heroku which erases after each reboot.
+* Glitch has an easier interface compared to heroku's
+* Glitch is more focused and better supported on Javascript/node.js and NPM packages. Hence why node modules are unlimited storage space
+* Glitch has no actual "hour counter", bots will reboot after 12 hours and can run again up to 12 hours. Heroku however will shut down your bot for the rest of the month.
