@@ -31,7 +31,8 @@ in action: https://i.imgur.com/w9a6V1m.png
 ## Bot Info
 **Comprehensive Bot Info command - no mods needed**  
 command: https://www.silversunset.net/paste/197  
-In Action: ![](https://i.imgur.com/yRPzpdr.png)  
+In Action:  
+![](https://i.imgur.com/yRPzpdr.png)  
 
 ## Current Time in Timezone
 **Show current time in a specified timezone (mods needed for the bot member items)**  
