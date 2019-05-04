@@ -28,6 +28,11 @@ command: https://silversunset.net/paste/94 *converted from ghostbin*
 in action: https://i.imgur.com/w9a6V1m.png  
 ![](https://i.imgur.com/w9a6V1m.png)
 
+## Bot Info
+**Comprehensive Bot Info command - no mods needed**  
+command: https://www.silversunset.net/paste/197  
+In Action: ![](https://i.imgur.com/yRPzpdr.png)  
+
 ## Current Time in Timezone
 **Show current time in a specified timezone (mods needed for the bot member items)**  
 This command will show you the current time in a requested timezone. It only comes with 8 timezones preconfigured (PST, MST, CST, EST, UTC, GMT, EET, AEST).   
