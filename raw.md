@@ -110,4 +110,8 @@ In action: https://i.imgur.com/2cWM3H7.png
 `.nick-blacklist (command)` - https://silversunset.net/paste/60 - displays all users who are currently flagged as "deny" for nick changes  
 `.nick-blacklist (event)` - https://silversunset.net/paste/61 - required event to be used with the .nick-blacklist command  
 
+## Purge Messages from User
+The syntax for this command is `[prefix]purge @user #` and will purge # of messages from the user mentioned. This is to work around the "delete bulk messages" action not working with an author.  
 
+This does not require mods or beta.  
+https://www.silversunset.net/paste/160
