@@ -253,10 +253,15 @@ console.log("I have selected " + sel + " items from your list: " + arr);
 This script will get all the names of your bot's commands and will store them onto a temp variable called `commands`.
 
 ```
-const command = require('./data/commands.json')
-const a = []
-for (var i = 2; command[i]; i++) {
-  a.push(command[i].name)
+// Grab the commands from the commands.json file inside the data folder
+const commands = require('./data/commands.json')
+// Make an empty list (Array)
+const array = []
+// Loop through each command inside the commands.json file
+for (let i = 1; !!command[i]; i++) {
+  // For each command, push it into the list (Array)
+  array.push(command[i].name)
 }
-this.storeValue(a.join(', '), 1, 'commands', cache)
+// Store the result into a Temp Variable called commands 
+this.storeValue(array.join(', '), 1, 'commands', cache)
 ```
