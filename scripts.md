@@ -2,7 +2,7 @@
 DBM allows users to create bots using a graphical user interface that gives coders of all levels a head start on building their bots. You can find this software [on steam](https://store.steampowered.com/app/682130/Discord_Bot_Maker/)
 
 # Creating your own scripts
-Most things that are not available as actions can be run as a script either in the `run script` action or in any box that allows for text entry using `${ }`. 
+Most things that are not available as actions can be run as a script either in the `Run Script` action or in any box that allows for text entry using `${ }`. 
 
 Sidenote: If you are trying to use a script in a text-entry field you'll need to surround it with `${ }` brackets so the program understands that it is a script and not text. However when using a run-script action you *should not* use the brackets.
 
@@ -161,7 +161,7 @@ Collect reactions to a message | ```const filter = (reaction, user) => reaction.
 Usage | Script
 :- | :-
 Create a list out of items that have data following them | `.array}`
-Count items in the specified array | `.array().length}`
+Count items in the specified array | `.array().length}` or `.size}`
 Count items in the specified list <br/> **or** <br/> count the length of a string | `.length}`
 Find position of item in a list <br/>_If the bot returns -1 that means the item is not on the list. 0 means its the first item, 1 is the second etc_ | `${tempVars("yourList").indexOf(tempVars("yourItemToFind"))}`
 Remove item from list | `${tempVars("yourList").splice(# to remove, 1)}`
