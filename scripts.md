@@ -265,3 +265,20 @@ for (let i = 1; !!command[i]; i++) {
 // Store the result into a Temp Variable called commands 
 this.storeValue(array.join(', '), 1, 'commands', cache)
 ```
+
+## List all of the bot events (names)
+This script will get all the names of your bot's events and will store them onto a temp variable called `events`.
+
+```
+// Grab the events from the events.json file inside the data folder
+const events = require('./data/events.json')
+// Make an empty list (Array)
+const array = []
+// Loop through each event inside the events.json file
+for (let i = 1; !!events[i]; i++) {
+  // For each event, push it into the list (Array)
+  array.push(events[i].name)
+}
+// Store the result into a Temp Variable called events 
+this.storeValue(array.join(', '), 1, 'events', cache)
+```
