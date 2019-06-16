@@ -148,12 +148,14 @@ Collect reactions to a message | ```const filter = (reaction, user) => reaction.
 ## Identifiers
 | Usage | Script |
 | :--- | :--- |
-| Get the bot as a client (user) | `${this.getDBM().Bot.bot` |
-| Get the bot as a client (user) (beta only)| `${client` |
+| Get the bot as a client | `${this.getDBM().Bot.bot` |
+| Get the bot as a client (beta only)| `${client` |
+| Get the bot as a guild member | `${msg.guild.me` or `${me` |
 | The command message | `${msg` |
 | The current server | `${msg.guild` |
 | The command channel | `${msg.channel` |
-| The command author | `${msg.author` |
+| The command author | `${msg.author` or `${user` |
+| The command author as a guild member | `${msg.member` or `${member` |
 
 ## Lists
 Usage | Script
