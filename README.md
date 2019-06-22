@@ -1,4 +1,4 @@
-This is documentation for Discord Bot Maker. Good luck.
+This is documentation for Discord Bot Maker. Good luck. (https://dbotmaker.io/documentation)
 
 If you would like to contribute to this documentation please make a pull-request and it will be reviewed. All contributions are welcome!
 
