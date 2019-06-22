@@ -142,3 +142,6 @@ This only applies to users who have BETA. The developer is aware of this. In the
 
 (If you run your bot on a VPS or in command line please make sure to update that file too)  
 [Download Correct Loop File](https://cdn.discordapp.com/attachments/345696100151459854/486570638018871306/loop_through_list.js)
+
+## SyntaxError: Block-scoped declarations (let, const, function, class) not yet supported outside strict mode
+To stop this error, you must update your [Node.js](https://nodejs.org) (The LTS version should be fine.)
