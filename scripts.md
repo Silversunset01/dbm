@@ -139,7 +139,7 @@ Usage | Script
 Send a message (hard coded text) | `msg.channel.send("your message here")`
 Send a message (variable) | `msg.channel.send(tempVars("some_variable"))`
 Send a message (with mixed text & variables) | `msg.channel.send("some text here " + tempVars("some_variable") + " and some more text")`
-Send a message (to another channel)| `msg.guild.channels.find("name","bot-logs").send("test in another channel")` <br/>*can use "ID" instead of "Name"*
+Send a message (to another channel)| `msg.guild.channels.find(c => c.name == "bot-logs").send("test in another channel")` <br/>*can use "ID" instead of "Name"*
 Log to console | `console.log("your text here")`
 Add reactions to message <br/> - *works on normal messages or embeds*<br/>- *If using this on an embed, you do not need the "send embed message" action, this will replace it* | `msg.channel.send(tempVars("test"))` <br /> `.then(function (message) {` <br /> `message.react("👍")` <br /> `message.react("👎")` <br /> `}).catch(function() {` <br /> `msg.channel.send("is broke yo")` <br /> `});`
 Collect reactions to a message | ```const filter = (reaction, user) => reaction.emoji.name === '👍'; tempVars("your_message").awaitReactions(filter, { time: 15000 }).then(collected => msg.channel.send(`Collected ${collected.size} 👍 reactions`)).catch(console.error);```
@@ -183,7 +183,7 @@ Usage | Script
 :- | :-
 Ban User <br/><i>requires user's ID</i> | `msg.guild.ban(tempVars("user_id"))`<br/>`.then(user => console.log("Banned " + user.username + " from" + msg.guild.name))`<br/>`.catch(console.error);`
 Unban User <br/><i>requires user's ID</i> | `msg.guild.unban(tempVars("user_id"))`<br/>`.then(user => console.log("Unbanned " + user.username + " from" + msg.guild.name))`<br/>`.catch(console.error);`
-Find Emoji | `client.emojis.find("name", "NameOfTheEmoji")`
+Find Emoji | `client.emojis.find(c => c.name === "NameOfTheEmoji")`
 Jump to a specific action #<br/>_in this example you will jump to action #22_ | `jumpto = 22`<br/>`const index = Math.max(jumpto - 1, 0);`<br/>`cache.index = index - 1;`<br/>`this.callNextAction(cache)`
 Show current date/time in timezone | `new Date().toLocaleString("en-US", {timeZone: "America/New_York"})`
 Create server invite | `msg.channel.createInvite({ maxAge: 0 }).then(invite => msg.channel.send(invite.url))`
