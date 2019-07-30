@@ -32,9 +32,14 @@ When you close DBM your bot will shut down. If you want your bot to run always y
 You can run `!info vps` in the discord server for some VPS options, and some hosting tutorials can be found [here](https://silversunset.net/dbm/tutorials#running-your-bot-247). 
 
 ## ...won't anyone help me make a kick / ban / dm all command?
-Inviting your bot to a server and then using it to kick, ban, or DM all users is abuse of your bot (and probably the Discord API rules) that we will not assist with. 
+Inviting your bot to a server and then using it to kick, ban, or DM all users is abuse of your bot and violates the Discord TOS.  see below for more info.
+
 
 # Can I ...
+## ...have my bot DM all users in a server?
+No, this is a violation of the Discord TOS and may result in your account being banned. Please see this helpful communication from Discord staff regarding this:  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/image.png)
+
 ## ...run two bots at the same time? 
 Sort of. You cannot run two bots in DBM at the same time, but you can run a second instance of your bot via command prompt. [Click Here](https://silversunset.net/dbm/tutorials#running-your-bot-247-running-your-bot-with-cmd) for instructions.
 
