@@ -258,9 +258,9 @@ const commands = require('./data/commands.json')
 // Make an empty list (Array)
 const array = []
 // Loop through each command inside the commands.json file
-for (let i = 1; !!command[i]; i++) {
+for (let i = 1; !!commands[i]; i++) {
   // For each command, push it into the list (Array)
-  array.push(command[i].name)
+  array.push(commands[i].name)
 }
 // Store the result into a Temp Variable called commands 
 this.storeValue(array.join(', '), 1, 'commands', cache)
