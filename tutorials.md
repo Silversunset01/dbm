@@ -606,7 +606,7 @@ This bit assumes you are going to use `forever.js` to run the bot. You can choos
 * connect via PuTTY
 * Run commands:
 * `apt install unzip`
-* `npm install --no optional -g forever`
+* `npm install --no-optional -g forever`
 
 #### Unpackage and Start the bot
 
