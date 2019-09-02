@@ -63,8 +63,8 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 
 | Usage | Script |
 | :--- | :--- |
-| Return Count of Members in all Bot Guilds | `${this.getDBM().Bot.bot.users.array().length}` |
-| Return Count of all Bot Guilds | `${this.getDBM().Bot.bot.guilds.array().length}` |
+| Return Count of Members in all Bot Guilds | `${this.getDBM().Bot.bot.users.size}` |
+| Return Count of all Bot Guilds | `${this.getDBM().Bot.bot.guilds.size}` |
 | Return List of all Bot Guilds | `${this.getDBM().Bot.bot.guilds.array()}` |
 | Program memory usage \(in MB\) | `${Math.floor((process.memoryUsage().heapUsed / 1024)/1024)} MB` |
 | Store the bot as a guild member (using the message sent) | `${msg.guild.me}`
@@ -110,12 +110,12 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 | Return Server Owner Display Name | `${msg.guild.owner.displayName}` |
 | Return Server Available Status | `${msg.guild.available}` |
 | Return Server Member Count | `${msg.guild.memberCount}` |
-| Return Server Emojis Count | `${msg.guild.emojis.array().length}` |
-| Return Server Count of Roles | `${msg.guild.roles.array().length}` |
-| Return Server Count of Channels | `${msg.guild.channels.array().length}` |
+| Return Server Emojis Count | `${msg.guild.emojis.size}` |
+| Return Server Count of Roles | `${msg.guild.roles.size}` |
+| Return Server Count of Channels | `${msg.guild.channels.size}` |
 | Return Server Count of Text Channels | `${msg.guild.channels.findAll('type', 'text').length}` |
 | Return Server Count of Voice Channels | `${msg.guild.channels.findAll('type', 'voice').length}` |
-| Store Count members in a role | `${tempVars("role").members.array().length}`|
+| Store Count members in a role | `${tempVars("role").members.size}`|
 | Return List of Members in a Role | `tempVars("role").members.map(m=>m.user.tag)`
 | Return Server Emojis List | `${msg.guild.emojis.array()}` |
 | Return Server Online members | `${msg.guild.members.filter(m => m.user.presence.status == "online").size}` |
@@ -129,7 +129,7 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 ## Embeds
 Usage | Script
 :- | :-
-Add Field to Embed message | `tempVars("test").addField("Test Name", "Test Value", [inline]);` <br/> `[inline]` = True or False
+Add Field to Embed message | `tempVars("test").addField("Test Name", "Test Value", [inline]);` <br/> `[inline]` = true or false (Defaults to false)
 Add Blank Field to Embed Message | `tempVars("test").addBlankField()`
 Add Footer to Embed message | `tempVars("test").setFooter(member.displayName, msg.author.avatarURL)`
 
@@ -141,7 +141,7 @@ Send a message (variable) | `msg.channel.send(tempVars("some_variable"))`
 Send a message (with mixed text & variables) | `msg.channel.send("some text here " + tempVars("some_variable") + " and some more text")`
 Send a message (to another channel)| `msg.guild.channels.find(c => c.name == "bot-logs").send("test in another channel")` <br/>*can use "ID" instead of "Name"*
 Log to console | `console.log("your text here")`
-Add reactions to message <br/> - *works on normal messages or embeds*<br/>- *If using this on an embed, you do not need the "send embed message" action, this will replace it* | `msg.channel.send(tempVars("test"))` <br /> `.then(function (message) {` <br /> `message.react("👍")` <br /> `message.react("👎")` <br /> `}).catch(function() {` <br /> `msg.channel.send("is broke yo")` <br /> `});`
+Add reactions to message <br/> - *works on normal messages or embeds*<br/>- *If using this on an embed, you do not need the "send embed message" action, this will replace it* | `msg.channel.send(tempVars("test"))` <br /> `.then(async function (message) {` <br /> `await message.react("👍")` <br /> `await message.react("👎")` <br /> `}).catch(function() {` <br /> `msg.channel.send("is broke yo")` <br /> `});`
 Collect reactions to a message | ```const filter = (reaction, user) => reaction.emoji.name === '👍'; tempVars("your_message").awaitReactions(filter, { time: 15000 }).then(collected => msg.channel.send(`Collected ${collected.size} 👍 reactions`)).catch(console.error);```
 
 # Miscellaneous
@@ -149,10 +149,10 @@ Collect reactions to a message | ```const filter = (reaction, user) => reaction.
 | Usage | Script |
 | :--- | :--- |
 | Get the bot as a client | `${this.getDBM().Bot.bot` |
-| Get the bot as a client (beta only)| `${client` |
+| Get the bot as a client (beta only)| `${client` or `${bot` |
 | Get the bot as a guild member | `${msg.guild.me` or `${me` |
 | The command message | `${msg` |
-| The current server | `${msg.guild` |
+| The current server | `${msg.guild` or `${server` |
 | The command channel | `${msg.channel` |
 | The command author | `${msg.author` or `${user` |
 | The command author as a guild member | `${msg.member` or `${member` |
@@ -194,7 +194,7 @@ Change nickname (command author) | `msg.member.setNickname(tempVars("new_nick"))
 Get Variable value | `this.getVariable(1,"varname",cache);`
 Store Variables via script | `this.storeValue(output, 1 ,"totalUsers", cache)` <br /> (*1 = temp, 2 = server, 3 = global*)
 Set Bot Username via script | `this.getDBM().Bot.bot.user.setUsername('a very cool username')`
-Set Bot Avatar via script | `	this.getDBM().Bot.bot.user.setAvatar('image_link')`
+Set Bot Avatar via script | `this.getDBM().Bot.bot.user.setAvatar('image_link')`
 Set Server Name via script | `msg.guild.setName('a very cool name')`
 Set Server Icon via script | `msg.guild.setIcon('image_link')`
 
