@@ -73,8 +73,8 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 | Bot Rounded Ping | `${Math.floor(this.getDBM().Bot.bot.ping)}` <br/>or<br/> `${Math.floor(client.ping)}` |
 | Bots CPU | `${(process.cpuUsage().user / 1000000).toFixed(2)} Seconds`
 | Bots Prefix | `${this.getDBM().Files.data.settings.tag}`
-| Count of Commands in Bot | `${this.DBM.Files.data.commands.length}`
-| Count of Events in Bot | `${this.DBM.Files.data.events.length}`
+| Count of Commands in Bot | `${this.getDBM().Files.data.commands.length}`
+| Count of Events in Bot | `${this.getDBM().Files.data.events.length}`
 | Bot uptime<br/>_use tempVars("uptime-ms") to display this_ | `var uptime = process.uptime();`<br/>`var days = Math.floor((uptime % 31536000) / 86400);`<br/>`var hours = Math.floor((uptime % 86400) / 3600);`<br/>`var minutes = Math.floor((uptime % 3600) / 60);`<br/>`var seconds = Math.round(uptime % 60);`<br/>`var botuptime = (days > 0 ? days + " days, ":"") + (hours > 0 ? hours + " hours, ":"") + (minutes > 0 ? minutes + " minutes, ":"") + (seconds > 0 ? seconds + " seconds":"")`<br/>`this.storeValue(botuptime, 1, "uptime-ms", cache)`
 
 ## User Info
