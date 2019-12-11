@@ -261,7 +261,7 @@ this.storeValue(array.join(', '), 1, 'commands', cache);
 ## List all of the bot events (names)
 This script will get all the names of your bot's events and will store them onto a temp variable called `events`.
 
-```javascript
+```
 const events = require('./data/events');
 let array = events.filter((e) => e && e.name).map((e) => e.name);
 this.storeValue(array.join(', '), 1, 'events', cache);
