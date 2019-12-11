@@ -234,12 +234,12 @@ This script will select the specified number of items from a list (array), and m
 - Change the value of `sel = 5` to be however many items you want to select  
 
 ```
-//count how many items are in the list
+// Count how many items are in the list
 var myList = tempVars("Your List Variable");
 var myListLen = myList.length;
 var sel = 5;
 
-//Select # random numbers from the total length of the list of items
+// Select # random numbers from the total length of the list of items
 var arr = []
 while(arr.length < sel){
     var r = Math.floor(Math.random()*myListLen) + 1;
@@ -253,32 +253,16 @@ console.log("I have selected " + sel + " items from your list: " + arr);
 This script will get all the names of your bot's commands and will store them onto a temp variable called `commands`.
 
 ```
-// Grab the commands from the commands.json file inside the data folder
-const commands = require('./data/commands.json')
-// Make an empty list (Array)
-const array = []
-// Loop through each command inside the commands.json file
-for (let i = 1; !!commands[i]; i++) {
-  // For each command, push it into the list (Array)
-  array.push(commands[i].name)
-}
-// Store the result into a Temp Variable called commands 
-this.storeValue(array.join(', '), 1, 'commands', cache)
+const commands = require('./data/commands');
+let array = commands.filter((c) => c && c.name).map((c) => c.name);
+this.storeValue(array.join(', '), 1, 'commands', cache);
 ```
 
 ## List all of the bot events (names)
 This script will get all the names of your bot's events and will store them onto a temp variable called `events`.
 
 ```
-// Grab the events from the events.json file inside the data folder
-const events = require('./data/events.json')
-// Make an empty list (Array)
-const array = []
-// Loop through each event inside the events.json file
-for (let i = 1; !!events[i]; i++) {
-  // For each event, push it into the list (Array)
-  array.push(events[i].name)
-}
-// Store the result into a Temp Variable called events 
-this.storeValue(array.join(', '), 1, 'events', cache)
+const events = require('./data/events');
+let array = events.filter((e) => e && e.name).map((e) => e.name);
+this.storeValue(array.join(', '), 1, 'events', cache);
 ```
