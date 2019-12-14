@@ -266,3 +266,18 @@ const events = require('./data/events');
 let array = events.filter((e) => e && e.name).map((e) => e.name);
 this.storeValue(array.join(', '), 1, 'events', cache);
 ```
+## Display a missing variable with alt text
+This script  will display some alternative text instead of "undefined" if a variable is missing.  
+Copy this into a `Run Script` action, and make sure to choose `Evaluate Text Directly` from the dropdown.  
+```
+var reason = tempVars("variable"); //change this to be your variable
+if (typeof reason == 'undefined') {
+    reasonType = "no reason"
+} else {
+   reasonType = reason
+};
+this.storeValue(reasonType, 1 ,"newVariableName", cache);
+```
+Replace `tempVars("variable")` with the variable you want to evaluate  
+Replace `newVariableName` with whatever you want to call the new variable (or leave it blank if you want).  
+To call this new variable in your command/event type in `tempVars("newVariableName")`
