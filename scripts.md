@@ -55,7 +55,7 @@ Force Upper case | `.toUpperCase()`
 Force string | `.toString()`
 Replace | `.replace("old text","new text")`
 Switch | `switch(thing to eval) {` <br /> `case "OPT1": action to execute on match; break;` <br />`case "OPT2": action to execute on match; break;` <br />`case "OPT3": action to execute on match; break;` <br />`default: action to execute on match; break;` <br /> `}`
-If/Then (Ternery) | `(A < 1 ? "value if true" : "value if false")`
+If/Then (Ternary) | `(A < 1 ? "value if true" : "value if false")`
 If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 
 # Information Storage
