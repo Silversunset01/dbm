@@ -118,6 +118,8 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 | Store Count members in a role | `${tempVars("role").members.size}`|
 | Return List of Members in a Role | `tempVars("role").members.map(m=>m.user.tag)`
 | Return Server Emojis List | `${msg.guild.emojis.array()}` |
+| Return # of Bot Accounts | `${msg.guild.members.filter(m => m.user.bot == true).size}` |
+| Return # of non-Bot Accounts | `${msg.guild.members.filter(m => m.user.bot == false).size}`
 | Return Server Online members | `${msg.guild.members.filter(m => m.user.presence.status == "online").size}` |
 | Return Server Offine members | `${msg.guild.members.filter(m => m.user.presence.status == "offline").size}` |
 | Return Server Idle members | `${msg.guild.members.filter(m => m.user.presence.status == "idle").size}` |
