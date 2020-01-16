@@ -255,8 +255,7 @@ console.log("I have selected " + sel + " items from your list: " + arr);
 This script will get all the names of your bot's commands and will store them onto a temp variable called `commands`.
 
 ```
-const commands = require('./data/commands');
-let array = commands.filter((c) => c && c.name).map((c) => c.name);
+const array = this.getDBM().Files.data.commands.filter((c) => c && c.name).map((c) => c.name);
 this.storeValue(array.join(', '), 1, 'commands', cache);
 ```
 
@@ -264,8 +263,7 @@ this.storeValue(array.join(', '), 1, 'commands', cache);
 This script will get all the names of your bot's events and will store them onto a temp variable called `events`.
 
 ```
-const events = require('./data/events');
-let array = events.filter((e) => e && e.name).map((e) => e.name);
+const array = this.getDBM().Files.data.events.filter((c) => c && c.name).map((c) => c.name);
 this.storeValue(array.join(', '), 1, 'events', cache);
 ```
 ## Display a missing variable with alt text
