@@ -51,7 +51,7 @@ Image Editing | Resize Image | |
 Image Editing | Rotate Image | | 
 Image Editing | Send Image | | 
 Lists and Loops | Add Item to List | Adds an item to a previously created list. | 
-Lists and Loops | Convet List to Text | Transforms a list from JSON format `["item","item","item"]` to something more friendly like <br/>`- item`<br/>`-item`<br/>`-item` | 
+Lists and Loops | Convet List to Text | Transforms a list from JSON format `["item","item","item"]` to something more friendly like <br/>`- item`<br/>`- item`<br/>`- item` | 
 Lists and Loops | Create List | Creates a list, in JavaScript this is referred to as an Array | 
 Lists and Loops | Get Item from List | Retrieve an item from a previously created list | 
 Lists and Loops | Get List Length | Count the number of items in a previously created list | 
