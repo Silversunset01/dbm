@@ -35,7 +35,7 @@ You can store parameters entered into a command using the "Store command paramet
   * DBM defines a "word" as a complete string of characters between your parameter separator
     * ex: If your separator is a space, a "world" would be anything between spaces - `this is four words`
     * ex: if your separator is a comma, a "word" would be anything between commas - `this is, two things`
-   
+
 * Source Info:
   * **One Parameter** - creates a parameter using a single word, beginning at the \# given in the "parameter number" field.
     * ex: `!prune 50 100` - using "One Parameter" and "1" your parameter would be `50`
@@ -53,11 +53,11 @@ Adding a role to users who join your server is quite simple.
 
 1. **Create an event that is triggered ON MEMBER JOIN**
 
-This event will detect every time someone joins your server, and when you enter a variable name in the box labelled `Temp Variable Name (stores member that joined):` it will store the user that joined. For this example, we will call the variable `new-user`
+This event will detect every time someone joins your server, and when you enter a variable name in the box labeled `Temp Variable Name (stores member that joined):` it will store the user that joined. For this example, we will call the variable `new-user`
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/autorole1.PNG)
 
-2. **Find the role you want to apply to users** 
+2. **Find the role you want to apply to users**
 
 To apply a role you must first obtain the role object. Do this with a Find Role action. You can search by Role ID, Role Name, or Role Color (name or ID are the best options for this as they are the least likely to duplicate).
 
@@ -76,33 +76,33 @@ You have stored both the member object for the user that joined (variable `new-u
 Your new user now has a shiny new role.
 
 ## Custom Command Categories
-![](https://i.imgur.com/Aw9bUbc.png)  
-To create a custom command seperator category in DBM you can use HTML codes (_On the command name_). The fivefour pictured above are set as follows:  
+![](https://i.imgur.com/Aw9bUbc.png)
+To create a custom command seperator category in DBM you can use HTML codes (_On the command name_). The fivefour pictured above are set as follows:
 `<s><center>--------------------</center></s>`<br/>`<center><b><div style="color:yellow;">MODERATION</div></center>`<br/>`<b><div style="color:red;">LEFT_ALIGNED</div>`<br/>`<b><div style="color:blue;text-align:right;">RIGHT_ALIGNED</div>`<br/>`<hr color=white width=75%>`
 
 ## Check variable (CaSe InSeNsItIvE)
-When you use the `Check Variable` action DBM requires that it be an EXACT match, including case. That means  
-```TeXt LiKe ThIs```  
-is not the same as  
-```text like this```  
-or   
-```TEXT LIKE THIS```   
+When you use the `Check Variable` action DBM requires that it be an EXACT match, including case. That means
+```TeXt LiKe ThIs```
+is not the same as
+```text like this```
+or
+```TEXT LIKE THIS```
 
-The way to combat this is to convert your variable to the same case (either all upper-case or all lower-case) and compare that to your text. You will need to use `run script` for this to work.  
-**1. Store Command params**  
-    - this is the variable you will be testing, however, you store it will depend on your command.  
-    - For this example, we will assume your variable is called `myInput`  
-**2. Run Script**  
-    - enter the following script into the box `tempVars("myInput").toLowerCase();`   
-    - in the Store-in box underneath, store this as a new temporary variable called `myInputLowerCase`  
-**3. Check Variable**  
-    - Source Variable: Temporary Variable  
-    - Variable name: `myInputLowerCase`  
-    - Comparison Type: equals  
-    - Value to compare to: "your text in all lower case with quotes around it"  
-    - If True: continue  
-    - iF False: end or skip, depending on your command  
-   
+The way to combat this is to convert your variable to the same case (either all upper-case or all lower-case) and compare that to your text. You will need to use `Run Script` for this to work.
+**1. Store Command params**
+    - this is the variable you will be testing, however, you store it will depend on your command.
+    - For this example, we will assume your variable is called `myInput`
+**2. Run Script**
+    - enter the following script into the box `tempVars("myInput").toLowerCase();`
+    - in the Store-in box underneath, store this as a new temporary variable called `myInputLowerCase`
+**3. Check Variable**
+    - Source Variable: Temporary Variable
+    - Variable name: `myInputLowerCase`
+    - Comparison Type: equals
+    - Value to compare to: "your text in all lower case with quotes around it"
+    - If True: continue
+    - iF False: end or skip, depending on your command
+
 ## Generating a Random Response
 A random response generator works for anything from a Magic 8 ball command to a coin toss command, to a random image, joke, phrase, or even paper/scissors/rock command. The bot will generate a random number and select a response based on the number chosen.
 
@@ -149,41 +149,41 @@ this.storeValue(resp, 1 ,"answer", cache);
 (you would use `tempVars("answer")` to call this variable
 
 ### Using an Updatable List
-This requires two commands, the first command will let you set up and add text to the list. The second will choose a response and print it.  
-Command 1 raw code: https://silversunset.net/paste/120  
-Command 2 raw code: https://silversunset.net/paste/121  
+This requires two commands, the first command will let you set up and add text to the list. The second will choose a response and print it.
+Command 1 raw code: https://silversunset.net/paste/120
+Command 2 raw code: https://silversunset.net/paste/121
 
 **1. command *?rndtext* - set up and edit the list of responses**
 
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist1.PNG)  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist1.PNG)
 
-This command will allow you to either create a new list (if the list is deleted) or add items to the list. *Please note:* if you do not have beta you cannot use the Save Variable action, which means the list will be deleted every time the bot restarts. In that case, you'll need to recreate and add the text each time. 
+This command will allow you to either create a new list (if the list is deleted) or add items to the list. *Please note:* if you do not have beta you cannot use the Save Variable action, which means the list will be deleted every time the bot restarts. In that case, you'll need to recreate and add the text each time.
 
-After actions 1 and 2 (to store the 'type' and 'text' if any) you'll need to use CHECK VARIABLE to determine what kind of command you're running: 
+After actions 1 and 2 (to store the 'type' and 'text' if any) you'll need to use CHECK VARIABLE to determine what kind of command you're running:
 
-Action 3: Checks to see if the response = "new", if it does it will create the list named "rndlist" as a server variable (in action 5).    
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist2.PNG)  
+Action 3: Checks to see if the response = "new", if it does it will create the list named "rndlist" as a server variable (in action 5).
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist2.PNG)
 
-Action 4: Checks to see if the response = "add", if it does it adds the text you've input to the list.  
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist3.PNG)    
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist4.PNG)  
+Action 4: Checks to see if the response = "add", if it does it adds the text you've input to the list.
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist3.PNG)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist4.PNG)
 
-Action 9: This is a catch-all. If you do not enter *?rndtext new* or *?rndtext add* this message will pop up reminding you of the proper syntax  
+Action 9: This is a catch-all. If you do not enter *?rndtext new* or *?rndtext add* this message will pop up reminding you of the proper syntax
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist5.PNG)
 
-**2. command *?rndresponse* - retrieve random text from the list**  
+**2. command *?rndresponse* - retrieve random text from the list**
 This command simply pulls a random item from the list you created and prints it to chat
 
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist7.PNG)  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist7.PNG)
 
 Make sure to select the SERVER var as your source list
 
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist6.PNG)  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist6.PNG)
 
 When you've got that simply print the `${tempVars("rnd_response")}` to a send-message.
 
 ## How to Create an Embed Message
-Your bot can send two types of message, a normal message (that looks like something you would type) an embed message.
+Your bot can send two types of messages, a normal message (that looks like something you would type) and an embed message.
 #### To create an embed you must have at least three actions
 
 **1. Create embed** - you must create an embed first. If you've not created an embed you won't be able to send it.
@@ -219,18 +219,18 @@ If you've copied all of the steps above you should end up with an embed like thi
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest6.png)
 
 ## How to create a SAY command
-If you'd like to be able to type a message and speak as the bot it's quite simple. This example makes the assumption that you will make the bot speak in *another* channel from the one you type into. The command would be `?say #channel <message>`
+If you'd like to be able to type a message and speak as the bot it's quite simple. This example assumes that you will make the bot speak in *another* channel from the one you type into. The command would be `?say #channel <message>`
 
-**1. Store the text you'd like the bot to repeat**  
+**1. Store the text you'd like the bot to repeat**
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/say1.PNG)
 
-**2. Send the message to the #channel you mentioned**  
+**2. Send the message to the #channel you mentioned**
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/say2.PNG)
 
 ## How do I set my bot's activity to "... on X servers"
 
 Without mods, you can set the bot's activity to playing or streaming. Using mods, you can also set it to watching and listening.
-So, the only thing you'll need is a `Set Bot Game` or a `Set Bot Activity` (with beta) action. Create one of them, and set the text to: `${this.getDBM().Bot.bot.guilds.array().length} servers`. And... that's it! Now run the command or put the action inside an On Bot Initialization event!  
+So, the only thing you'll need is a `Set Bot Game` or a `Set Bot Activity` (with beta) action. Create one of them, and set the text to: `${this.getDBM().Bot.bot.guilds.array().length} servers`. And... that's it! Now run the command or put the action inside an On Bot Initialization event!
 ![](https://i.imgur.com/zjSkZ56.png)
 
 ## How to use `client` in non-beta
@@ -238,22 +238,22 @@ So, the only thing you'll need is a `Set Bot Game` or a `Set Bot Activity` (with
 Since `client` isn't defined in non-beta, you must use `this.getDBM().Bot.bot` to call the Discord.js Client. However, `this.getDBM().Bot.bot` is too long to type and we don't want to do that, do we? To work around this, you can put the following code in a Run Script inside a Bot Initialization event.
 ```JavaScript
 global.client = this.getDBM().Bot.bot
-``` 
+```
 
 ## Lists & Loops
 ### Lists
-A list in DBM is nothing more than what JavaScript calls [an array](https://www.w3schools.com/js/js_arrays.asp), which is a special type of item that can be used to store multiple values within a single variable.  
+A list in DBM is nothing more than what JavaScript calls [an array](https://www.w3schools.com/js/js_arrays.asp), which is a special type of item that can be used to store multiple values within a single variable.
 
 For example: Say you have a list of roles:
 
 - Role 1: Moderator
 - Role 2: Streamer
-- Role 3: Player  
+- Role 3: Player
 
-And you want to do something with the roles, for example - search through all roles and find out if you have one called "Streamer". To do this,  you would put the roles into a list (array) and search through that for your matching item  
+And you want to do something with the roles, for example - search through all roles and find out if you have one called "Streamer". To do this,  you would put the roles into a list (array) and search through that for your matching item
 `var serverMembers = ["Moderator", "Streamer", "Player"];`
 
-There are some lists that DBM stores for you automatically:  
+There are some lists that DBM stores for you automatically:
 
 - Server Members
 - Server Channels
@@ -261,19 +261,19 @@ There are some lists that DBM stores for you automatically:
 - Server Emojis
 - All bot servers
 - Mentioned roles
-- Command author roles  
+- Command author roles
 
 **Creating Lists & Adding Items**
-To create your own lists in DBM with the `Create List` action.  
+To create your lists in DBM with the `Create List` action.
 
-To add items to the list you have created, you would use the `Add Item To List` action, select your list variable, and put the value you want to add to the list in the VALUE box  
+To add items to the list you have created, you would use the `Add Item To List` action, select your list variable, and put the value you want to add to the list in the VALUE box
 
-**To add a value from another variable**, you *do not* need to use `${}` brackets, simply right click into the box and choose your variable, or type `tempVars("variableName")`  
+**To add a value from another variable**, you *do not* need to use `${}` brackets, simply right click into the box and choose your variable, or type `tempVars("variableName")`
 
 **To add TEXT to your list** make sure to put the value in "quotation marks"
 
 ### Loops
-Loops are very handy if you want to run the same code over and over, it saves you from having to type up the code for each instance.  
+Loops are very handy if you want to run the same code over and over, it saves you from having to type up the code for each instance.
 
 *For example:* Without using a loop, you would have to write five lines of code *for each role*, to do the following:
 ```
@@ -294,8 +294,8 @@ Loops are very handy if you want to run the same code over and over, it saves yo
 - Add Role To Member
 - Find Channel - my logging channel
 - Send Message - [USER] now has [ROLE]
-```  
-While this may not be bad for a handful of roles, what happens if you have 20. Or 200? Or 500? Using a loop, you would only need to write the code a single time; it would look like this:  
+```
+While this may not be bad for a handful of roles, what happens if you have 20. Or 200? Or 500? Using a loop, you would only need to write the code a single time; it would look like this:
 ```
 - Get all of my MEMBERS in an array
 - Loop through the array, and FOR EACH MEMBER
@@ -304,7 +304,7 @@ While this may not be bad for a handful of roles, what happens if you have 20. O
    - Find Channel - my logging channel
    - Send Message - [USER] now has [ROLE]
 ```
-Another way of looking at what a loop does is to say it like this:  
+Another way of looking at what a loop does is to say it like this:
 ```
 FOR EACH member IN ServerMembers DO myEvent
 
@@ -315,25 +315,25 @@ myEvent:
 - Send Message
 ```
 
-#### How to use a LOOP in DBM  
-Adding a loop in DBM can be a little confusing. It requires TWO actions. 
-**ACTION 1:** LOOP THROUGH LIST  
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/loops.PNG)  
-**Source List:** this is the list (array) you want to cycle through  
-**Temp Variable Name:** When performing a LOOP in DBM, the software needs to create a temporary variable to save the "current item" in, and you can use that variable to perform tasks.  
-**Event:** This is the name of the event that holds all of the actions you want the bot to perform on each item in your list.  
-**Call Type:** Synchronous = "Only run one item at a time, and finish it before moving on to the next"; Asynchronous = "Try to run all items at the same time  
+#### How to use a LOOP in DBM
+Adding a loop in DBM can be a little confusing. It requires TWO actions.
+**ACTION 1:** LOOP THROUGH LIST
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/loops.PNG)
+**Source List:** this is the list (array) you want to cycle through
+**Temp Variable Name:** When performing a LOOP in DBM, the software needs to create a temporary variable to save the "current item" in, and you can use that variable to perform tasks.
+**Event:** This is the name of the event that holds all of the actions you want the bot to perform on each item on your list.
+**Call Type:** Synchronous = "Only run one item at a time, and finish it before moving on to the next"; Asynchronous = "Try to run all items at the same time
 
-**ACTION 2:** An EVENT that contains all of the actions you want to perform during the loop. In this case, you would use "Find Role", "Add Role to Member", "Find Channel", "Send Message" -> In the *add role to member* action, you would use the variable you created in your "Loop through list" action as your user role.  
+**ACTION 2:** An EVENT that contains all of the actions you want to perform during the loop. In this case, you would use "Find Role", "Add Role to Member", "Find Channel", "Send Message" -> In the *add role to member* action, you would use the variable you created in your "Loop through list" action as your user role.
 
 **NOTE:** Because of the way DBM uses TEMPORARY variables, this will NOT show up in your right-click list. **YOU MUST TYPE THIS VARIABLE MANUALLY** by typing `tempVars("currentMember")` (or whatever you've named it). IT WILL STILL WORK. Just trust me.
 
 ### Synchronous or Asynchronous
 Thread: the flow of actions, starting from one until it ends
 
-These keywords refer to how the thread is treated and how the program flows. Whenever the call type is Sync, it waits until it receives a callback or when the thread ends. Meaning that when the event or command is called, the main thread starts first, and if it is ever interrupted by a call, it does that action and if that action ends, returns to the main thread. Async is similar to Sync however, it runs alongside with the main thread.  
+These keywords refer to how the thread is treated and how the program flows. Whenever the call type is Sync, it waits until it receives a callback or when the thread ends. Meaning that when the event or command is called, the main thread starts first, and if it is ever interrupted by a call, it does that action and if that action ends, returns to the main thread. Async is similar to Sync however, it runs alongside the main thread.
 
-Purpose: This is useful in multithreading. Take this example:  
+Purpose: This is useful in multithreading. Take this example:
 
 `Main Thread:
 ControlVariable(A to 1)
@@ -363,23 +363,23 @@ See [dbm/raw/callback.txt](https://github.com/ArztVielfrass/dbm/blob/master/raws
 ## Using @botname to trigger the bot
 To call the bot via @botname instead of using a command you can follow these steps:
 
-**1. create an EVENT that triggers on ANY MESSAGE**  
-This event will evaluate each message and look for a mention that matches the bot's ID  
+**1. create an EVENT that triggers on ANY MESSAGE**
+This event will evaluate each message and look for a mention that matches the bot's ID
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/ping1.png)
 
 **2. Store the text of the message**
 
-**3. use Check Variable to see if the message contains the ping for your bot**  
-If it contains the ping you're checking for, continue the actions. Otherwise, have it stop or your bot will just process on every message sent which is crazy.  
-*protip: you can use any ping here if you wanted to have it look for a specific user or role*    
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/ping3.PNG)  
+**3. use Check Variable to see if the message contains the ping for your bot**
+If it contains the ping you're checking for, continue the actions. Otherwise, have it stop or your bot will just process on every message sent which is crazy.
+*protip: you can use any ping here if you wanted to have it look for a specific user or role*
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/ping3.PNG)
 
-**4. Store any other information that you want from the message**  
+**4. Store any other information that you want from the message**
 At the very least I recommend storing the channel so you can send a response on the same channel.
-If you're using the @botname to trigger a command you'd then need to parse the text of your message for the rest of the command. That can be a bit complicated and will require you to learn some JS.  
+If you're using the @botname to trigger a command you'd then need to parse the text of your message for the rest of the command. That can be a bit complicated and will require you to learn some JS.
 
-**5. Send a message (or whatever else you want)**  
-The raw code for this example can be found here https://silversunset.net/paste/86  
+**5. Send a message (or whatever else you want)**
+The raw code for this example can be found here https://silversunset.net/paste/86
 *make sure you add it as an EVENT, not a command.*
 
 ## Working with Time
@@ -391,7 +391,7 @@ First, go [to this site](https://www.w3schools.com/jsref/jsref_obj_date.asp), bo
 ### Basic Timestamps
 * Getting the current time
 Getting the current time in javascript is easy.
-`${new Date()}` is all you really need. When you run this you're going to get something that looks like `Wed Apr 04 2018 20:18:02 GMT-0400 (Eastern Daylight Time)`
+`${new Date()}` is all you need. When you run this you're going to get something that looks like `Wed Apr 04 2018 20:18:02 GMT-0400 (Eastern Daylight Time)`
 **but be careful** - this will give you the time in the bot's timezone. So if you're running it on your home computer you'll get your local time, but when you save it out to a VPS you'll get whatever the servers 'local time' is.
 
 ### Getting the current UTC time
@@ -452,7 +452,7 @@ we're using a few javascript tricks here.
 If you use this method in DBM you WILL NOT be able to run your bot directly in DBM. It will be fine on your VPS or running via cmd locally.
 **YOU HAVE BEEN WARNED**
 
-[.toLocaleString()](https://www.w3schools.com/jsref/jsref_tolocalestring.asp) allows you to display a string using location-specific formatting. If your string is a date, it will show the current time as `4/4/2018, 7:40:32 PM` since that is the local settings for where the bot is currently running. **AGAIN** if you save the bot to a VPS it will use the bots server settings instead, BUT you can tell the program which settings you want it to use rather than the 'local' ones. 
+[.toLocaleString()](https://www.w3schools.com/jsref/jsref_tolocalestring.asp) allows you to display a string using location-specific formatting. If your string is a date, it will show the current time as `4/4/2018, 7:40:32 PM` since that is the local settings for where the bot is currently running. **AGAIN** if you save the bot to a VPS it will use the bots server settings instead, BUT you can tell the program which settings you want it to use rather than the 'local' ones.
 `new Date().toLocaleString("en-US", {timeZone: "UTC"})` will show the current UTC time in an American format
 `new Date().toLocaleString("en-US", {timeZone: "America/Chicago"})` will show the current CST time in an American format.
 [This Document](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString) has more information on locale string settings.
@@ -463,7 +463,7 @@ Another common use for the time in javascript is determining "when the last time
 To do this you'll need to store the last time something was run and compare it to the current time.
 **[This link](https://pastebin.com/EaBjackY) is the raw-data for the below command tutorial.**
 
-The real magic however is this script:
+The real magic, however, is this script:
 ```
 var duration = tempVars("time_var");
 var ms = parseInt((duration%1000)/100);
@@ -474,7 +474,7 @@ var h = parseInt((duration/(1000*60*60))%24);
 var timeoutput = h + "h:" + m + "m:" + s + "s:" + ms + "ms";
 this.storeValue(timeoutput,1,"donetime",cache)
 ```
-which converts the # of milliseconds between "current run" and "last run" to a human readable format.
+which converts the # of milliseconds between "current run" and "last run" to a human-readable format.
 
 For this example, we'll time "when was the last time [User] ran [Command]"
 
@@ -487,7 +487,7 @@ This is what each action is doing:
 
 **Action 3**: OPTIONAL: Format the time from milliseconds to a human-readable format. This will output your time as `0h:2m:34s:4ms`
 
-**Action 4**: Send some message with the information (Or do whatever else you want with it really). For the purposes of this tutorial, you should get two lines, one in milliseconds and one formatted.
+**Action 4**: Send some message with the information (Or do whatever else you want with it really). For this tutorial, you should get two lines, one in milliseconds and one formatted.
 
 **Action 5**: **required** Save the new current time to the member data, overwriting the old one and storing the new 'last time this command was run for that user.
 
@@ -496,12 +496,12 @@ To make this, you'll require a simple Run Script action.<br/>
 `var search = tempVars("parameters").toLowerCase()`<br/>`var member = msg.guild.members.find(member => member.name.toLowerCase().startsWith(search) || member.name.toLowerCase().endsWith(search) || member.name.toLowerCase().includes(search))`<br/>`this.storeValue(member, 1, "member", cache)`<br/>
 _the `tempVars("parameters")` would be your input, and, to use the output, use `tempVars("member")`_
 
-## Running via Command Prompt 
-This allows you to run your bot outside of DBM using command prompt (aka CMD). Please remember when you close the window the bot will shut down.  
-1. Open project directory  
-2. Click into the address bar  
-3. At the beginning type "cmd" and hit enter (this will open a cmd prompt in this folder)  
-4. type `node bot.js` <br/>Note: If you use a restart script (see [Restarting Automatically](#running-your-bot-247-restarting-automatically) this step may be different)  
+## Running via Command Prompt
+This allows you to run your bot outside of DBM using command prompt (aka CMD). Please remember when you close the window the bot will shut down.
+1. Open project directory
+2. Click into the address bar
+3. At the beginning type "cmd" and hit enter (this will open a cmd prompt in this folder)
+4. type `node bot.js` <br/>Note: If you use a restart script (see [Restarting Automatically](#running-your-bot-247-restarting-automatically) this step may be different)
 
 ## Stopping the Bot
 
@@ -565,7 +565,7 @@ goto main
 
 ### Forever.js
 
-You can install a script called **Forever.js** that will automatically restart your bot if it crashes. 
+You can install a script called **Forever.js** that will automatically restart your bot if it crashes.
 
 * `npm install --no optional -g forever`
 * `chmod -R a+rwx <bot folder>`- Give the bot folder permission to be read/write and executable
@@ -584,14 +584,14 @@ You can install a script called **Forever.js** that will automatically restart y
 
 
 # Running your bot 24/7
-By now you may have noticed that when you close DBM your bot shuts down - this is *normal and expected behavior*, the bot can only stay online when the program running it is online.  
-  
-You have three options to keep the bot running 24/7  
-1. **Keep DBM open all the time** - This is not recommended because the bot *will* crash periodically and DBM does not automatically restart  
-2. **Run the bot on your computer via Command Prompt (CMD)** - This is *slightly* better than running directly with DBM because you *can* create a restart script to handle the bot crashing. HOWEVER, most home internet providers are not designed for this sort of always-running access if your internet has caps you may hit them for larger (or music) bots. Using this method you can technically run the bot on any computer that will allow you to run node.js, which means you could run it on a Mac or Raspberri Pi machine should you have access to those.<br/>[Click for Command Prompt (CMD) Tutorial](#miscellaneous-tutorials-stopping-the-bot)<br/>[Click for Restart Script Tutorials](#miscellaneous-tutorials-restarting-automatically)  
-3. **Host the bot on a VPS** - A VPS (Virtual Private Server) is a more 'correct' way to host a bot. These servers are generally located in data centers designed for always-on use, and can often be found for a couple of dollars per month. There *are* some 'free' versions (i.e. Heroku and Glitch), but they are NOT designed for bot hosting, they are designed for things like websites and if you choose to use them be aware that they are unstable and your bot will have problems.  
-[Click for VPS Tutorials](#vps-tutorials)  
-    
+By now you may have noticed that when you close DBM your bot shuts down - this is *normal and expected behavior*, the bot can only stay online when the program running it is online.
+
+You have three options to keep the bot running 24/7
+1. **Keep DBM open all the time** - This is not recommended because the bot *will* crash periodically and DBM does not automatically restart
+2. **Run the bot on your computer via Command Prompt (CMD)** - This is *slightly* better than running directly with DBM because you *can* create a restart script to handle the bot crashing. HOWEVER, most home internet providers are not designed for this sort of always-running access if your internet has caps you may hit them for larger (or music) bots. Using this method you can technically run the bot on any computer that will allow you to run node.js, which means you could run it on a Mac or Raspberri Pi machine should you have access to those.<br/>[Click for Command Prompt (CMD) Tutorial](#miscellaneous-tutorials-stopping-the-bot)<br/>[Click for Restart Script Tutorials](#miscellaneous-tutorials-restarting-automatically)
+3. **Host the bot on a VPS** - A VPS (Virtual Private Server) is a more 'correct' way to host a bot. These servers are generally located in data centers designed for always-on use, and can often be found for a couple of dollars per month. There *are* some 'free' versions (i.e. Heroku and Glitch), but they are NOT designed for bot hosting, they are designed for things like websites and if you choose to use them be aware that they are unstable and your bot will have problems.
+[Click for VPS Tutorials](#vps-tutorials)
+
 # VPS Tutorials
 
 ## Digital Ocean
@@ -657,17 +657,17 @@ Comment: "rsa-key-[date]"
 ## Raspberry Pi
 
 ### Installing Node.js on a Raspberry pi
-First of all, I made this guide using Raspberry Pi 3, however, it should work with Raspberry Pi 2 too. But not with a Raspberry Pi Zero because it doesn't support node.js - You can just google if your pi supports node.js. 
+First of all, I made this guide using Raspberry Pi 3, however, it should work with Raspberry Pi 2 too. But not with a Raspberry Pi Zero because it doesn't support node.js - You can just google if your pi supports node.js.
 _Tresmos\#2135_
 
 Connect your Raspberry Pi using [PuTTY](https://www.putty.org/), or using [VNC ](https://howtoraspberrypi.com/raspberry-pi-vnc/)and type these commands in order to install Node.js:
 
 ### **for Node.js LTS:**
 
-If you have any other version of Node.js installed please uninstall them now before continuing 
+If you have any other version of Node.js installed please uninstall them now before continuing
 ```
 sudo apt purge node.js npm
-``` 
+```
 
 ARM Version:
 ```
@@ -693,7 +693,7 @@ sudo cp -R * /usr/local/
 Reboot RPi
 ```
 reboot
-``` 
+```
 
 ### **for Node.js 8:**
 
@@ -809,21 +809,21 @@ From R. Danny (Discord's API server bot)
 
 * Bots are not what the platform is designed for. Heroku is designed to provide web servers (like Django, Flask, etc). This is why they give you a domain name and open a port on their local emulator.
 * Heroku's environment is heavily containerized, making it quite significantly underpowered (this is reason 1 why voice doesn't work properly on Heroku)
-* Heroku's environment is volatile. In order to handle the insane amount of users trying to use it for their own applications, Heroku will dispose your environment every time your application dies unless you pay.
+* Heroku's environment is volatile. To handle the insane amount of users trying to use it for their applications, Heroku will dispose your environment every time your application dies unless you pay.
 * Heroku does not let you control system dependencies barely at all. This means if any of your requirements need C bindings (pynacl, lxml, etc), they'll probably not work. (this is reason 2 why voice doesn't work properly on Heroku)
-* Heroku only offers a limited amount of time on their free programme for your applications. If you exceed this limit (which you probably will), they'll shut down your application until your free credit resets.
+* Heroku only offers a limited amount of time on their free program for your applications. If you exceed this limit (which you probably will), they'll shut down your application until your free credit resets.
 
 If you need help with Heroku hosting please do not ask on our discord servers. You can just ask [here using our support system](https://dbm-support.site/).
 
 ### YouTube Tutorials
 
 * [HOW TO HOST YOUR DISCORD BOT FOR FREE! (Heroku)](https://www.youtube.com/watch?v=d8INsGl28xw) - Published on May 29, 2018 **most recent**
-* [Discord Bot | Host your bot for free! (using heroku)](https://www.youtube.com/watch?v=kpIFnZ0zbsw) - Published on Mar 22, 2018
+* [Discord Bot | Host your bot for free! (using Heroku)](https://www.youtube.com/watch?v=kpIFnZ0zbsw) - Published on Mar 22, 2018
 * [HOW TO HOST A DISCORD BOT FOR FREE USING HEROKU!](https://www.youtube.com/watch?v=diq7INoHqh4) - Published on Nov 15, 2017
 * [Host your Discord bot on Heroku 24/7!](https://www.youtube.com/watch?v=NM8IMyqpvqU) - Published on Sep 10, 2017
 
 ## Glitch
-Glitch is a **free** service that is generally used to run low to medium end applications and in general testing. Discord bots can be run on this however, there are some limits to glitch you must watch out for. This can be a great option for small to some medium bots. It's a much better option then **heroku**. It is also **compatible with DBM beta.** This is a far better alternative then **android** and **heroku**. 
+Glitch is a **free** service that is generally used to run low to medium end applications and in general testing. Discord bots can be run on this however, there are some limits to glitch you must watch out for. This can be a great option for small to medium bots. It's a much better option then **heroku**. It is also **compatible with DBM beta.** This is a far better alternative then **android** and **heroku**.
 
 If you would like to use this service follow the tutorial link here: [https://dbotmaker.io/forums/threads/glitch-hosting-free-compatible-with-beta-saves-data.305/](https://dbotmaker.io/forums/threads/glitch-hosting-free-compatible-with-beta-saves-data.305/ "Glitch Tutorial")
 

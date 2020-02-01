@@ -1,5 +1,5 @@
 # Discord (Not DBM Specific)
-These are tutorials that are not necessary specific to DBM, but rather are more geared towards "how discord works" or other things that can be done outside DBM.
+These are tutorials that are not necessarily specific to DBM, but rather are more geared towards "how discord works" or other things that can be done outside DBM.
 
 ## Display Twitch notifications with IFTTT
 ### Creating the Webhook/Trigger
@@ -19,14 +19,14 @@ These are tutorials that are not necessary specific to DBM, but rather are more 
 	5. Click the big blue "[+] That" and choose "Webhooks"
 	6. Choose "Make a web request" (it should be the only option)
 	7. Fill in the following details:
-		> **URL:** _[your URL from "part 2" above]_  
-		> **Method:** POST  
-		> **Content type:** `application/json`  
-		> **Body:** _[see the snippet below]_  
+		> **URL:** _[your URL from "part 2" above]_
+		> **Method:** POST
+		> **Content type:** `application/json`
+		> **Body:** _[see the snippet below]_
 	8. Click "Create Action"
-	
+
 ### Formatting the **Snippet**
-The following template shows a basic snippet 
+The following template shows a basic snippet
 ```json
 {
   "content": "{{ChannelName}} went live on Twitch",
