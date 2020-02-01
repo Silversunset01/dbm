@@ -84,16 +84,16 @@ Messaging | Send Message | |
 Messaging | Send TTS Message | | 
 Messaging | Set Embed Description | | 
 Messaging | Store Message Info | | 
-Other Stuff | Call Command/Event | | 
-Other Stuff | Control Variable | | 
-Other Stuff | End Action Sequence | | 
-Other Stuff | Generate Random Number | | 
-Other Stuff | Run Script | | 
+Other Stuff | Call Command/Event | | [link](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/actions/callcommandevent.PNG) 
+Other Stuff | Control Variable | | [link](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/actions/controlvariable.PNG)
+Other Stuff | End Action Sequence | | [link](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/actions/endactionsequence.PNG)
+Other Stuff | Generate Random Number | | [link](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/actions/generaterandomnumber.PNG)
+Other Stuff | Run Script | | [link](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/actions/runscript.PNG)
 Other Stuff | Save Variable | | 
-Other Stuff | Store Command Params | | 
+Other Stuff | Store Command Params | | [link](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/actions/storecommandparams.PNG)
 Other Stuff | Store Time Info | | 
 Other Stuff | Transfer Variable | | 
-Other Stuff | Wait | | 
+Other Stuff | Wait | | [link](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/actions/wait.PNG)
 Role Control | Create Role | | 
 Role Control | Delete Role | | 
 Role Control | Edit Role | | 
