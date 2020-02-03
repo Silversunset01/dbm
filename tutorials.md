@@ -165,7 +165,7 @@ Action 3: Checks to see if the response = "new", if it does it will create the l
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist2.PNG)
 
 Action 4: Checks to see if the response = "add", if it does it adds the text you've input to the list.  
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist3.PNG)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist3.PNG)  
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist4.PNG)
 
 Action 9: This is a catch-all. If you do not enter *?rndtext new* or *?rndtext add* this message will pop up reminding you of the proper syntax
@@ -221,16 +221,16 @@ If you've copied all of the steps above you should end up with an embed like thi
 ## How to create a SAY command
 If you'd like to be able to type a message and speak as the bot it's quite simple. This example assumes that you will make the bot speak in *another* channel from the one you type into. The command would be `?say #channel <message>`
 
-**1. Store the text you'd like the bot to repeat**
+**1. Store the text you'd like the bot to repeat**  
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/say1.PNG)
 
-**2. Send the message to the #channel you mentioned**
+**2. Send the message to the #channel you mentioned**  
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/say2.PNG)
 
 ## How do I set my bot's activity to "... on X servers"
 
 Without mods, you can set the bot's activity to playing or streaming. Using mods, you can also set it to watching and listening.
-So, the only thing you'll need is a `Set Bot Game` or a `Set Bot Activity` (with beta) action. Create one of them, and set the text to: `${this.getDBM().Bot.bot.guilds.array().length} servers`. And... that's it! Now run the command or put the action inside an On Bot Initialization event!
+So, the only thing you'll need is a `Set Bot Game` or a `Set Bot Activity` (with beta) action. Create one of them, and set the text to: `${this.getDBM().Bot.bot.guilds.array().length} servers`. And... that's it! Now run the command or put the action inside an On Bot Initialization event!  
 ![](https://i.imgur.com/zjSkZ56.png)
 
 ## How to use `client` in non-beta
@@ -317,7 +317,7 @@ myEvent:
 
 #### How to use a LOOP in DBM
 Adding a loop in DBM can be a little confusing. It requires TWO actions.
-**ACTION 1:** LOOP THROUGH LIST
+**ACTION 1:** LOOP THROUGH LIST  
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/loops.PNG)
 **Source List:** this is the list (array) you want to cycle through
 **Temp Variable Name:** When performing a LOOP in DBM, the software needs to create a temporary variable to save the "current item" in, and you can use that variable to perform tasks.
@@ -364,14 +364,14 @@ See [dbm/raw/callback.txt](https://github.com/ArztVielfrass/dbm/blob/master/raws
 To call the bot via @botname instead of using a command you can follow these steps:
 
 **1. create an EVENT that triggers on ANY MESSAGE**
-This event will evaluate each message and look for a mention that matches the bot's ID
+This event will evaluate each message and look for a mention that matches the bot's ID  
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/ping1.png)
 
 **2. Store the text of the message**
 
 **3. use Check Variable to see if the message contains the ping for your bot**
 If it contains the ping you're checking for, continue the actions. Otherwise, have it stop or your bot will just process on every message sent which is crazy.
-*protip: you can use any ping here if you wanted to have it look for a specific user or role*
+*protip: you can use any ping here if you wanted to have it look for a specific user or role*  
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/ping3.PNG)
 
 **4. Store any other information that you want from the message**
