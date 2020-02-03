@@ -4,8 +4,7 @@ DBM allows users to create bots using a graphical user interface that gives code
 # Creating your scripts
 Most things that are not available as actions can be run as a script either in the `Run Script` action or in any box that allows for text entry using `${}`.
 
-Sidenote: If you are trying to use a script in a text-entry field you'll need to surround it with `${}` brackets so the program understands that it is a script and not text. However, when using a Run Script action you *should not* use the brackets. 
-
+Sidenote: If you are trying to use a script in a text-entry field you'll need to surround it with `${}` brackets so the program understands that it is a script and not text. However, when using a Run Script action you *should not* use the brackets.  
 ![](https://github.com/Silversunset01/dbm/raw/master/screenshots/scriptex.png)
 
 ## Handy Scripting Resources
@@ -16,7 +15,7 @@ Sidenote: If you are trying to use a script in a text-entry field you'll need to
 There are three main ways to use scripts within DBM.
 
 ## Print a value
-For scripts that display information, you can simply put the script into your send message or embed, ensuring it is surrounded by `${}`. Within DBM anything in `${}` will evaluate as javascript and in this context will print the results.
+For scripts that display information, you can simply put the script into your send message or embed, ensuring it is surrounded by `${}`. Within DBM anything in `${}` will evaluate as javascript and in this context will print the results.  
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/HowToScript1.PNG)
 
 ## Use as a variable for other actions
