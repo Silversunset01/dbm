@@ -2,7 +2,7 @@
 DBM allows users to create bots using a graphical user interface that gives coders of all levels a head start on building their bots. You can find this software [on Steam](https://store.steampowered.com/app/682130/Discord_Bot_Maker/)
 
 # Creating your scripts
-Most things that are not available as actions can be run as a script either in the `Run Script` action or in any box that allows for text entry using `${}`.  
+Most things that are not available as actions can be run as a script either in the `Run Script` action or in any box that allows for text entry using `${}`.
 
 Sidenote: If you are trying to use a script in a text-entry field you'll need to surround it with `${}` brackets so the program understands that it is a script and not text. However, when using a Run Script action you *should not* use the brackets. 
 
