@@ -75,7 +75,7 @@ You have stored both the member object for the user that joined (variable `new-u
 
 Your new user now has a shiny new role.
 
-## Custom Command Categories
+## Custom Command Categories  
 ![](https://i.imgur.com/Aw9bUbc.png)
 To create a custom command seperator category in DBM you can use HTML codes (_On the command name_). The fivefour pictured above are set as follows:
 `<s><center>--------------------</center></s>`<br/>`<center><b><div style="color:yellow;">MODERATION</div></center>`<br/>`<b><div style="color:red;">LEFT_ALIGNED</div>`<br/>`<b><div style="color:blue;text-align:right;">RIGHT_ALIGNED</div>`<br/>`<hr color=white width=75%>`
@@ -164,7 +164,7 @@ After actions 1 and 2 (to store the 'type' and 'text' if any) you'll need to use
 Action 3: Checks to see if the response = "new", if it does it will create the list named "rndlist" as a server variable (in action 5).
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist2.PNG)
 
-Action 4: Checks to see if the response = "add", if it does it adds the text you've input to the list.
+Action 4: Checks to see if the response = "add", if it does it adds the text you've input to the list.  
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist3.PNG)
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist4.PNG)
 
