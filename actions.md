@@ -1,5 +1,3 @@
-**as of Beta 1.5.7**
-
 Action | Category | Description | IMG
 :-  |  :-  |  :-  |  :-:
 Add Embed Field | Messaging | Adds a new field to an embed message, requires `Create Embed Message` | 
