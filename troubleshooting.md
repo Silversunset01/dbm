@@ -117,12 +117,11 @@ Unexpected Token has nothing to do with your bots token. It means you've got an 
 
 ## Error: Search bar does not return results [beta] 
 For Windows 10:  
-1. Exit Discord Bot Maker
-2. Browse to %localappdata%
-3. Delete DBM, DBM2, and any other DBM folders
-4. Start Discord Bot Maker
-5. If on Open Project screen, it worked
-6. Search should work
+1. Exit Discord Bot Maker  
+2. Browse to %localappdata%  
+3. Delete DBM, DBM2, and any other DBM folders  
+4. Start Discord Bot Maker  
+5. Search should work  
 
 ## Error: Uncaught, unspecific "error" event.
 This error appears in your console because your hosting service or discord has a few internet problems. That's normal! Problem: It crashes your bot.  
