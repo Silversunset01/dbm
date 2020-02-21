@@ -316,22 +316,22 @@ myEvent:
 ```
 
 #### How to use a LOOP in DBM
-Adding a loop in DBM can be a little confusing. It requires TWO actions.
+Adding a loop in DBM can be a little confusing. It requires TWO actions.  
 **ACTION 1:** LOOP THROUGH LIST  
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/loops.PNG)
-**Source List:** this is the list (array) you want to cycle through
-**Temp Variable Name:** When performing a LOOP in DBM, the software needs to create a temporary variable to save the "current item" in, and you can use that variable to perform tasks.
-**Event:** This is the name of the event that holds all of the actions you want the bot to perform on each item on your list.
-**Call Type:** Synchronous = "Only run one item at a time, and finish it before moving on to the next"; Asynchronous = "Try to run all items at the same time
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/loops.PNG)  
+**Source List:** this is the list (array) you want to cycle through  
+**Temp Variable Name:** When performing a LOOP in DBM, the software needs to create a temporary variable to save the "current item" in, and you can use that variable to perform tasks.  
+**Event:** This is the name of the event that holds all of the actions you want the bot to perform on each item on your list.  
+**Call Type:** Synchronous = "Only run one item at a time, and finish it before moving on to the next"; Asynchronous = "Try to run all items at the same time  
 
-**ACTION 2:** An EVENT that contains all of the actions you want to perform during the loop. In this case, you would use "Find Role", "Add Role to Member", "Find Channel", "Send Message" -> In the *add role to member* action, you would use the variable you created in your "Loop through list" action as your user role.
+**ACTION 2:** An EVENT that contains all of the actions you want to perform during the loop. In this case, you would use "Find Role", "Add Role to Member", "Find Channel", "Send Message" -> In the *add role to member* action, you would use the variable you created in your "Loop through list" action as your user role.  
 
-**NOTE:** Because of the way DBM uses TEMPORARY variables, this will NOT show up in your right-click list. **YOU MUST TYPE THIS VARIABLE MANUALLY** by typing `tempVars("currentMember")` (or whatever you've named it). IT WILL STILL WORK. Just trust me.
+**NOTE:** Because of the way DBM uses TEMPORARY variables, this will NOT show up in your right-click list. **YOU MUST TYPE THIS VARIABLE MANUALLY** by typing `tempVars("currentMember")` (or whatever you've named it). IT WILL STILL WORK. Just trust me.  
 
 ### Synchronous or Asynchronous
-Thread: the flow of actions, starting from one until it ends
+Thread: the flow of actions, starting from one until it ends  
 
-These keywords refer to how the thread is treated and how the program flows. Whenever the call type is Sync, it waits until it receives a callback or when the thread ends. Meaning that when the event or command is called, the main thread starts first, and if it is ever interrupted by a call, it does that action and if that action ends, returns to the main thread. Async is similar to Sync however, it runs alongside the main thread.
+These keywords refer to how the thread is treated and how the program flows. Whenever the call type is Sync, it waits until it receives a callback or when the thread ends. Meaning that when the event or command is called, the main thread starts first, and if it is ever interrupted by a call, it does that action and if that action ends, returns to the main thread. Async is similar to Sync however, it runs alongside the main thread.  
 
 Purpose: This is useful in multithreading. Take this example:
 
