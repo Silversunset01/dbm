@@ -168,7 +168,7 @@ Action 4: Checks to see if the response = "add", if it does it adds the text you
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist3.PNG)  
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist4.PNG)
 
-Action 9: This is a catch-all. If you do not enter *?rndtext new* or *?rndtext add* this message will pop up reminding you of the proper syntax
+Action 9: This is a catch-all. If you do not enter *?rndtext new* or *?rndtext add* this message will pop up reminding you of the proper syntax  
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/rndtextlist5.PNG)
 
 **2. command *?rndresponse* - retrieve random text from the list**
@@ -219,13 +219,29 @@ If you've copied all of the steps above you should end up with an embed like thi
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest6.png)
 
 ## How to create a SAY command
-If you'd like to be able to type a message and speak as the bot it's quite simple. This example assumes that you will make the bot speak in *another* channel from the one you type into. The command would be `?say #channel <message>`
+If you'd like to be able to type a message and speak as the bot it's quite simple. 
+
+### In another channel 
+This example assumes that you will make the bot speak in *another* channel from the one you type into. The command would be `?say #channel <message>`
 
 **1. Store the text you'd like the bot to repeat**  
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/say1.PNG)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/say4.PNG)
 
 **2. Send the message to the #channel you mentioned**  
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/say2.PNG)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/say5.PNG)
+
+### In the same channel 
+This example assumes that you will make the bot speak in *the same channel* from the one you type into. The comand would be `?say <message>`  
+
+**1. Store the text you'd like the bot to repeat**  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/say1.PNG)  
+
+**2. Delete the command message**  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/say2.PNG)  
+
+**3. Send the message to the channel you typed in**  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/say3.PNG)  
+
 
 ## How do I set my bot's activity to "... on X servers"
 
