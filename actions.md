@@ -21,7 +21,7 @@ Control Audio | Audio Control | Stop / Pause / Resume playback of audio |
 Control Member Data | Deprecated | Saves member data to the `data/players.json` file | 
 Control Server Data | Deprecated | Saves server data to the `data/servers.json` file | 
 Control Variable | Other Stuff | Sets the value of a variable | [link](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/actions/controlvariable.PNG)
-Convet List to Text | Lists and Loops | Transforms a list from JSON format `["item","item","item"]` to something more friendly like <br/>`- item`<br/>`- item`<br/>`- item` | 
+Convert List to Text | Lists and Loops | Transforms a list from JSON format `["item","item","item"]` to something more friendly like <br/>`- item`<br/>`- item`<br/>`- item` | 
 Create Embed Message | Messaging | Creates a rich embed message. See [this tutorial](https://silversunset.net/dbm/tutorials#miscellaneous-tutorials-how-to-create-an-embed-message) for more information. | 
 Create Emoji | Emoji Control | Creates an emoji on the server | 
 Create Image | Image Editing | Creates an image from a local file or web URL | 
