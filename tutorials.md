@@ -88,21 +88,21 @@ is not the same as
 or
 ```TEXT LIKE THIS```
 
-The way to combat this is to convert your variable to the same case (either all upper-case or all lower-case) and compare that to your text. You will need to use `Run Script` for this to work.
-**1. Store Command params**
-    - this is the variable you will be testing, however, you store it will depend on your command.
-    - For this example, we will assume your variable is called `myInput`
-**2. Run Script**
-    - enter the following script into the box `tempVars("myInput").toLowerCase();`
-    - in the Store-in box underneath, store this as a new temporary variable called `myInputLowerCase`
-**3. Check Variable**
-    - Source Variable: Temporary Variable
-    - Variable name: `myInputLowerCase`
-    - Comparison Type: equals
-    - Value to compare to: "your text in all lower case with quotes around it"
-    - If True: continue
-    - iF False: end or skip, depending on your command
-
+The way to combat this is to convert your variable to the same case (either all upper-case or all lower-case) and compare that to your text. You will need to use `Run Script` for this to work.  
+**1. Store Command params**  
+    - this is the variable you will be testing, however, you store it will depend on your command.  
+    - For this example, we will assume your variable is called `myInput`  
+**2. Run Script**  
+    - enter the following script into the box `tempVars("myInput").toLowerCase();`  
+    - in the Store-in box underneath, store this as a new temporary variable called `myInputLowerCase`  
+**3. Check Variable**  
+    - Source Variable: Temporary Variable  
+    - Variable name: `myInputLowerCase`  
+    - Comparison Type: equals  
+    - Value to compare to: "your text in all lower case with quotes around it"  
+    - If True: continue  
+    - iF False: end or skip, depending on your command  
+  
 ## Generating a Random Response
 A random response generator works for anything from a Magic 8 ball command to a coin toss command, to a random image, joke, phrase, or even paper/scissors/rock command. The bot will generate a random number and select a response based on the number chosen.
 
