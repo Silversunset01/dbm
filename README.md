@@ -1,6 +1,8 @@
-This is the documentation for Discord Bot Maker. Good luck. (https://dbotmaker.io/documentation)
+# Discord Bot Maker
+
+Discord Bot Maker is a program [available on Steam](https://store.steampowered.com/app/682130/Discord_Bot_Maker/) that allows you to make a discord bot without extensive programming knowledge. This documentation is sourced by support volunteers. 
+
+[Official Documentation Link](https://dbotmaker.io/documentation)
 
 If you would like to contribute to this documentation please make a pull-request and it will be reviewed. All contributions are welcome!
 
-If you want to see the video tutorials see here:
-https://www.youtube.com/playlist?list=PLkfg3Bt9RE055BeP8DeDZSUCYxeSLnobe
