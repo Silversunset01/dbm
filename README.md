@@ -4,5 +4,7 @@ Discord Bot Maker is a program [available on Steam](https://store.steampowered.c
 
 [Official Documentation Link](https://dbotmaker.io/documentation)
 
-If you would like to contribute to this documentation please make a pull-request and it will be reviewed. All contributions are welcome!
+If you would like to contribute to this documentation please make a pull-request and it will be reviewed. All contributions are welcome!  
+
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/maindbm.PNG)
 
