@@ -1,6 +1,3 @@
-# Discord Bot Maker
-DBM allows users to create bots using a graphical user interface that gives coders of all levels a head start on building their bots. You can find this software [on Steam](https://store.steampowered.com/app/682130/Discord_Bot_Maker/)  
-
 # Creating your scripts
 Most things that are not available as actions can be run as a script either in the `Run Script` action or in any box that allows for text entry using `${}`.  
 
