@@ -103,6 +103,7 @@ _note: this also applies to server.json, serverVars.json, and globalVars.json_
 _note: if you have mods installed you will need to reinstall them after this process_  
 
 ## Error: Search bar doesnt work [Beta]
+### Reinstall Mods
 DBM Beta allows you to search for actions,  but sometimes mods make this break. to fix it:  
 1. Close Discord Bot Maker
 2. Open your Steam Library and find Discord Bot Maker on the Software tab
@@ -114,6 +115,14 @@ DBM Beta allows you to search for actions,  but sometimes mods make this break. 
 
 That should have fixed it.
 By doing this, your mods will be deleted. So, if you want, you can install them again. Follow the installation guide at https://github.com/dbm-network/mods/tree/beta#installing-mods
+
+### Delete your DBM Cache
+For Windows 10:  
+1. Exit Discord Bot Maker  
+2. Browse to %localappdata%  
+3. Delete DBM, DBM2, and any other DBM folders  
+4. Start Discord Bot Maker  
+5. Search should work  
 
 ## Error: Unexpected Token
 Unexpected Token has nothing to do with your bots token. It means you've got an unmatched bracket somewhere.  
@@ -127,14 +136,6 @@ Unexpected Token has nothing to do with your bots token. It means you've got an 
 
 **Example:**
 `${parseInt(tempVars("name")}` will throw an error: `Unexpected Token (` because you're missing a closing `)` after the variable.  
-
-## Error: Search bar does not return results [beta] 
-For Windows 10:  
-1. Exit Discord Bot Maker  
-2. Browse to %localappdata%  
-3. Delete DBM, DBM2, and any other DBM folders  
-4. Start Discord Bot Maker  
-5. Search should work  
 
 ## Error: Uncaught, unspecific "error" event.
 This error appears in your console because your hosting service or discord has a few internet problems. That's normal! Problem: It crashes your bot.  
