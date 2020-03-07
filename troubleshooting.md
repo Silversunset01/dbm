@@ -26,7 +26,7 @@ A common bot task is to add roles to users either automatically upon joining, or
 
 ## Error: Cannot find module `discord.js`
 1. Delete node_modules  
-2. type `npm i` (this will reinstall modules)  
+2. type `npm i discord.js@11.6.1` (this will reinstall the discord.js module)  
 
 ## Error: Cannot find module `./constants`
 You need to reinstall your node modules from package.json  
