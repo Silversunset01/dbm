@@ -10,6 +10,7 @@ This section covers various tutorials and things that may be helpful.
 * [DBM Tutorial #5 - Obtaining Parameters](https://youtu.be/haAyykGaY_E)
 * [DBM Tutorial #6 - How to use Events](https://youtu.be/lBEQBEXe2yQ)
 * [DBM Tutorial #7 - How to Export the Bot](https://youtu.be/MNw7anSA06g)
+* [DBM v1.2.0 Update Demonstration (Lists and Loops)](https://youtu.be/HdxJo4C5pw4)
 
 # Data
 Information relating to the storage and passing of data between commands or actions.
