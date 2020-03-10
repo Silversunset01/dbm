@@ -79,6 +79,7 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 | :--- | :--- |
 |Author Username|`${msg.author.username}`
 |Author Display Name (Nick)|`${member.displayName}`
+|Author Created At| `${msg.author.createdAt}`
 |Author Id|`${msg.author.id}`
 |Author Tag|`${msg.author.tag}`
 |Author Discriminator|`${msg.author.discriminator}`
