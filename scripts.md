@@ -130,7 +130,7 @@ Usage | Script
 :- | :-
 Add Field to Embed message | `tempVars("test").addField("Test Name", "Test Value", [inline]);` <br/> `[inline]` = true or false (Defaults to false)
 Add Blank Field to Embed Message | `tempVars("test").addBlankField()`
-Add Footer to Embed message | `tempVars("test").setFooter(member.displayName, msg.author.avatarURL)`
+Add Footer to Embed message | `tempVars("test").setFooter(member.displayName, msg.author.avatarURL)` <br/> or for plain text <br/> `tempVars("test").setFooter("your text here")`
 
 ## Miscellaneous
 Usage | Script
