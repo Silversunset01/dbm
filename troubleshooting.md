@@ -167,3 +167,24 @@ This only applies to users who have BETA. The developer is aware of this. In the
 
 ## SyntaxError: Block-scoped declarations (let, const, function, class) not yet supported outside strict mode
 To stop this error, you must update your [Node.js](https://nodejs.org/en/download/) (The LTS version should be fine.)  
+
+## Error with Event "Create Text Channel", DiscordAPIError: Invalid Form Body type: Value "text" is not int.
+To fix this error, you will need a text editor such as [Atom](https://atom.io/) or [Visual Studio Code](https://code.visualstudio.com/). After installing one, follow these steps:
+
+1. Open Steam
+2. Right click Discord Bot Maker
+3. Click "Properies"
+4. Click "Browse Local Files"
+5. Navigate to the Actions folder
+6. Find the `create_channel.js` file
+7. Open it with any text editor 
+8. Find line 121
+9. It should be: 
+```js
+server.createChannel(name, 'text').then(function(channel) {
+```
+10. Change it to:
+```js
+server.createChannel(name).then(function(channel) {
+```
+11. Make sure you **save** your work, restart Discord Bot Maker, and the error should have gone away.
