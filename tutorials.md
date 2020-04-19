@@ -260,6 +260,7 @@ For this example we will be using an EMBED message with the following parameters
    - **Action 1)** Store command parameters -> one parameter starting at 1 -> save as Temp Variable "topic"  
    - **Action 2)** Create embed message -> variable `e`, title `Info`  
    - **Action 3)** Run Script (Evaluate Text Directly):  
+   
    ```
    if (!tempVars("topic")) {var t = "X";} else {var t = tempVars("topic").toUpperCase()};
    var e = tempVars("e");
@@ -284,6 +285,7 @@ For this example we will be using an EMBED message with the following parameters
    - **Action 1)** Store command parameters -> one parameter starting at 1 -> save as Temp Variable "topic"  
    - **Action 2)** Create embed message -> variable `e`, title `Info`  
    - **Action 3)** Run Script (Evaluate Text Directly):
+   
    ```
    var e = tempVars("e");
 
