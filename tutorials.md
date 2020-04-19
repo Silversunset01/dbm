@@ -222,9 +222,10 @@ If you've copied all of the steps above you should end up with an embed like thi
 ## How to create an Info/Help command
 ### DBM Only
 This method of an Info/Help command uses ONLY DBM actions, but it can be tricky to update as your info changes.  
-For this example we will be using an EMBED message with the following parameters:
-   * `!info [topic]`
-   * available topics: `server`, `bot`, `commands`
+For this example we will be using an EMBED message with the following parameters:  
+   * `!info [topic]`  
+   * available topics: `server`, `bot`, `commands`  
+   
 1. Plan out the topics you want to cover. For each topic you will need the following actions:  
    - **a)** Check Variable   
    - **b)** Set Embed Description  
@@ -251,13 +252,14 @@ For this example we will be using an EMBED message with the following parameters
 
 ### With JavaScript - Switch/Case
 This method of an Info/Help command uses DBM actions as well as javascript, and can be very simple to update as your info expands.  
-For this example we will be using an EMBED message with the following parameters:
+For this example we will be using an EMBED message with the following parameters:  
    - `!info [topic]`  
    - available topics: `server`, `bot`, `commands`  
+   
 1. Command actions:  
    - **Action 1)** Store command parameters -> one parameter starting at 1 -> save as Temp Variable "topic"  
    - **Action 2)** Create embed message -> variable `e`, title `Info`  
-   - **Action 3)** Run Script (Evaluate Text Directly):
+   - **Action 3)** Run Script (Evaluate Text Directly):  
    ```
    if (!tempVars("topic")) {var t = "X";} else {var t = tempVars("topic").toUpperCase()};
    var e = tempVars("e");
@@ -273,10 +275,11 @@ For this example we will be using an EMBED message with the following parameters
 2. To add items to this list, simply copy & paste each `case` line (make sure to end with `break;`) and update the new line with your new information. Make sure to add the new `info` to your `Default` case as well.  
 
 ### With JavaScript - JSON
-This method of an Info/Help command uses DBM actions as well as javascript, and can be very simple to update as your info expands.  
-For this example we will be using an EMBED message with the following parameters:
+This method of an Info/Help command uses DBM actions as well as javascript, and can be very simple to update as your info expands.   
+For this example we will be using an EMBED message with the following parameters:  
    - `!info [topic]`  
    - available topics: `server`, `bot`, `commands`  
+   
 1. Command actions:  
    - **Action 1)** Store command parameters -> one parameter starting at 1 -> save as Temp Variable "topic"  
    - **Action 2)** Create embed message -> variable `e`, title `Info`  
