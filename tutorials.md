@@ -188,7 +188,7 @@ Your bot can send two types of messages, a normal message (that looks like somet
 #### To create an embed you must have at least three actions
 
 **1. Create embed** - you must create an embed first. If you've not created an embed you won't be able to send it.
-[THIS IMAGE](https://dbm-mods.xyz/files/opera_2018-03-05_15-51-27.png) is a full explanation of what the fields mean.
+[THIS IMAGE](https://i.imgur.com/F07x5YV.png) is a full explanation of what the fields mean.
 For this example we'll use the following settings:
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest.png)
