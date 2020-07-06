@@ -111,7 +111,7 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 | Return Server Count of Roles | `${msg.guild.roles.cache.size}` |
 | Return Server Count of Channels | `${msg.guild.channels.cache.size}` |
 | Return Server Count of Text Channels | `${msg.guild.channels.cache.find(c => c.type === 'text').length}` |
-| Return Server Count of Voice Channels | `${msg.guild.channels.cache.findAll(c => c.type === 'voice').length}` |
+| Return Server Count of Voice Channels | `${msg.guild.channels.cache.find(c => c.type === 'voice').length}` |
 | Store Count members in a role | `${tempVars("role").members.cache.size}`|
 | Return List of Members in a Role | `tempVars("role").members.cache.map(m => m.user.tag)`
 | Return Server Emojis List | `${msg.guild.emojis.cache.array()}` |
