@@ -49,7 +49,7 @@ Usage | Script
 Force Lower case | `.toLowerCase()`
 Force Upper case | `.toUpperCase()`
 Force string | `.toString()`
-Replace | `.replace("old text","new text")`
+Replace | `.replace("old text", "new text")`
 Switch | `switch(thing to eval) {` <br /> `case "OPT1": action to execute on match; break;` <br />`case "OPT2": action to execute on match; break;` <br />`case "OPT3": action to execute on match; break;` <br />`default: action to execute on match; break;` <br /> `}`
 If/Then (Ternary) | `(A < 1 ? "value if true" : "value if false")`
 If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
@@ -59,14 +59,14 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 
 | Usage | Script |
 | :--- | :--- |
-| Return Count of Members in all Bot Guilds | `${this.getDBM().Bot.bot.users.size}` |
-| Return Count of all Bot Guilds | `${this.getDBM().Bot.bot.guilds.size}` |
-| Return List of all Bot Guilds | `${this.getDBM().Bot.bot.guilds.array()}` |
+| Return Count of Members in all Bot Guilds | `${this.getDBM().Bot.bot.users.cache.size}` |
+| Return Count of all Bot Guilds | `${this.getDBM().Bot.bot.guilds.cache.size}` |
+| Return List of all Bot Guilds | `${this.getDBM().Bot.bot.guilds.cache.array()}` |
 | Program memory usage \(in MB\) | `${Math.floor((process.memoryUsage().heapUsed / 1024)/1024)} MB` |
 | Store the bot as a guild member (using the message sent) | `${msg.guild.me}`
 | Store the client (using the message sent) | `${msg.guild.client}`
-| Bot Ping | `${this.getDBM().Bot.bot.ping}` <br/>or<br/> `${client.ping}`
-| Bot Rounded Ping | `${Math.floor(this.getDBM().Bot.bot.ping)}` <br/>or<br/> `${Math.floor(client.ping)}` |
+| Bot Ping | `${this.getDBM().Bot.bot.ping}` <br/>or<br/> `${client.ws.ping}`
+| Bot Rounded Ping | `${Math.floor(this.getDBM().Bot.bot.ws.ping)}` <br/>or<br/> `${Math.floor(client.ws.ping)}` |
 | Bots CPU | `${(process.cpuUsage().user / 1000000).toFixed(2)} Seconds`
 | Bots Prefix | `${this.getDBM().Files.data.settings.tag}`
 | Count of Commands in Bot | `${this.getDBM().Files.data.commands.length}`
@@ -83,15 +83,15 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 |Author Id|`${msg.author.id}`
 |Author Tag|`${msg.author.tag}`
 |Author Discriminator|`${msg.author.discriminator}`
-|Author Avatar URL|`${msg.author.displayAvatarURL}`
-|Author Role List | `${member.roles.array()}`
-|Author Role List (truncated after 3 roles) <br/>*enter `${tempVars("role_list")}` into your send-message to view this output.*<br/>*output will display as `@role1,@role2,@role3 + # more roles!`* | `var roles = member.roles.array();`<br/>`var len = roles.length;`<br/>`if (len > 3) {`<br/>`   var answer = roles.slice(0,3) + " + " + (len - 3) + " more!"`<br/>`} else {`<br/>`   var answer = roles`<br/>`};`<br/>`this.storeValue(answer, 1 ,"role_list", cache);`
+|Author Avatar URL|`${msg.author.displayAvatarURL({ dynamic: true })}`
+|Author Role List | `${member.roles.cache.array()}`
+|Author Role List (truncated after 3 roles) <br/>*enter `${tempVars("role_list")}` into your send-message to view this output.*<br/>*output will display as `@role1,@role2,@role3 + # more roles!`* | `var roles = member.roles.cache.array();`<br/>`var len = roles.length;`<br/>`if (len > 3) {`<br/>`   var answer = roles.slice(0,3) + " + " + (len - 3) + " more!"`<br/>`} else {`<br/>`   var answer = roles`<br/>`};`<br/>`this.storeValue(answer, 1 ,"role_list", cache);`
 |User (variable) Username|`${tempVars("user_object").user.username}`
 |User (variable) Display Name (Nick)|`${tempVars("user_object").displayName}`
 |User (variable) Id|`${tempVars("user_object").user.id}`
 |User (variable) Tag|`${tempVars("user_object").user.tag}`
 |User (variable) Discriminator|`${tempVars("user_object").user.discriminator}`
-|User (variable) Avatar URL|`${tempVars("user_object").user.displayAvatarURL}`
+|User (variable) Avatar URL|`${tempVars("user_object").user.displayAvatarURL({ dynamic: true })}`
 
 ## Server Info
 
@@ -99,7 +99,7 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 | :--- | :--- |
 | Return Server Name | `${msg.guild.name}` |
 | Return Server Id | `${msg.guild.id}` |
-| Return Server Icon URL | `${msg.guild.iconURL}` |
+| Return Server Icon URL | `${msg.guild.iconURL({ dynamic: true })}` |
 | Return Server Region | `${msg.guild.region}` |
 | Return Server Creation Date | `${msg.guild.createdAt}` |
 | Return Server Verification Level | `${msg.guild.verificationLevel}` |
@@ -107,20 +107,20 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 | Return Server Owner Display Name | `${msg.guild.owner.displayName}` |
 | Return Server Available Status | `${msg.guild.available}` |
 | Return Server Member Count | `${msg.guild.memberCount}` |
-| Return Server Emojis Count | `${msg.guild.emojis.size}` |
-| Return Server Count of Roles | `${msg.guild.roles.size}` |
-| Return Server Count of Channels | `${msg.guild.channels.size}` |
-| Return Server Count of Text Channels | `${msg.guild.channels.findAll('type', 'text').length}` |
-| Return Server Count of Voice Channels | `${msg.guild.channels.findAll('type', 'voice').length}` |
-| Store Count members in a role | `${tempVars("role").members.size}`|
-| Return List of Members in a Role | `tempVars("role").members.map(m=>m.user.tag)`
-| Return Server Emojis List | `${msg.guild.emojis.array()}` |
-| Return # of Bot Accounts | `${msg.guild.members.filter(m => m.user.bot == true).size}` |
-| Return # of non-Bot Accounts | `${msg.guild.members.filter(m => m.user.bot == false).size}`
-| Return Server Online members | `${msg.guild.members.filter(m => m.user.presence.status == "online").size}` |
-| Return Server Offine members | `${msg.guild.members.filter(m => m.user.presence.status == "offline").size}` |
-| Return Server Idle members | `${msg.guild.members.filter(m => m.user.presence.status == "idle").size}` |
-| Return Server DND members | `${msg.guild.members.filter(m => m.user.presence.status == "dnd").size}` |
+| Return Server Emojis Count | `${msg.guild.emojis.cache.size}` |
+| Return Server Count of Roles | `${msg.guild.roles.cache.size}` |
+| Return Server Count of Channels | `${msg.guild.channels.cache.size}` |
+| Return Server Count of Text Channels | `${msg.guild.channels.cache.find(c => c.type === 'text').length}` |
+| Return Server Count of Voice Channels | `${msg.guild.channels.cache.findAll(c => c.type === 'voice').length}` |
+| Store Count members in a role | `${tempVars("role").members.cache.size}`|
+| Return List of Members in a Role | `tempVars("role").members.cache.map(m => m.user.tag)`
+| Return Server Emojis List | `${msg.guild.emojis.cache.array()}` |
+| Return # of Bot Accounts | `${msg.guild.members.cache.filter(m => m.user.bot).size}` |
+| Return # of non-Bot Accounts | `${msg.guild.members.cache.filter(m => !m.user.bot).size}`
+| Return Server Online members | `${msg.guild.members.cache.cache.filter(m => m.user.presence.status === "online").size}` |
+| Return Server Offine members | `${msg.guild.members.cache.filter(m => m.user.presence.status === "offline").size}` |
+| Return Server Idle members | `${msg.guild.members.cache.filter(m => m.user.presence.status === "idle").size}` |
+| Return Server DND members | `${msg.guild.members.cache.filter(m => m.user.presence.status === "dnd").size}` |
 | Return Server AFK Channel | `${msg.guild.afkChannel}` |
 | Return Server AFK Timeout \(in seconds\) | `${msg.guild.afkTimeout}` |
 
@@ -129,8 +129,8 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 Usage | Script
 :- | :-
 Add Field to Embed message | `tempVars("test").addField("Test Name", "Test Value", [inline]);` <br/> `[inline]` = true or false (Defaults to false)
-Add Blank Field to Embed Message | `tempVars("test").addBlankField()`
-Add Footer to Embed message | `tempVars("test").setFooter(member.displayName, msg.author.avatarURL)` <br/> or for plain text <br/> `tempVars("test").setFooter("your text here")`
+Add Blank Field to Embed Message | `tempVars("test").addField('\u200B', '\u200B', [inline])` <br/> `[inline]` = true or false (Defaults to false)
+Add Footer to Embed message | `tempVars("test").setFooter(member.displayName, msg.author.avatarURL({ dynamic: true }))` <br/> or for plain text <br/> `tempVars("test").setFooter("your text here")`
 
 ## Miscellaneous
 Usage | Script
@@ -138,9 +138,9 @@ Usage | Script
 Send a message (hard coded text) | `msg.channel.send("your message here")`
 Send a message (variable) | `msg.channel.send(tempVars("some_variable"))`
 Send a message (with mixed text & variables) | `msg.channel.send("some text here " + tempVars("some_variable") + " and some more text")`
-Send a message (to another channel)| `msg.guild.channels.find(c => c.name == "bot-logs").send("test in another channel")` <br/>*can use "ID" instead of "Name"*
+Send a message (to another channel)| `msg.guild.channels.cache.find(c => c.name === "bot-logs").send("test in another channel")` <br/>*can use "id" instead of "name"*
 Log to console | `console.log("your text here")`
-Add reactions to message <br/> - *works on normal messages or embeds*<br/>- *If using this on an embed, you do not need the "send embed message" action, this will replace it* | `msg.channel.send(tempVars("test"))` <br /> `.then(async function (message) {` <br /> `await message.react("👍")` <br /> `await message.react("👎")` <br /> `}).catch(function() {` <br /> `msg.channel.send("is broke yo")` <br /> `});`
+Add reactions to message <br/> - *works on normal messages or embeds*<br/>- *If using this on an embed, you do not need the "send embed message" action, this will replace it* | `msg.channel.send(tempVars("test"))` <br /> `.then(async function(message) {` <br /> `await message.react("👍")` <br /> `await message.react("👎")` <br /> `}).catch(function() {` <br /> `msg.channel.send("is broke yo")` <br /> `});`
 Collect reactions to a message | ```const filter = (reaction, user) => reaction.emoji.name === '👍'; tempVars("your_message").awaitReactions(filter, { time: 15000 }).then(collected => msg.channel.send(`Collected ${collected.size} 👍 reactions`)).catch(console.error);```
 
 # Miscellaneous
@@ -159,39 +159,39 @@ Collect reactions to a message | ```const filter = (reaction, user) => reaction.
 ## Lists
 Usage | Script
 :- | :-
-Create a list out of items that have data following them | `.array}`
+Create a list out of items that have data following them | `.array()}`
 Count items in the specified array | `.array().length}` or `.size}`
 Count items in the specified list <br/> **or** <br/> count the length of a string | `.length}`
 Find position of item in a list <br/>_If the bot returns -1 that means the item is not on the list. 0 means its the first item, 1 is the second etc_ | `${tempVars("yourList").indexOf(tempVars("yourItemToFind"))}`
 Remove item from list | `${tempVars("yourList").splice(# to remove, 1)}`
 Return the last # of items in a list | `tempVars("your variable").slice(Math.max(tempVars("your variable").length - 5, 1))` <br/> *where 5 is the number of items to return*
-Return item at [position] from [list] | `tempVars("list").slice(tempVars("pos_num")-1,tempVars("pos_num"))`
+Return item at [position] from [list] | `tempVars("list").slice(tempVars("pos_num") - 1, tempVars("pos_num"))`
 
 ## Webhooks
 Usage | Script
 :- | :-
-Create Webhook | `msg.channel.createWebHook('Webhook Name', 'https://i.imgur.com/9kgJteG.png')`
-Edit Webhook Name | `const hook = new DiscordJS.WebhookClient('webhook_id', 'webhook_token');`<br/>`hook.edit('A very cool nickname')`
-Edit Webhook Avatar | `const hook = new DiscordJS.WebhookClient('webhook_id', 'webhook_token');`<br/>`hook.edit(hook.name, 'https://i.imgur.com/9kgJteG.png')`<br/>_do not touch the **hook.name**_
-Edit Webhook Name & Avatar | `const hook = new DiscordJS.WebhookClient('webhook_id', 'webhook_token');`<br/>`hook.edit('a very cool name', 'https://i.imgur.com/9kgJteG.png')`
+Create Webhook | `msg.channel.createWebHook('Webhook Name', { avatar: 'https://i.imgur.com/9kgJteG.png' })` <br/> The avatar is optional
+Edit Webhook Name | `const hook = new DiscordJS.WebhookClient('webhook_id', 'webhook_token');`<br/>`hook.edit({ name: 'A very cool nickname' })`
+Edit Webhook Avatar | `const hook = new DiscordJS.WebhookClient('webhook_id', 'webhook_token');`<br/>`hook.edit({ avatar: 'https://i.imgur.com/9kgJteG.png' })`
+Edit Webhook Name & Avatar | `const hook = new DiscordJS.WebhookClient('webhook_id', 'webhook_token');`<br/>`hook.edit({ avatar: 'https://i.imgur.com/9kgJteG.png', name: 'a very cool name' })`
 Send Message to Webhook | `const hook = new DiscordJS.WebhookClient('webhook_id', 'webhook_token');`<br/>`hook.send('a very cool message');`
 Send Embed to Webhook | `const hook = new DiscordJS.WebhookClient('webhook_id', 'webhook_token');`<br/>`hook.send(tempVars("embed"));`
 
 ## Uncategorized
 Usage | Script
 :- | :-
-Ban User <br/><i>requires user's ID</i> | `msg.guild.ban(tempVars("user_id"))`<br/>`.then(user => console.log("Banned " + user.username + " from" + msg.guild.name))`<br/>`.catch(console.error);`
-Unban User <br/><i>requires user's ID</i> | `msg.guild.unban(tempVars("user_id"))`<br/>`.then(user => console.log("Unbanned " + user.username + " from" + msg.guild.name))`<br/>`.catch(console.error);`
-Find Emoji | `client.emojis.find(c => c.name === "NameOfTheEmoji")`
-Jump to a specific action #<br/>_in this example you will jump to action #22_ | `jumpto = 22`<br/>`const index = Math.max(jumpto - 1, 0);`<br/>`cache.index = index - 1;`<br/>`this.callNextAction(cache)`
-Show current date/time in timezone | `new Date().toLocaleString("en-US", {timeZone: "America/New_York"})`
+Ban User <br/><i>requires user's ID</i> | `msg.guild.members.ban(tempVars("user_id"))`<br/>`.then(user => console.log("Banned " + user.username + " from" + msg.guild.name))`<br/>`.catch(console.error);`
+Unban User <br/><i>requires user's ID</i> | `msg.guild.members.unban(tempVars("user_id"))`<br/>`.then(user => console.log("Unbanned " + user.username + " from" + msg.guild.name))`<br/>`.catch(console.error);`
+Find Emoji | `client.emojis.cache.find(c => c.name === "NameOfTheEmoji")`
+Jump to a specific action #<br/>_in this example you will jump to action #22_ | `let jumpTo = 22`<br/>`const index = Math.max(jumpTo - 1, 0);`<br/>`cache.index = index - 1;`<br/>`this.callNextAction(cache)`
+Show current date/time in timezone | `new Date().toLocaleString("en-US", { timeZone: "America/New_York" })`
 Create server invite | `msg.channel.createInvite({ maxAge: 0 }).then(invite => msg.channel.send(invite.url))`
-Create server invite (Variable) | `msg.guild.channels.find(c => c.name === tempVars("channel_name")).createInvite({ maxAge: 0 }).then(invite => msg.channel.send(invite.url))` <br/>*can use "ID" instead of "Name"*
-Add role to cmd author | `member.addRole(tempVars("newrolename"));`
+Create server invite (Variable) | `msg.guild.channels.cache.find(c => c.name === tempVars("channel_name")).createInvite({ maxAge: 0 }).then(invite => msg.channel.send(invite.url))` <br/>*can use "ID" instead of "Name"*
+Add role to cmd author | `member.roles.add(tempVars("newroleid"));`
 Stop the bot | `process.exit();`
 Change nickname (command author) | `msg.member.setNickname(tempVars("new_nick"))`<br/>`.then(console.log)`<br/>`.catch(console.error);`
-Get Variable value | `this.getVariable(1,"varname",cache);`
-Store Variables via script | `this.storeValue(output, 1 ,"totalUsers", cache)` <br /> (*1 = temp, 2 = server, 3 = global*)
+Get Variable value | `this.getVariable(1, "varname", cache);`
+Store Variables via script | `this.storeValue(output, 1, "totalUsers", cache)` <br /> (*1 = temp, 2 = server, 3 = global*)
 Set Bot Username via script | `this.getDBM().Bot.bot.user.setUsername('a very cool username')`
 Set Bot Avatar via script | `this.getDBM().Bot.bot.user.setAvatar('image_link')`
 Set Server Name via script | `msg.guild.setName('a very cool name')`
