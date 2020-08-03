@@ -59,14 +59,14 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 
 | Usage | Script |
 | :--- | :--- |
-| Return Count of Members in all Bot Guilds | `${this.getDBM().Bot.bot.users.cache.size}` |
-| Return Count of all Bot Guilds | `${this.getDBM().Bot.bot.guilds.cache.size}` |
-| Return List of all Bot Guilds | `${this.getDBM().Bot.bot.guilds.cache.array()}` |
+| Return Count of Members in all Bot Guilds | `${client.users.cache.size}` |
+| Return Count of all Bot Guilds | `${client.guilds.cache.size}` |
+| Return List of all Bot Guilds | `${client.guilds.cache.array()}` |
 | Program memory usage \(in MB\) | `${Math.floor((process.memoryUsage().heapUsed / 1024)/1024)} MB` |
 | Store the bot as a guild member (using the message sent) | `${msg.guild.me}`
 | Store the client (using the message sent) | `${msg.guild.client}`
-| Bot Ping | `${this.getDBM().Bot.bot.ws.ping}` <br/>or<br/> `${client.ws.ping}`
-| Bot Rounded Ping | `${Math.floor(this.getDBM().Bot.bot.ws.ping)}` <br/>or<br/> `${Math.floor(client.ws.ping)}` |
+| Bot Ping | `${client.ws.ping}`
+| Bot Rounded Ping | `${Math.floor(client.ws.ping)}` |
 | Bots CPU | `${(process.cpuUsage().user / 1000000).toFixed(2)} Seconds`
 | Bots Prefix | `${this.getDBM().Files.data.settings.tag}`
 | Count of Commands in Bot | `${this.getDBM().Files.data.commands.length}`
@@ -147,8 +147,7 @@ Collect reactions to a message | ```const filter = (reaction, user) => reaction.
 ## Identifiers
 | Usage | Script |
 | :--- | :--- |
-| Get the bot as a client | `${this.getDBM().Bot.bot` |
-| Get the bot as a client (beta only)| `${client` or `${bot` |
+| Get the bot as a client | `${client` or `${bot` |
 | Get the bot as a guild member | `${msg.guild.me` or `${me` |
 | The command message | `${msg` |
 | The current server | `${msg.guild` or `${server` |
