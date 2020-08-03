@@ -340,13 +340,6 @@ Without mods, you can set the bot's activity to playing or streaming. Using mods
 So, the only thing you'll need is a `Set Bot Game` or a `Set Bot Activity` (with beta) action. Create one of them, and set the text to: `${this.getDBM().Bot.bot.guilds.array().length} servers`. And... that's it! Now run the command or put the action inside an On Bot Initialization event!  
 ![](https://i.imgur.com/zjSkZ56.png)
 
-## How to use `client` in non-beta
-
-Since `client` isn't defined in non-beta, you must use `this.getDBM().Bot.bot` to call the Discord.js Client. However, `this.getDBM().Bot.bot` is too long to type and we don't want to do that, do we? To work around this, you can put the following code in a Run Script inside a Bot Initialization event.
-```JavaScript
-global.client = this.getDBM().Bot.bot
-```
-
 ## Lists & Loops
 ### Lists
 A list in DBM is nothing more than what JavaScript calls [an array](https://www.w3schools.com/js/js_arrays.asp), which is a special type of item that can be used to store multiple values within a single variable.
