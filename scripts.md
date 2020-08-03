@@ -117,7 +117,7 @@ If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 | Return Server Emojis List | `${msg.guild.emojis.cache.array()}` |
 | Return # of Bot Accounts | `${msg.guild.members.cache.filter(m => m.user.bot).size}` |
 | Return # of non-Bot Accounts | `${msg.guild.members.cache.filter(m => !m.user.bot).size}`
-| Return Server Online members | `${msg.guild.members.cache.cache.filter(m => m.user.presence.status === "online").size}` |
+| Return Server Online members | `${msg.guild.members.cache.filter(m => m.user.presence.status === "online").size}` |
 | Return Server Offine members | `${msg.guild.members.cache.filter(m => m.user.presence.status === "offline").size}` |
 | Return Server Idle members | `${msg.guild.members.cache.filter(m => m.user.presence.status === "idle").size}` |
 | Return Server DND members | `${msg.guild.members.cache.filter(m => m.user.presence.status === "dnd").size}` |
