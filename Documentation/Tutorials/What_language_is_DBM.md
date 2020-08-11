@@ -1,0 +1,2 @@
+# What language is DBM/my bot written in?
+DBM uses JavaScript, HTML and CSS, while your bot uses [Node.js](https://nodejs.org/en/) and [Discord.js](https://www.npmjs.com/package/discord.js) to interact with the [Discord API](https://discordapp.com/developers/docs/intro).

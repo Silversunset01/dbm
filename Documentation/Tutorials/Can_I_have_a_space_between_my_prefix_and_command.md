@@ -1,0 +1,3 @@
+# Can I have a space between my prefix & command? 
+Sort of. The way the bot is coded you cannot have a space between the prefix/command or in the command itself. The only way around this is to do an "any message" event (or command if you have beta), and evaluate the message to see if your desired string is included in the text and if so run the command. You may also want to add logic to see if your string is at the beginning of the message to avoid false triggers.  
+So yes, you **can** do it, but not simply by throwing a space in the command name. 

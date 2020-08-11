@@ -1,0 +1,2 @@
+# SyntaxError: Block-scoped declarations (let, const, function, class) not yet supported outside strict mode
+To stop this error, you must update your [Node.js](https://nodejs.org/en/download/) (The LTS version should be fine.) 
