@@ -55,7 +55,7 @@ screenshot: https://i.imgur.com/4PYckb7.png
 ![](https://i.imgur.com/4PYckb7.png)  
 
 ## Log bot DM's to Channel
-**Log all DM's to the bot to a channel - DBM V 1.6+**
+**Log all DM's to the bot to a channel - DBM V 1.6+**  
 This is an event that will log all DM's users send to your bot to a single channel in a server.
 This is a COMMAND that triggers ON ANY MESSAGE. To use it you will need to supply your server id and your desired log channel or the command will not work. 
 Raw Data: https://www.silversunset.net/paste/235    
