@@ -55,13 +55,12 @@ screenshot: https://i.imgur.com/4PYckb7.png
 ![](https://i.imgur.com/4PYckb7.png)  
 
 ## Log bot DM's to Channel
-**Log all DM's to the bot to a channel (No mods or beta needed)**
+**Log all DM's to the bot to a channel - DBM V 1.6+**
 This is an event that will log all DM's users send to your bot to a single channel in a server.
-These are EVENTS that trigger ON ANY MESSAGE. To use them you will need to supply your server id and your desired log channel or the commands will not work. One outputs an embed message, the other a normal bot message, your choice which to use.
-Event (embed version): https://silversunset.net/paste/97 *converted from Ghostbin*  
-Event (normal version): https://silversunset.net/paste/88 *converted from Ghostbin*  
+This is a COMMAND that triggers ON ANY MESSAGE. To use it you will need to supply your server id and your desired log channel or the command will not work. 
+Raw Data: https://www.silversunset.net/paste/235    
 Screenshot: https://i.imgur.com/wd2grr0.png  
-![](https://i.imgur.com/wd2grr0.png)  
+![](https://media.discordapp.net/attachments/345696100151459854/747253636366598216/unknown.png)  
 
 ## Move user to voice channel
 **Move User from one voice channel to another**
