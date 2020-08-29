@@ -16,32 +16,3 @@ If you are unsure the variable type you should use please see the below chart:
 |   **Same Command**    |  Temp Variable  |   Temp Variable  |
 | **Different Command** | Server Variable |  Global variable |
 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-</style>
-<table class="tg">
-<thead>
-  <tr>
-    <th class="tg-c3ow">Variable Types</th>
-    <th class="tg-c3ow">Same Server</th>
-    <th class="tg-c3ow">Different Server</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td class="tg-c3ow">Same Command</td>
-    <td class="tg-c3ow">Temp Variable</td>
-    <td class="tg-c3ow">Temp Variable</td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">Different Command</td>
-    <td class="tg-c3ow">Server Variable</td>
-    <td class="tg-c3ow">Global variable</td>
-  </tr>
-</tbody>
-</table>
