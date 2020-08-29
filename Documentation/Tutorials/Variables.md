@@ -11,29 +11,24 @@ There are a few ways to store and reuse information in DBM.
 # Which variable type should I use? 
 If you are unsure the variable type you should use please see the below chart:  
 
-|     Variable Types    |   Same Server   | Different Server |
-|:----------------------|:---------------:|:----------------:|
-|   **Same Command**    |  Temp Variable  |   Temp Variable  |
-| **Different Command** | Server Variable |  Global variable |
-
 <table style="width:500px;">
 <thead>
   <tr>
-    <th style="background-color:black;color:white">Variable Types</th>
-    <th>Same Server</th>
-    <th>Different Server</th>
+    <th style="background-color:black;color:white;text-align:center;">Variable Types</th>
+    <th style="padding-left:5px;">Same Server</th>
+    <th style="padding-left:5px;">Different Server</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td style="font-weight: bold">Same Command</td>
-    <td>Temp Variable</td>
-    <td>Temp Variable</td>
+    <td style="font-weight: bold;text-align:center;">Same Command</td>
+    <td style="color:green;">Temp Variable</td>
+    <td style="color:green;">Temp Variable</td>
   </tr>
   <tr>
-    <td style="font-weight: bold">Different Command</td>
-    <td>Server Variable</td>
-    <td>Global variable</td>
+    <td style="font-weight: bold;text-align:center;">Different Command</td>
+    <td style="color:blue;">Server Variable</td>
+    <td style="color:purple;">Global variable</td>
   </tr>
 </tbody>
 </table>
