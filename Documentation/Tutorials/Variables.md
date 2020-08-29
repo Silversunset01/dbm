@@ -16,3 +16,24 @@ If you are unsure the variable type you should use please see the below chart:
 |   **Same Command**    |  Temp Variable  |   Temp Variable  |
 | **Different Command** | Server Variable |  Global variable |
 
+<table style="width:500px;">
+<thead>
+  <tr>
+    <th style="background-color:black;color:white">Variable Types</th>
+    <th>Same Server</th>
+    <th>Different Server</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td style="font-weight: bold">Same Command</td>
+    <td>Temp Variable</td>
+    <td>Temp Variable</td>
+  </tr>
+  <tr>
+    <td style="font-weight: bold">Different Command</td>
+    <td>Server Variable</td>
+    <td>Global variable</td>
+  </tr>
+</tbody>
+</table>
