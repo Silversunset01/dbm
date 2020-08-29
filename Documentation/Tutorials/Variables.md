@@ -7,3 +7,11 @@ There are a few ways to store and reuse information in DBM.
 * **Temp variable** - exists only for the duration of the command. Once the command action list is over the variable is 'forgotten' by the bot
 * **Server variable** - exists for a single server. The bot will 'remember' these variables between commands but only for the server they were created in.
 * **Global variable** - exists for the bot regardless of server or command.
+
+# Which variable type should I use? 
+If you are unsure the variable type you should use please see the below chart:  
+
+|     Variable Types    |   Same Server   | Different Server |
+|:----------------------|:---------------:|:----------------:|
+|   **Same Command**    |  Temp Variable  |   Temp Variable  |
+| **Different Command** | Server Variable |  Global variable |
