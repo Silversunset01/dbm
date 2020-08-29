@@ -15,18 +15,18 @@ If you are unsure the variable type you should use please see the below chart:
 <thead>
   <tr>
     <th style="background-color:black;color:white;text-align:center;">Variable Types</th>
-    <th style="padding-left:5px;">Same Server</th>
-    <th style="padding-left:5px;">Different Server</th>
+    <th style="text-align:center;">Same Server</th>
+    <th style="text-align:center;">Different Server</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td style="font-weight: bold;text-align:center;">Same Command</td>
+    <td style="font-weight: bold;text-align:left;">Same Command</td>
     <td style="color:green;">Temp Variable</td>
     <td style="color:green;">Temp Variable</td>
   </tr>
   <tr>
-    <td style="font-weight: bold;text-align:center;">Different Command</td>
+    <td style="font-weight: bold;text-align:left;">Different Command</td>
     <td style="color:blue;">Server Variable</td>
     <td style="color:purple;">Global variable</td>
   </tr>
