@@ -24,7 +24,7 @@ Beta should no longer be used, the main program is currently the most up-to-date
 3. Check your discord.js version: click `Project`, then click `Module Manager` - you should just be able to delete anything in the `discord.js` box and it will default to "the most recent"
 
 At this point DBM should restart and update.  
-![](https://cdn.discordapp.com/attachments/481550058387537920/722119085386760202/DBM1_6_0Demo.gif)  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/DBM1_6_0Demo.gif)  
 
 ## Enabling Intents  
 **From SRD:** 
@@ -34,7 +34,7 @@ At this point DBM should restart and update.
 
 ### To enable them:
 1. First go to the `Developer Portal -> Bot` and scroll down. You can check the boxes to enable them  
-![](https://cdn.discordapp.com/attachments/481550058387537920/732970924592070687/FqovuRfUlc.gif)  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/DBM1_6_0Intents.gif)  
 2. Second, in Discord Bot Maker, go to `Extensions -> Bot Intents` (If it does not appear, first do `File -> Update Default Actions/Events/Extensions`).  
-![](https://cdn.discordapp.com/attachments/481550058387537920/732970955751686234/QAt3KKpoqZ.gif)  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/DBM1_6_0Intents2.gif)  
 3. Enable the intents. You can either select "All Intents", or use "Custom" to toggle which ones you'd like specifically. 
