@@ -129,7 +129,9 @@ Unexpected Token has nothing to do with your bots token. It means you've got an 
 
 *  `Unexpected Token (` means you're missing `)`  
 *  `Unexpected Token )` means you're missing `(`  
-*  `Unexpected Token {` means you're missing `}`  
+*  `Unexpected Token {` means you're missing `}`<br>
+**Note:**
+The error `Unexpected Token {` can also mean your Node.js version is below the required version (version 12.8.4+) - update [here](https://nodejs.org/en/)
 *  `Unexpected Token }` means you're missing `{`  
 *  `Unexpected Token <` means you're missing `>`  
 *  `Unexpected Token >` means you're missing `<`  
