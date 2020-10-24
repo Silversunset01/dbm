@@ -3,6 +3,10 @@ Navigate to your bots folder > DATA > and open the file that is unable to parse 
 
 _note: this also applies to server.json, serverVars.json, and globalVars.json_  
 
+### Bot Encryption
+You might also get these errors if you have encrypted your bot.
+You can disable the encryption from the **Settings** tab.
+
 ## If your file is empty
 
 1. Open the bots project folder  
