@@ -26,14 +26,16 @@ You can disable the encryption from the **Settings** tab.
 _note: if you have mods installed you will need to reinstall them after this process_  
 
 ## Crypto.createDecipher is depracated
-`There was issue parsing commands.json!  
+```
+There was issue parsing commands.json!  
 (node:10416) [DEP0106] DeprecationWarning: crypto.createDecipher is deprecated.  
 There was issue parsing events.json!  
 There was issue parsing players.json!  
 There was issue parsing settings.json!  
 There was issue parsing serverVars.json!  
 There was issue parsing globalVars.json!   
- There was issue parsing servers.json!`
+There was issue parsing servers.json!
+```
 
 Occasionally you may get this error.  
 If you get this error, either delete your encryption key under the settings page, or insert anything and delete it from the encryption key field.
