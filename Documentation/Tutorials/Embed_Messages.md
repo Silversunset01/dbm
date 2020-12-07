@@ -8,6 +8,9 @@ For this example we'll use the following settings:
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest.png)
 
+*1.16+ Scripts Update:*  
+It is reccomended to use the scripts found on the [scripts page](https://silversunset.net/dbm/scripts?topic=Information_Storage) as they have been updated for Discord.js 12, the screenshot was taken using v11 and some items may have changed.  
+
 **2. Add embed field OR set embed description** - If you want to add more content to your embed you can add a field or description. You can do both if you wish as well. The main difference is that the *Description* field does not have a required header, as the "embed title" is considered the header. the *embed field* item requires both a name and a description.
 For this example we'll use the following settings (Both an embed description AND an embed field):
 
