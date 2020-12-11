@@ -25,7 +25,7 @@ You can disable the encryption from the **Settings** tab.
 
 _note: if you have mods installed you will need to reinstall them after this process_  
 
-## Crypto.createDecipher is depracated
+## Crypto.createDecipher is deprecated
 ```
 There was issue parsing commands.json!  
 (node:10416) [DEP0106] DeprecationWarning: crypto.createDecipher is deprecated.  
