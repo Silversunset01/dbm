@@ -1,7 +1,7 @@
 # Storing Member Data (Numbers)
 DBM uses a JSON object to store user data to the `players.json` file. By default, JSON objects are *always* stored as text values.  
 
-This can cause issues with NUMERIC member data (things like wallet balances). In JavaScript, the `+` sign means "concatenate" if the variable is a text variable, and "add "if its a numeric variable. Since JSON is text by default DBM tends to concatenate values rather than add them.
+This can cause issues with NUMERIC member data (things like wallet balances). In JavaScript, the `+` sign means "concatenate" if the variable is a text variable, and "add" if its a numeric variable. Since JSON is text by default DBM tends to concatenate values rather than add them.
 
 **Symptom: 10 + 10 = 1010, but it should be 20**  
 
