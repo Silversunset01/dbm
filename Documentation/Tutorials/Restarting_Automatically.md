@@ -43,8 +43,6 @@ goto main
 
 * Done! Now you can run your bot just executing that file.
 
-[**Tutorial Video **_\(Click to watch it\)_](https://youtu.be/1ZDE3z_Fsi4)
-
 ## Forever.js
 
 You can install a script called **Forever.js** that will automatically restart your bot if it crashes.
