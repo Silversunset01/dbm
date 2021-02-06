@@ -61,7 +61,7 @@
 | Return Server Count of Text Channels | `${msg.guild.channels.cache.filter(c => c.type === 'text').size}` |
 | Return Server Count of Voice Channels | `${msg.guild.channels.cache.filter(c => c.type === 'voice').size}` |
 | Store Count members in a role | `${tempVars("role").members.cache.size}`|
-| Return List of Members in a Role | `tempVars("role").members.cache.map(m => m.user.tag)`
+| Return List of Members in a Role | `tempVars("role").members.map(m => m.user.tag)`
 | Return Server Emojis List | `${msg.guild.emojis.cache.array()}` |
 | Return # of Bot Accounts | `${msg.guild.members.cache.filter(m => m.user.bot).size}` |
 | Return # of non-Bot Accounts | `${msg.guild.members.cache.filter(m => !m.user.bot).size}`
