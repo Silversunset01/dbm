@@ -1,4 +1,4 @@
-#Error: FFMPEG Not Working
+# Error: FFMPEG Not Working
 ## "FFMPEG not found"
 1. Press Windows + R  
 2. Type in the field: cmd  
