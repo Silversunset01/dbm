@@ -29,10 +29,10 @@ in action: https://i.imgur.com/w9a6V1m.png
 ![](https://i.imgur.com/w9a6V1m.png)
 
 ## Bot Info
-**Comprehensive Bot Info command - no mods needed**
-Updated for discord.js v12+ https://www.silversunset.net/paste/239
-~~Non-beta: https://www.silversunset.net/paste/197~~
-~~Beta: https://www.silversunset.net/paste/233~~
+**Comprehensive Bot Info command - no mods needed**  
+Updated for discord.js v12+ https://www.silversunset.net/paste/239  
+~~Non-beta: https://www.silversunset.net/paste/197~~  
+~~Beta: https://www.silversunset.net/paste/233~~  
 In Action:  
 ![](https://i.imgur.com/yRPzpdr.png)  
 
