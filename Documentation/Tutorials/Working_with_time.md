@@ -11,9 +11,8 @@ Trying to code things with time in javascript will most likely set your hair on 
 First, go [to this site](https://www.w3schools.com/jsref/jsref_obj_date.asp), bookmark it, and make it your new best friend. This will give you all the bits and pieces of time you could ever want.
 
 ## Basic Timestamps
-* Getting the current time
-Getting the current time in javascript is easy.
-`${new Date()}` is all you need. When you run this you're going to get something that looks like `Wed Apr 04 2018 20:18:02 GMT-0400 (Eastern Daylight Time)`
+**Getting the current time**  
+`${new Date()}` will return the current time. When you run this you're going to get something that looks like `Wed Apr 04 2018 20:18:02 GMT-0400 (Eastern Daylight Time)`
 **but be careful** - this will give you the time in the bot's timezone. So if you're running it on your home computer you'll get your local time, but when you save it out to a VPS you'll get whatever the servers 'local time' is.
 
 ## Getting the current UTC time
