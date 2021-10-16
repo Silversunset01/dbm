@@ -25,13 +25,13 @@
 
 | Usage | Script |
 | :--- | :--- |
-|Author Username|`${msg.author.username}`
+|Author Username|`${user.username}`
 |Author Display Name (Nick)|`${member.displayName}`
-|Author Created At| `${msg.author.createdAt}`
-|Author Id|`${msg.author.id}`
-|Author Tag|`${msg.author.tag}`
-|Author Discriminator|`${msg.author.discriminator}`
-|Author Avatar URL|`${msg.author.displayAvatarURL({ dynamic: true })}`
+|Author Created At| `${user.createdAt}`
+|Author Id|`${{user..id}`
+|Author Tag|`${user.tag}`
+|Author Discriminator|`${{user.discriminator}`
+|Author Avatar URL|`${user.displayAvatarURL({ dynamic: true })}`
 |Author Role List | `${member.roles.cache.array()}`
 |Author Role List (truncated after 3 roles) <br/>*enter `${tempVars("role_list")}` into your send-message to view this output.*<br/>*output will display as `@role1,@role2,@role3 + # more roles!`* | `var roles = member.roles.cache.array();`<br/>`var len = roles.length;`<br/>`if (len > 3) {`<br/>`   var answer = roles.slice(0,3) + " + " + (len - 3) + " more!"`<br/>`} else {`<br/>`   var answer = roles`<br/>`};`<br/>`this.storeValue(answer, 1 ,"role_list", cache);`
 |User (variable) Username|`${tempVars("user_object").user.username}`
