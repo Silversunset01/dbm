@@ -228,19 +228,3 @@ If you need help with Heroku hosting please do not ask on our discord servers. Y
 * [Discord Bot | Host your bot for free! (using Heroku)](https://www.youtube.com/watch?v=kpIFnZ0zbsw) - Published on Mar 22, 2018
 * [HOW TO HOST A DISCORD BOT FOR FREE USING HEROKU!](https://www.youtube.com/watch?v=diq7INoHqh4) - Published on Nov 15, 2017
 * [Host your Discord bot on Heroku 24/7!](https://www.youtube.com/watch?v=NM8IMyqpvqU) - Published on Sep 10, 2017
-
-## Glitch
-Glitch is a **free** service that is generally used to run low to medium end applications and in general testing. Discord bots can be run on this however, there are some limits to glitch you must watch out for. This can be a great option for small to medium bots. It's a much better option then **heroku**. It is also **compatible with DBM beta.** This is a far better alternative then **android** and **heroku**.
-
-If you would like to use this service follow the tutorial link here: [https://dbotmaker.io/forums/threads/glitch-hosting-free-compatible-with-beta-saves-data.305/](https://dbotmaker.io/forums/threads/glitch-hosting-free-compatible-with-beta-saves-data.305/ "Glitch Tutorial")
-
-#### **Limits**
-* Projects have a limit of around **200MB of disk space** on the project however node modules don't count towards it.
-* Projects have a limit of **512MB of RAM**.
-* Projects sleep after 5 minutes (tutorial shows how to fix it) and after 12 hours of constant running before being rebooted.
-
-#### **Comparison to Heroku**
-* Glitch will save your bot files and data. This is an actual storage system compared to Heroku which erases after each reboot.
-* Glitch has an easier interface compared to Heroku's
-* Glitch is more focused and better supported on Javascript/node.js and NPM packages. Hence why node modules are unlimited storage space
-* Glitch has no actual "hour counter", bots will reboot after 12 hours and can run again up to 12 hours. Heroku, however, will shut down your bot for the rest of the month.
