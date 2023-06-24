@@ -16,11 +16,11 @@ For scripts that display information, you can simply put the script into your se
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/HowToScript1.PNG)  
 
 ## Use as a variable for other actions
-You can also use simple scripts in other actions as a value rather than using other actions to create the value first. An example of this would be creating an Embed message, instead of having to use "Store member info" or "Store server info" for the username, guild icon, user avatar, etc you can reduce the number of actions you use by using the script version to pull the information.  
+You can also use simple scripts in other actions as a value rather than using other actions to create the value first. An example of this would be creating an Embed message, instead of having to use "Store member info" or "Store server info" for the username and user avatar. You can reduce the number of actions you use by using the script version to pull the information.  
 **Note:** Sometimes you will need to enclose the script in brackets `${}`, but other times you will not. You can test this by right-clicking into the field and inserting *any* variable. If the variable inserts with brackets you'll _probably_ need them for the scripts as well.  
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/embedtest.png)  
 
 ## Run complex JavaScript
-You can run JavaScript (including Discord.js) within DBM by using the RUN SCRIPT action. This allows you to create custom actions that the bot does not already have (either in the vanilla/beta version or via mods).  
-When using this method **do not** put brackets `${}` around the data. A run-script action will run anything within it as a script, so adding the brackets is overkill (and will cause DBM to not understand what you're doing and the script may fail).  
+You can run JavaScript (including Discord.js) within DBM by using the `Run Script` action. This allows you to create custom actions that the bot does not already have (either in the vanilla/beta version or via mods).  
+When using this method **do not** put brackets `${}` around the data. A Run Script action will run anything within it as a script, so adding the brackets is overkill (and will cause DBM to not understand what you're doing and the script may fail).
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/HowToScript2.PNG)  
