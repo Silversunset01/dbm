@@ -1,5 +1,5 @@
 # VPS Tutorials
-[Digital Ocean](#digital-ocean) | [Raspberry Pi](#raspberry-pi) | [Heroku](#heroku) | [Glitch](#glitch)
+[Digital Ocean](#digital-ocean) | [Raspberry Pi](#raspberry-pi)
 
 ## Digital Ocean
 
@@ -102,17 +102,17 @@ Reboot RPi
 reboot
 ```
 
-### **for Node.js 8:**
+### **for Node.js 16:**
 
 ```
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-### **for Node.js 9:**
+### **for Node.js 18:**
 
 ```
-curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
@@ -208,23 +208,3 @@ _In this way if you close PuTTY, your bot will stop working too._
 That's it!
 
 _In this way you can close VNC Viewer and your bot will still run, however if you close that terminal window bot will stop working._
-
-## Heroku
-
-### Disclaimers
-From R. Danny (Discord's API server bot)
-
-* Bots are not what the platform is designed for. Heroku is designed to provide web servers (like Django, Flask, etc). This is why they give you a domain name and open a port on their local emulator.
-* Heroku's environment is heavily containerized, making it quite significantly underpowered (this is reason 1 why voice doesn't work properly on Heroku)
-* Heroku's environment is volatile. To handle the insane amount of users trying to use it for their applications, Heroku will dispose your environment every time your application dies unless you pay.
-* Heroku does not let you control system dependencies barely at all. This means if any of your requirements need C bindings (pynacl, lxml, etc), they'll probably not work. (this is reason 2 why voice doesn't work properly on Heroku)
-* Heroku only offers a limited amount of time on their free program for your applications. If you exceed this limit (which you probably will), they'll shut down your application until your free credit resets.
-
-If you need help with Heroku hosting please do not ask on our discord servers. You can just ask [here using our support system](https://dbm-support.site/).
-
-### YouTube Tutorials
-
-* [HOW TO HOST YOUR DISCORD BOT FOR FREE! (Heroku)](https://www.youtube.com/watch?v=d8INsGl28xw) - Published on May 29, 2018 **most recent**
-* [Discord Bot | Host your bot for free! (using Heroku)](https://www.youtube.com/watch?v=kpIFnZ0zbsw) - Published on Mar 22, 2018
-* [HOW TO HOST A DISCORD BOT FOR FREE USING HEROKU!](https://www.youtube.com/watch?v=diq7INoHqh4) - Published on Nov 15, 2017
-* [Host your Discord bot on Heroku 24/7!](https://www.youtube.com/watch?v=NM8IMyqpvqU) - Published on Sep 10, 2017

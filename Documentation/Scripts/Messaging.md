@@ -15,6 +15,8 @@ Send a message (hard coded text) | `msg.channel.send("your message here")`
 Send a message (variable) | `msg.channel.send(tempVars("some_variable"))`
 Send a message (with mixed text & variables) | `msg.channel.send("some text here " + tempVars("some_variable") + " and some more text")`
 Send a message (to another channel)| `msg.guild.channels.cache.find(c => c.name === "bot-logs").send("test in another channel")` <br/>*can use "id" instead of "name"*
+Reply to a message | `msg.reply("message")`
+Reply to an interaction | `interaction.reply("message")`
 Log to console | `console.log("your text here")`
 Add reactions to message <br/> - *works on normal messages or embeds*<br/>- *If using this on an embed, you do not need the "send embed message" action, this will replace it* | `msg.channel.send(tempVars("test"))` <br /> `.then(async function(message) {` <br /> `await message.react("👍")` <br /> `await message.react("👎")` <br /> `}).catch(function() {` <br /> `msg.channel.send("is broke yo")` <br /> `});`
 Collect reactions to a message | ```const filter = (reaction, user) => reaction.emoji.name === '👍'; tempVars("your_message").awaitReactions(filter, { time: 15000 }).then(collected => msg.channel.send(`Collected ${collected.size} 👍 reactions`)).catch(console.error);```

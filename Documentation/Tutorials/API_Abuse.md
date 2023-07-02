@@ -8,7 +8,7 @@ Inviting your bot to a server and then using it to kick, ban, or DM all users is
 
 ## Can I have my bot DM all users in a server?
 No, this is a violation of the Discord TOS and may result in your account being banned. Please see this helpful communication from Discord staff regarding this:  
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/image.png)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/dmall.png)
 
 ## Can I make rainbow roles?
 No. This is API abuse and is not allowed by the Discord API. [More information on rate limits can be found here](https://discordapp.com/developers/docs/topics/rate-limits). More specifically because of [this](https://discordapp.com/developers/docs/legal) from the Discord TOS:  

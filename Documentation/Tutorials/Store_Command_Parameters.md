@@ -1,6 +1,6 @@
 # Store Command Parameters
 
-You can store parameters entered into a command using the "Store command parameters" action. This will assume your parameters are using the default `space` \(`\s+`\) as a separator.
+You can store parameters entered into a command using the "Store command parameters" action. This will assume your parameters are using the default `space` \(`\s+`\) as a separator. You can change the separator in Text Command Options in the settings tab.
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/storeparams.png)
 
@@ -14,7 +14,7 @@ You can store parameters entered into a command using the "Store command paramet
   * **One Parameter** - creates a parameter using a single word, beginning at the \# given in the "parameter number" field.
     * ex: `!prune 50 100` - using "One Parameter" and "1" your parameter would be `50`
     * ex: `!prune 50 100` - using "One Parameter" and "2" your parameter would return `100`
-  * **Multiple Parameters** - creates a parameter using multiple words separated by the character indicated in the bot settings(default space), beginning from the number you specify in "Parameter Number" and going to the end of the command input
+  * **Multiple Parameters** - creates a parameter using multiple words separated by the character indicated in the bot settings, beginning from the number you specify in "Parameter Number" and going to the end of the command input
     * ex: `!ban @Silversunset You are breaking the rules` - using "Multiple Parameters" and "2" your parameter would be `You are breaking the rules`
     * ex: `!ban @Silversunset You are breaking the rules` - using "Multiple Parameters" and "3" your parameter would be `are breaking the rules`
   * **Mentioned Member** - stores the `@username` from a command as a parameter

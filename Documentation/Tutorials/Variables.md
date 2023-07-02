@@ -4,11 +4,11 @@
 
 There are a few ways to store and reuse information in DBM.
 
-* **Temp variable** - exists only for the duration of the command. Once the command action list is over the variable is 'forgotten' by the bot. Note: these will be available in loops or when calling an event but you may have to type the variable manually, DBM doesn't pass temp variables between things even if they are available.
+* **Temp variable** - exists only for the duration of the command. Once the command action list is over the variable is 'forgotten' by the bot. **Note:** these will be available in loops or when calling an event but you may have to type the variable manually, DBM doesn't pass temp variables between things even if they are available.
 * **Server variable** - exists for a single server. The bot will 'remember' these variables between commands but only for the server they were created in.
 * **Global variable** - exists for the bot regardless of server or command.
 
-# Which variable type should I use? 
+## Which variable type should I use? 
 If you are unsure the variable type you should use please see the below chart:  
 
 <table style="width:500px;">
@@ -32,3 +32,6 @@ If you are unsure the variable type you should use please see the below chart:
   </tr>
 </tbody>
 </table>
+
+## Saving Variables
+By default, server and global variables are only stored until the bot is stopped. To prevent this, you will need to use the Save Variable action to save the variables to your disk so that they can be accessed once the bot is restarted.
