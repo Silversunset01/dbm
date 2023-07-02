@@ -26,7 +26,7 @@
 
 **Note:** Since the pomelo username update, user discriminator numbers have been replaced with "0" for users with the new username system. Currently, in discord.js v13 (the version that DBM currently uses), there is no way to get a user's display name
 
-*(Author = User)*
+*Author = User | (you can also use `user` in most cases, instead of `msg.author`)* 
 
 | Usage | Script |
 | :--- | :--- |
