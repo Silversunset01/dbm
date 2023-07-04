@@ -19,14 +19,14 @@ There are some lists that DBM stores for you automatically:
 - Server Channels
 - Server Roles
 - Server Emojis
-- All bot servers
-- Mentioned roles
-- Command author roles
+- All Bot Servers
+- Mentioned User Roles
+- Command User Roles
 
 **Creating Lists & Adding Items**
 To create your lists in DBM with the `Create List` action.
 
-To add items to the list you have created, you would use the `Add Item To List` action, select your list variable, and put the value you want to add to the list in the VALUE box
+To add items to the list you have created, you would use the `Add Item To List` action, select your list variable, and put the value you want to add to the list in the Value box
 
 **To add a value from another variable**, you *do not* need to use `${}` brackets, simply right click into the box and choose your variable, or type `tempVars("variableName")`
 
@@ -76,17 +76,18 @@ myEvent:
 ```
 
 ### How to use a LOOP in DBM
-Adding a loop in DBM can be a little confusing. It requires TWO actions.  
-**ACTION 1:** LOOP THROUGH LIST  
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/loops.PNG)  
-**Source List:** this is the list (array) you want to cycle through  
-**Temp Variable Name:** When performing a LOOP in DBM, the software needs to create a temporary variable to save the "current item" in, and you can use that variable to perform tasks.  
-**Event:** This is the name of the event that holds all of the actions you want the bot to perform on each item on your list.  
-**Call Type:** Synchronous = "Only run one item at a time, and finish it before moving on to the next"; Asynchronous = "Try to run all items at the same time  
+Looping requires the "Loop Through List" action.
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/loops.PNG)
 
-**ACTION 2:** An EVENT that contains all of the actions you want to perform during the loop. In this case, you would use "Find Role", "Add Role to Member", "Find Channel", "Send Message" -> In the *add role to member* action, you would use the variable you created in your "Loop through list" action as your user role.  
+In the Iteration Options, you can specify your source list/array to cycle through.
+In Loop Options, there are two options.
 
-**NOTE:** Because of the way DBM uses TEMPORARY variables, this will NOT show up in your right-click list. **YOU MUST TYPE THIS VARIABLE MANUALLY** by typing `tempVars("currentMember")` (or whatever you've named it). IT WILL STILL WORK. Just trust me.  
+**Temp Variable Name:** When performing a loop in DBM, the bots needs to create a temporary variable to save the "current item" in, and you can use that variable to perform tasks.  
+**Call Type:** 
+- Wait for Completion (Synchronous): The bot will only loop through one item at a time and finish it before moving on to the next.
+- Process Simultaneously (Asynchronous): The bot will loop through all items at the same time.  
+
+From there, you can add any actions inside the container that the loop will run through for each item.
 
 ## Synchronous or Asynchronous
 Thread: the flow of actions, starting from one until it ends  

@@ -1,7 +1,7 @@
 # Error: There was an error parsing `filename.json`
 Navigate to your bots folder > DATA > and open the file that is unable to parse in a text editor.  
 
-_note: this also applies to server.json, serverVars.json, and globalVars.json_  
+_note: this also applies to other JSON files in your data folder._  
 
 ## Bot Encryption
 You might also get these errors if you have encrypted your bot.
@@ -23,7 +23,7 @@ You can disable the encryption from the **Settings** tab.
 5. Click the Verify integrity of game files button.  
 6. Steam will verify the game's files - this process may take several minutes.  
 
-_note: if you have mods installed you will need to reinstall them after this process_  
+_note: if you have mods or themes installed, you will need to reinstall them after this process_  
 
 ## Crypto.createDecipher is deprecated
 ```

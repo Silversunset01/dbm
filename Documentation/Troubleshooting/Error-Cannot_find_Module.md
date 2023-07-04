@@ -1,12 +1,12 @@
 # Error: Cannot find module `discord.js`
 1. Delete node_modules  
-2. type `npm i discord.js@11.6.1` (this will reinstall the discord.js module)  
+2. type `npm i discord.js@13` (this will reinstall the discord.js module)  
 
 # Error: Cannot find module `./constants`
 You need to reinstall your node modules from package.json  
 ## For Windows:
 1. In CMD type `CD/your bot directory` (if you're not already in it)  
-2. Enter the following exactly `rd /s /q node_modules`  
+2. Enter the following exactly `rd /s /q node_modules` (or you can delete the node_modules folder manually)
 3. Reinstall modules with `npm i`  
 
 ## For Linux

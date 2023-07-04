@@ -3,7 +3,7 @@
 
 ## DBM Only
 This method of an Info/Help command uses ONLY DBM actions, but it can be tricky to update as your info changes.  
-For this example we will be using an EMBED message with the following parameters:  
+For this example we will be using an embed message with the following parameters:  
    * `!info [topic]`  
    * available topics: `server`, `bot`, `commands`  
    
@@ -39,7 +39,7 @@ For this example we will be using an EMBED message with the following parameters
    
 1. Command actions:  
    - **Action 1)** Store command parameters -> one parameter starting at 1 -> save as Temp Variable "topic"  
-   - **Action 2)** Create embed message -> variable `e`, title `Info`  
+   - **Action 2)** Create embed message -> variable `e`, title: `Info`  
    - **Action 3)** Run Script (Evaluate Text Directly):  
    
    ```

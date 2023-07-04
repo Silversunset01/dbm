@@ -1,26 +1,23 @@
 # Adding a role on-join
-Adding a role to users who join your server is quite simple.
+Adding a role to members who join your server is quite simple.
 
-1. **Create an event that is triggered ON MEMBER JOIN**
+1. **Create an event that is triggered on Member Join Server**
 
-This event will detect every time someone joins your server, and when you enter a variable name in the box labeled `Temp Variable Name (stores member that joined):` it will store the user that joined. For this example, we will call the variable `new-user`
+This event will detect every time someone joins your server, and when you enter a variable name in the box labeled `Temp Variable Name (stores member that joined):` it will store the member that joined. For this example, we will call the variable `new-member`
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/autorole1.PNG)
 
-2. **Find the role you want to apply to users**
+2. **Add the role to the member that joined**
 
-To apply a role you must first obtain the role object. Do this with a Find Role action. You can search by Role ID, Role Name, or Role Color (name or ID are the best options for this as they are the least likely to duplicate).
+Using the Add Member Role action, we can give a specified role to the member.
 
-Give this role a variable name that you can easily identify later. Here we will search for the role called `Players` and store it as the variable name `default-role`
+The `Source Role` field can be used to find a role via its role ID or name.
+If you have a role object, you can its variable too.
+
+Now we can use the found "Players" role and give it to the member stored in the `new-member` variable.
 
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/autorole2.PNG)
 
-3. **Add the role to the member that joined**
-
-You have stored both the member object for the user that joined (variable `new-user`) and the role object for your default role (variable `default-role`). Now you will select an Add Member Role action, and apply the role you stored to the member you stored.
-
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/autorole3.PNG)
-
 **That's it!**
 
-Your new user now has a shiny new role.
+Your new member now has a shiny new role.
