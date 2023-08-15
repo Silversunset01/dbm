@@ -37,7 +37,7 @@ Intents are privileges that allow your bot to receive information from miscellan
 
 ### To enable them:
 1. First go to the `Developer Portal -> Bot` and scroll down. You can check the boxes to enable them  
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/DBM2_02Intents1.gif)  
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/DBM2_0Intents1.gif)  
 2. Second, in Discord Bot Maker, go to `Extensions -> Bot Intents`.  
 ![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/DBM2_0Intents2.gif)  
 3. Enable the intents. You can either select "All Intents", or use "Custom" to toggle which ones you'd like specifically. 

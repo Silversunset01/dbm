@@ -8,15 +8,14 @@ It means that your interaction has expired before your bot could respond to it.
 
 If your command takes longer than an interaction's short time period to execute, you may need a "Start Thinking" action.
 This way, your bot can let Discord, and the user, know that your bot is still executing the command and will respond when ready.
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/thinking.PNG)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/thinking.png)
 
 Just like with interaction replies, you can enable the ephemeral option to make the "thinking" message hidden to other users.
 
 To update the thinking message with your final reply, use a Send Message action with `Reply to Interaction if possible` checked. 
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/thinking2.PNG)
+![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/thinking2.png)
 
 Your thinking message should change to your final reply in Send Message once ready.
-![](https://raw.githubusercontent.com/Silversunset01/dbm/master/screenshots/thinking3.PNG)
 
 ## Cannot send an empty message
 If your bot log contains an error like this: `DiscordAPIError: Cannot send an empty message` 
