@@ -26,7 +26,7 @@ Switch | `switch(thing to eval) {` <br /> `case "OPT1": action to execute on mat
 If/Then (Ternary) | `(A < 1 ? "value if true" : "value if false")`
 If/Then (Normal) | `if(thing to evaluate) {value if true} else {value if false}`
 Replace undefined/null (nullish coalescing) | `tempVars("banReason") ?? "No reason."`
-Replace false/NaN (logical OR) | `tempVars("number") || "Invalid number."`
+Replace false/NaN (logical OR) | `tempVars("number") \|\| "Invalid number."`
 Ban User <br/><i>requires user's ID</i> | `msg.guild.members.ban(tempVars("user_id"))`<br/>`.then(user => console.log("Banned " + user.username + " from" + msg.guild.name))`<br/>`.catch(console.error);`
 Unban User <br/><i>requires user's ID</i> | `msg.guild.members.unban(tempVars("user_id"))`<br/>`.then(user => console.log("Unbanned " + user.username + " from" + msg.guild.name))`<br/>`.catch(console.error);`
 Find Emoji | `client.emojis.cache.find(c => c.name === "NameOfTheEmoji")`

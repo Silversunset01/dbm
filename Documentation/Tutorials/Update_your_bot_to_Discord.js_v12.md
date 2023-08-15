@@ -2,7 +2,7 @@
 
 **ATTENTION:** DBM now currently uses Discord.js v13. Please use [this guide](/dbm/tutorials?topic=Update_your_bot_to_Discord.js_v12) to update to the latest version.
 
-Discord.js has updated from v11 to v12. From their [update guide](https://discordjs.guide/additional-info/changes-in-v12.html#before-you-start)
+Discord.js has updated from v11 to v12. From their [update guide](https://discordjs.guide/additional-info/changes-in-v13.html#before-you-start)
 > After a long time in development, Discord.js v12 has been formally released, meaning it's time to update from v11 to get new features for your bots! However, with those new features comes a lot of changes to the library that will break code written for v11.
 
 This page will outline the steps for updating your DBM bot. This change is REQUIRED or your bot will stop working.
