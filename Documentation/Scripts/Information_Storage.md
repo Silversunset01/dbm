@@ -59,7 +59,7 @@
 | Server Icon URL | `${msg.guild.iconURL({ dynamic: true })}` |
 | Server Splash URL | `${msg.guild.splashURL({ dynamic: true })}` | 
 | Server Banner URL | `${msg.guild.bannerURL({ dynamic: true })}` |
-| Server Vanity Invite | `${msg.guild.bannerURL({ dynamic: true })}` |
+| Server Vanity Invite | `${msg.guild.vanityURLCode}` |
 | Server Creation Date | `${msg.guild.createdAt}` |
 | Server Verification Level | `${msg.guild.verificationLevel}` |
 | Server Explicit Content Filter | `${msg.guild.explicitContentFilter}` |
